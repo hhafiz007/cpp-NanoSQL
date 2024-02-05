@@ -33,8 +33,8 @@ int main(int argc, char* argv[]) {
 
         database_file.seekg(90);
 
-        char buf[8];
-        database_file.read(buf, 8);
+        char buf[4];
+        database_file.read(buf, 4);
         std::cout << "database page size: " << buf<< std::endl;
         
 
