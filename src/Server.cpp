@@ -31,8 +31,7 @@ int main(int argc, char* argv[]) {
         
         unsigned short page_size = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
         
-        std::cout << "database page size: " << page_size << std::endl;
-
+      
         
         database_file.seekg(HEADER_SIZE+3);
         database_file.read(buffer, 2);
