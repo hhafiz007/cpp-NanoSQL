@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
                          (static_cast<unsigned char>(buffer[0]) << 24));
         std::cout << "address: " << cellAdd << std::endl;
         
-        std::uint32_t* ptr = reinterpret_cast<uint32_t*>(cellAdd);
+        unsigned long* ptr = reinterpret_cast<unsigned long>(cellAdd);
         std::cout << "Value at the address: " << *ptr << std::endl;
 
         
