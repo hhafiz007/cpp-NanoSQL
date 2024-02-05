@@ -2,6 +2,8 @@
 #include <iostream>
 #include <fstream>
 
+const int HEADER_SIZE = 100;
+
 int main(int argc, char* argv[]) {
     // You can use print statements as follows for debugging, they'll be visible when running tests.
     std::cout << "Logs from your program will appear here" << std::endl;
