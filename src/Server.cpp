@@ -38,12 +38,6 @@ int main(int argc, char* argv[]) {
         std::cout << "database page size: " << buf<< std::endl;
         
 
-        int count = 0;
-
-        for (auto number : buf) {
-        std::cout << number << " ";
-        }
-
 
 
 
