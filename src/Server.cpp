@@ -3,6 +3,7 @@
 #include <fstream>
 
 const int HEADER_SIZE = 100;
+const int pageHeader = 8;
 
 int main(int argc, char* argv[]) {
     // You can use print statements as follows for debugging, they'll be visible when running tests.
@@ -33,6 +34,14 @@ int main(int argc, char* argv[]) {
         unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
         std::cout << "database page size: " << page_size << std::endl;
         std::cout << "number of tables: " << num_table << std::endl;
+        database_file.seekg(HEADER_SIZE+3);
+        database_file.read(buffer, 2);
+        database_file.seekg(HEADER_SIZE+pageHeader);
+        char buff[2];
+        database_file.read(buff, 2);
+        std :: cout << buff << std::endl;
+
+
         
 
 
