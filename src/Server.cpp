@@ -42,6 +42,9 @@ int main(int argc, char* argv[]) {
                          (static_cast<unsigned char>(buffer[2]) << 8) |
                          (static_cast<unsigned char>(buffer[1]) << 16) |
                          (static_cast<unsigned char>(buffer[0]) << 24));
+        
+        uint32_t* ptr = reinterpret_cast<uint32_t*>(cellAdd);
+        std::cout << "Value at the address: " << *ptr << std::endl;
 
         std :: cout << *cellAdd << std::endl;
 
