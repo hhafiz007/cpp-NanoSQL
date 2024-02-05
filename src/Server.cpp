@@ -33,11 +33,13 @@ int main(int argc, char* argv[]) {
         
         std::cout << "database page size: " << page_size << std::endl;
 
-        database_file.seekg(90);
-
-        char buf[8];
-        database_file.read(buf, 8);
-        std::cout << "database page size: " << buf<< std::endl;
+        
+        database_file.seekg(HEADER_SIZE+3);
+        database_file.read(buffer, 2);
+        unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
+        std::cout << "database page size: " << page_size << std::endl;
+1
+        std::cout << "number of tables: " << num_table << std::endl;
         
 
 
