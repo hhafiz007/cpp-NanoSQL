@@ -56,9 +56,8 @@ int main(int argc, char* argv[]) {
         std::cout << "database page size: " << page_size << std::endl;
         std::cout << "number of tables: " << num_table << std::endl;
         database_file.seekg(HEADER_SIZE+pageHeader);
-        char buff[2];
-        database_file.read(buff, 2);
-        std :: cout << buff << std::endl;
+        
+        std :: cout << database_file << std::endl;
 
 
     }
