@@ -30,6 +30,23 @@ int main(int argc, char* argv[]) {
         unsigned short page_size = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
         
         std::cout << "database page size: " << page_size << std::endl;
+
+        database_file.seekg(90);
+
+        char buf[1];
+        std::cout << "database page size: " << buf<< std::endl;
+        database_file.read(buf, 1);
+
+        int count = 0;
+
+        for (auto number : buf) {
+        std::cout << number << " ";
+        }
+
+
+
+
+
     }
 
     return 0;
