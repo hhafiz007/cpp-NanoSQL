@@ -46,10 +46,6 @@ int main(int argc, char* argv[]) {
         uint32_t* ptr = reinterpret_cast<uint32_t*>(cellAdd);
         std::cout << "Value at the address: " << *ptr << std::endl;
 
-        std :: cout << *cellAdd << std::endl;
-
-    
-
         
     }
     
