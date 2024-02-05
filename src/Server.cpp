@@ -56,9 +56,12 @@ int main(int argc, char* argv[]) {
         std::cout << "database page size: " << page_size << std::endl;
         std::cout << "number of tables: " << num_table << std::endl;
         database_file.seekg(HEADER_SIZE+pageHeader);
-        char buff[200];
-        database_file.read(buff, 200);
-        std :: cout << buff << std::endl;
+        char buff[4];
+        database_file.read(buff, 4);
+        unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
+        unsigned long cellAdd = (static_cast<unsigned char>(buffer[3]) | (static_cast<unsigned char>(buffer[2]) << 8) |static_cast<unsigned char>(buffer[1] << 16) | (static_cast<unsigned char>(buffer[0]) << 24));
+
+        std :: cout << cellAdd << std::endl;
 
 
     }
