@@ -37,8 +37,8 @@ int main(int argc, char* argv[]) {
         database_file.seekg(HEADER_SIZE+3);
         database_file.read(buffer, 2);
         database_file.seekg(HEADER_SIZE+pageHeader);
-        char buff[2];
-        database_file.read(buff, 2);
+        char buff[8];
+        database_file.read(buff, 8);
         std :: cout << buff << std::endl;
 
 
