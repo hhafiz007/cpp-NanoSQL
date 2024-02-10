@@ -301,13 +301,11 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
     }
 // kk
     
-    for(std::vector ele : tableData){
-        // std::cout << index << std::endl;
-        
+    for (int j = 0 ; j < tableData.size(),j++){
 
-        std::cout << ele[index]<< std::endl;
+        std :: cout << j << std::endl;
 
-          
+
     }
 
 
