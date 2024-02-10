@@ -37,10 +37,11 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
     int i = 0;
 
     while ((int(database_file[i]) >> 7) & 1) {
+
         i+=1;
     }
 
-    std::cout<<"printing payload bytesa" << int(database_file[rowAddress+i])<<" " <<database_file[rowAddress+i]   <<std::endl;
+    std::cout<<"printing payload bytesa" << int(database_file[rowAddress+i])<<" " <<i  <<std::endl;
 
     return rowAddress+i+1;
 
