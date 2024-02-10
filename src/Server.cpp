@@ -37,7 +37,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
  }
 
- int processHeader(std::vector<char> &database_file ,unsigned short rowAddress, std::vector<char> &header ){
+ int processHeader(std::vector<char> &database_file ,unsigned short rowAddress, std::vector<int> &header ){
 
     int totalBytes = int(database_file[rowAddress]);
     std::cout<<"header bytesa" << totalBytes  <<std::endl;
