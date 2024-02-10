@@ -225,10 +225,10 @@ std::vector<std::string> columnNames;
     for (; iter != end; ++iter) {
         contents += (*iter)[0].str().substr(1, (*iter)[0].str().size() - 2); // Remove surrounding parentheses
     }
-    std::vector<std::string> tokens = split(command, ',');
+    std::vector<std::string> tokens = split(contents, ',');
 
     for( std::column : tokens){
-        std::vector<std::string> columnTokens = split(command, ',');
+        std::vector<std::string> columnTokens = split(column, ',');
         columnNames.push_back(columnTokens[0]);
 
 
