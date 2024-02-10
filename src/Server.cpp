@@ -93,7 +93,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
 
 
-int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
+int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std::vector<vector<string>> &tableData){
 
     int next = rowAddress;
     std::vector<int> header; 
@@ -103,6 +103,8 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
     
     next = processHeader(database_file,next,header);
     int index = 0;
+    
+    std::vector<string> currRow;
 
     for (int element : header) {
        
@@ -120,6 +122,8 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
             startByte+=1;
         }
 
+        currRow.push_back(currHeader);
+
         if (index == 1) {
             std::cout <<currHeader<<" ";
         
@@ -133,6 +137,8 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
         next = endExclusive;
         index+=1;
     }
+
+    tableData.push_back(currRow);
 
 
 
@@ -151,7 +157,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
 }
 
 
-void printTableLeafPage(std::vector<char> &database_file , unsigned short num_table,int start) {
+void printTableLeafPage(std::vector<char> &database_file , unsigned short num_table,int start,std::vector<vector<string>> &tableData) {
     
     std::vector<unsigned short> cellAddress;
 
@@ -166,7 +172,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     }
 
     for (int i = 0; i < cellAddress.size(); ++i) {
-       getRowData(database_file,cellAddress[i]);
+       getRowData(database_file,cellAddress[i],tableData);
     //    break;
         
     }
@@ -238,7 +244,15 @@ int main(int argc, char* argv[]) {
         
 
     int start = 108;
-    printTableLeafPage(bytes,num_table,start);
+    std:: vector <vector<string>> tableData; 
+    printTableLeafPage(bytes,num_table,start,tableData);
+
+
+
+    }
+    else {
+        std:: vector <vector<string>> tableData; 
+        int start = 108;
 
 
 
