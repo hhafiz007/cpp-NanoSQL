@@ -33,7 +33,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
     int i = 0;
     bool isMSBSet = (static_cast<unsigned char>(database_file[rowAddress+i]) >> 7) & 1;
-     std::cout << "msb bit  " << isMSBSet<<std::endl;
+    //  std::cout << "msb bit  " << isMSBSet<<std::endl;
 
     while (isMSBSet) {
         // std::cout << "setting bit" << std::endl;
@@ -64,14 +64,15 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
         for (  j = 0 ; j +prev < next-1; j++) {
             result <<= 8;
             unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
-            std :: cout << currByte << " curr byte "<<int(database_file[prev+j])<<std:: endl;
+            // std :: cout << currByte << " curr byte "<<int(database_file[prev+j])<<std:: endl;
             result |=  (currByte) & 0b01111111;
             
         }
         result <<= 8;
         unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
         result |= currByte;
-        std::cout << " indices" << prev <<"   "<< next<<" "<<rowAddress+totalBytes << "   " << result <<std:: endl;
+        header.push_back(result);
+        // std::cout << " indices" << prev <<"   "<< next<<" "<<rowAddress+totalBytes << "   " << result <<std:: endl;
         i = next;
        
         // break;
@@ -86,7 +87,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
 
 
-    return rowAddress+1;
+    return i;
  }
 
 
@@ -100,6 +101,10 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
     next = processVarInt(database_file,next);
     
     next = processHeader(database_file,next,header);
+
+    for (int element : header) {
+        std::cout <<"printing header element" <<element<< std :: endl;
+    }
 
 
 
