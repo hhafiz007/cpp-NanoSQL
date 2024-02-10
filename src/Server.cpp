@@ -414,7 +414,7 @@ int main(int argc, char* argv[]) {
 
         // printTableLeafPage(bytes,cellCount,start+8,tableData);
 
-        std :: cout << "back here  " << start  <<" ";
+        std :: cout << "back here  " << page_size  <<" ";
 
         printSelectColumns(tableData, columnNames , selectColumn);
 
