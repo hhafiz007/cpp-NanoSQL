@@ -311,8 +311,8 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
             
             if (columnBool[index] == 1){
                 std::cout << "hello" << std::endl;
-                index+=1
-                break
+                index+=1;
+                break;
             }
 
             index += 1;
