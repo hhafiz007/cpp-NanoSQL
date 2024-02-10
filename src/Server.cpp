@@ -197,7 +197,7 @@ std::vector<std::string> split(const std::string& s, char delimiter) {
 
 int getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string tableName) {
 
-    std::cout << " tableName" << tableName;
+    // std::cout << " tableName" << tableName;
 
     for (std::vector table : tableData){
             if (table[1] == tableName){
@@ -286,7 +286,7 @@ int main(int argc, char* argv[]) {
     else {
         // std:: vector <vector<string>> tableData; 
         std :: cout << command << "   "<<std::endl;
-        int start;
+        int start=108;
         std::vector <std::vector<std::string>> tableData; 
 
         
@@ -297,9 +297,9 @@ int main(int argc, char* argv[]) {
         int queryLength = tokens.size();
         
         int rootPage = getRootPage(tableData,tokens[queryLength-1]);
-        // start = (rootPage-1)*4096;
-        // unsigned short cellCount=(static_cast<unsigned char>(buffer[start+4]) | (static_cast<unsigned char>(buffer[start+4]) << 8));
-        // std::cout << "table total row count " << cellCount << std::endl;
+        start = (rootPage-1)*4096;
+        unsigned short cellCount=(static_cast<unsigned char>(buffer[start+4]) | (static_cast<unsigned char>(buffer[start+4]) << 8));
+        std::cout << "table total row count " << cellCount << std::endl;
 
 
 
