@@ -29,7 +29,11 @@ void printTables(std::ifstream &database_file , unsigned short num_table) {
         unsigned short page_address = (static_cast<unsigned char>(buffer[startIndex+1]) | (static_cast<unsigned char>(buffer[startIndex]) << 8));
         cellAddress.push_back(page_address);
     }
-    std::cout << "adresses of " << cellAddress << std::endl;
+
+    for (int i = 0; i < cellAddressec.size(); ++i) {
+        std::cout << cellAddress[i] << " ";
+    }
+   
 }
 
 
