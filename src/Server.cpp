@@ -290,9 +290,9 @@ int main(int argc, char* argv[]) {
         std::vector<std::string> tokens = split(command, ' ');
         int queryLength = tokens.size();
         int rootPage = getRootPage(tableData,tokens[queryLength-1]);
-        start = (rootPage-1)*4096;
-        unsigned short cellCount=(static_cast<unsigned char>(buffer[start+4]) | (static_cast<unsigned char>(buffer[start+4]) << 8));
-        std::cout << "table total row count " << cellCount << std::endl;
+        // start = (rootPage-1)*4096;
+        // unsigned short cellCount=(static_cast<unsigned char>(buffer[start+4]) | (static_cast<unsigned char>(buffer[start+4]) << 8));
+        // std::cout << "table total row count " << cellCount << std::endl;
 
 
 
