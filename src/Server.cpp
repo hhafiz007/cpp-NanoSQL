@@ -287,7 +287,7 @@ int main(int argc, char* argv[]) {
     }
     else {
         // std:: vector <vector<string>> tableData; 
-        // std :: cout << command << "   "<<std::endl;
+        // std :: cout << command << " great work  "<<std::endl;
         int start=108;
         std::vector <std::vector<std::string>> tableData; 
 
