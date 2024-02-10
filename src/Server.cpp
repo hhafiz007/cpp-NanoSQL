@@ -58,7 +58,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
       
         int prev = i;
         int next = processVarInt(database_file,prev);
-        int result = 0;
+        unsigned int result = 0;
         for ( int j = prev ; j < next; j++) {
             result <<= 8;
             result |= int(database_file[j]);
