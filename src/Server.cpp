@@ -103,7 +103,10 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
     next = processHeader(database_file,next,header);
 
     for (int element : header) {
-        std::cout <<"printing header element" <<element<< std :: endl;
+        int startByte = next;
+        int endExclusive = next + element;
+        std::cout <<"printing header element" <<element<<"  header value   "<<std:: string(database_file[startByte:endExclusive]) << std :: endl;
+        next = endExclusive
     }
 
 
