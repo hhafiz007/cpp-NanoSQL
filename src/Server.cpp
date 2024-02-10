@@ -37,6 +37,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
     int i = 0;
 
     while ((int(database_file[i]) >> 7) & 1) {
+          std::cout<<"setting bit" << std::endl;
 
         i+=1;
     }
