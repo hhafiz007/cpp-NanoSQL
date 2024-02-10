@@ -23,7 +23,7 @@ void getRowID(std::vector<char> &database_file ,unsigned short rowAddress){
 
     int i = 0;
 
-    while (int(database_file[i]) >> 7) & 1{
+    while ((int(database_file[i]) >> 7) & 1){
         i+=1
     }
 
@@ -40,7 +40,7 @@ void getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress)
 
     int i = 0;
 
-    while (int(database_file[i]) >> 7) & 1{
+    while ((int(database_file[i]) >> 7) & 1) {
         i+=1
     }
 
