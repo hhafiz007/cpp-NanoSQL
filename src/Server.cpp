@@ -201,7 +201,7 @@ int getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string ta
 
     for (std::vector table : tableData){
             if (table[1] == tableName){
-                std::cout << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
+                // std::cout << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
                 return int(table[3][0]);
             }
 
@@ -285,7 +285,7 @@ int main(int argc, char* argv[]) {
     }
     else {
         // std:: vector <vector<string>> tableData; 
-        std :: cout << command << "   "<<std::endl;
+        // std :: cout << command << "   "<<std::endl;
         int start=108;
         std::vector <std::vector<std::string>> tableData; 
 
@@ -299,7 +299,7 @@ int main(int argc, char* argv[]) {
         int rootPage = getRootPage(tableData,tokens[queryLength-1]);
         start = (rootPage-1)*4096;
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
-        std::cout <<cellCount << std::endl;
+        std::cout << std::endl<<cellCount << std::endl;
 
 
 
