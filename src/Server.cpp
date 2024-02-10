@@ -362,6 +362,7 @@ int main(int argc, char* argv[]) {
 
 
     }
+    std:: cout << command.substr(0,15);
     
     
     return 0;
