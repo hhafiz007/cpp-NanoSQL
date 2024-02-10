@@ -291,7 +291,7 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
     for (int i = 0 ; i < m ; i+=1){
         columnBool[i] = 0;
         if (columnNames[i] == selectColumn){
-            std :: cout << "stting column" << columnNames[i];
+            std :: cout << "tesstting column" << columnNames[i];
             columnBool[i] = 1;
         }
     }
@@ -403,6 +403,7 @@ int main(int argc, char* argv[]) {
         int queryLength = tokens.size();
         int rootPage;
         start = (rootPage-1)*4096;
+
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
 
         std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
@@ -413,7 +414,7 @@ int main(int argc, char* argv[]) {
 
         // printTableLeafPage(bytes,cellCount,start+8,tableData);
 
-        std :: cout << "back here";
+        std :: cout << "back here  " << int(bytes[start]) ;
 
         printSelectColumns(tableData, columnNames , selectColumn);
 
