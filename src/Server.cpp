@@ -45,7 +45,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
 
 
-    return rowAddress;
+    return rowAddress+1;
  }
 
 
