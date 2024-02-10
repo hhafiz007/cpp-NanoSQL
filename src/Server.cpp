@@ -106,9 +106,7 @@ int main(int argc, char* argv[]) {
 
     printTables(bytes,num_table,start);
 
-        // unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8))
     
- 
 
     }
     
