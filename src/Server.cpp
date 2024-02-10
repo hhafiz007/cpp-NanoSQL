@@ -206,7 +206,7 @@ int getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string ta
                 rootPage =  int(table[3][0]);
             }
 
-            std :: cout<<" create table command is " << table[4] << endl;
+            std :: cout<<" create table command is " << table[4] << std::endl;
 
 
     }
