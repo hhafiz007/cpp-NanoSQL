@@ -69,7 +69,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
     // Convert the little-endian bytes to integer
         int result = 0;
-        for ( j = prev ; j < next; j++) {
+        for ( int j = prev ; j < next; j++) {
             result <<= 8;
             result |= int(database_file[j]);
         }
