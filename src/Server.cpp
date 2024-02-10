@@ -304,7 +304,7 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
     for (int j = 0 ; j < tableData.size();j++){
 
         
-        std :: cout << tableData[j][1] << " "<<std::endl;
+        std :: cout << tableData[j][10] << " "<<std::endl;
         
 
         std :: cout << j<<std:: endl;
