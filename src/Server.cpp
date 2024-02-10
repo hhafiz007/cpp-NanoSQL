@@ -291,7 +291,7 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
     for (int i = 0 ; i < m ; i+=1){
         columnBool[i] = 0;
         if (columnNames[i] == selectColumn){
-            std :: cout << "tesstting column" << columnNames[i];
+            std :: cout << "tesstting column" << columnNames[i] <<" " << tableData.size();
             columnBool[i] = 1;
         }
     }
@@ -419,7 +419,7 @@ int main(int argc, char* argv[]) {
 
         printTableLeafPage(bytes,cellCount,start+8,tableData);
 
-        std :: cout << "back here  " << start  <<" ";
+        // std :: cout << "back here  " << start  <<" ";
 
         printSelectColumns(tableData, columnNames , selectColumn);
 
