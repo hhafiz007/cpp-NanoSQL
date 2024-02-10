@@ -51,7 +51,7 @@ void printTables(std::ifstream &database_file , unsigned short num_table) {
     }
 
     for (int i = 0; i < cellAddress.size(); ++i) {
-        getRowData(database_file,cellAddress[i]);
+        cout << cellAddress[i];
     }
 
 
