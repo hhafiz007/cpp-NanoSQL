@@ -196,15 +196,17 @@ std::vector<std::string> split(const std::string& s, char delimiter) {
     return tokens;
 }
 
-int getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string tableName) {
+int getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string tableName,int & rootPage) {
 
     // std::cout << " tableName" << tableName;
 
     for (std::vector table : tableData){
             if (table[1] == tableName){
                 // std::cout << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
-                return int(table[3][0]);
+                rootPage =  int(table[3][0]);
             }
+
+            std :: cout<<" create table command is " << table[4] << endl;
 
 
     }
@@ -285,7 +287,7 @@ int main(int argc, char* argv[]) {
 
 
     }
-    else {
+    else if (command.substr(0,18) == "SELECT COUNT(*) FROM ")  {
         // std:: vector <vector<string>> tableData; 
         // std :: cout << command << " great work  "<<std::endl;
         int start=108;
@@ -298,11 +300,23 @@ int main(int argc, char* argv[]) {
         
         int queryLength = tokens.size();
         
-        int rootPage = getRootPage(tableData,tokens[queryLength-1]);
+        getRootPage(tableData,tokens[queryLength-1],rootPage);
         start = (rootPage-1)*4096;
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
         std::cout <<cellCount << std::endl;
 
+
+
+    }
+    else {
+        int start=108;
+        std::vector <std::vector<std::string>> tableData; 
+        printTableLeafPage(bytes,num_table,start,tableData);
+              std::vector<std::string> tokens = split(command, ' ');
+        
+        int queryLength = tokens.size();
+        int rootPage;
+        getRootPage(tableData,tokens[queryLength-1],rootPage);
 
 
     }
