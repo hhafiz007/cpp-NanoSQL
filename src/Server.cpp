@@ -29,19 +29,19 @@ unsigned int littleEndianToInt(const unsigned char* bytes) {
 
 
 int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
-    std::cout << "row Address: " << rowAddress << std::endl;
+    // std::cout << "row Address: " << rowAddress << std::endl;
 
     int i = 0;
     bool isMSBSet = (static_cast<unsigned char>(database_file[rowAddress+i]) >> 7) & 1;
      std::cout << "msb bit  " << isMSBSet<<std::endl;
 
     while (isMSBSet) {
-        std::cout << "setting bit" << std::endl;
+        // std::cout << "setting bit" << std::endl;
         i += 1;
         isMSBSet = (static_cast<unsigned char>(database_file[rowAddress+i]) >> 7) & 1;
     }
 
-    std::cout << "printing payload bytes: " << static_cast<int>(database_file[rowAddress+i]) << std::endl;
+    // std::cout << "printing payload bytes: " << static_cast<int>(database_file[rowAddress+i]) << std::endl;
 
     return rowAddress + i + 1;
 }
@@ -64,10 +64,13 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
         for (  j = prev ; j < next-1; j++) {
             result <<= 8;
             unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
+            std :: cout << currByte << std:: endl;
             result |=  (currByte) & 0b01111111;
+            
         }
         result <<= 8;
-        result |= int(database_file[prev+j]);
+        unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) 
+        result |= currByte;
         std::cout << " indices" << prev <<"   "<< next<<" "<<rowAddress+totalBytes << "   " << result <<std:: endl;
         i = next;
        
