@@ -44,7 +44,7 @@ int getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress){
         i+=1;
     }
 
-    // std::cout<<"printing payload bytes" << <<std::endl;
+    std::cout<<"printing payload bytes" << int(database_file[rowAddress+i]) <<std::endl;
 
     return rowAddress+i+1;
 
