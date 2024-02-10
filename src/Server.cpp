@@ -17,7 +17,7 @@ struct schemaRow {
 };
 
 void getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress){
-    database_file.seekg(rowAddress);
+    // database_file.seekg(rowAddress);
 
 
  }
