@@ -37,13 +37,18 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
  }
 
+
+
 int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
 
     int next = rowAddress;
+    std::vector<int> header; 
     
     next = processVarInt(database_file,rowAddress);
     next = processVarInt(database_file,next);
     next = processVarInt(database_file,next);
+    next = processHeader()
+
 
     return next;
 
@@ -63,7 +68,7 @@ void printTables(std::vector<char> &database_file , unsigned short num_table,int
     
     std::vector<unsigned short> cellAddress;
 
-    // Calculate factorialass
+    // Calculate factorialass b
     for (int i = 0; i < num_table; i++) {
         int startIndex = 2*i+start; 
         unsigned short page_address = (static_cast<unsigned char>(database_file[startIndex+1]) | (static_cast<unsigned char>(database_file[startIndex]) << 8));
