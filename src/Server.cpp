@@ -19,7 +19,7 @@ struct schemaRow {
 void getRowID(std::vector<char> &database_file ,unsigned short rowAddress){
     // database_file.seekg(rowAddress);
 
-    vector<int> getRowID;
+    // vector<int> getRowID;
 
     int i = 0;
 
@@ -36,7 +36,7 @@ void getRowID(std::vector<char> &database_file ,unsigned short rowAddress){
 void getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress){
     // database_file.seekg(rowAddress);
 
-    vector<int> payload;
+    // vector<int> payload;
 
     int i = 0;
 
