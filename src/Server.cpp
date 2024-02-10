@@ -46,7 +46,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
     
     next = processVarInt(database_file,rowAddress);
     next = processVarInt(database_file,next);
-    next = processVarInt(database_file,next)
+    next = processVarInt(database_file,next);
 
     return next;
 
