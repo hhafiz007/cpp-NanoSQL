@@ -30,7 +30,7 @@ void printTables(std::ifstream &database_file , unsigned short num_table) {
         cellAddress.push_back(page_address);
     }
 
-    for (int i = 0; i < cellAddressec.size(); ++i) {
+    for (int i = 0; i < cellAddress.size(); ++i) {
         std::cout << cellAddress[i] << " ";
     }
    
