@@ -88,11 +88,7 @@ int main(int argc, char* argv[]) {
         unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
         std::cout << "database page size: " << page_size << std::endl;
         std::cout << "number of tables: " << num_table << std::endl;
-        if (!file.is_open()) {
-        std::cerr << "Error opening file." << std::endl;
-        return 1;
-    }
-
+       
     // Get the file size
     database_file.seekg(0, std::ios::end);
     std::streampos fileSize = file.tellg();
