@@ -286,7 +286,7 @@ int main(int argc, char* argv[]) {
         int start = 108;
         std::vector <std::vector<std::string>> tableData; 
         printTableLeafPage(bytes,num_table,start,tableData);
-        td::vector<std::string> tokens = split(input, ' ');
+        td::vector<std::string> tokens = split(command, ' ');
         int queryLength = tokens.size()
         int rootPage = getRootPage(tableData,tokens[queryLength-1]);
 
