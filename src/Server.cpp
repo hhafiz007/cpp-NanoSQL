@@ -5,6 +5,7 @@
 #include <variant>
 #include <charconv>
 #include <cmath>
+#include <sstream>
 #include <string>
 
 
