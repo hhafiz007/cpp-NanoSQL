@@ -4,6 +4,7 @@
 #include <vector>
 #include <variant>
 #include <charconv>
+#include <fmt/core.h>
 
 
 const int HEADER_SIZE = 100;
@@ -60,8 +61,14 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
         int next = processVarInt(database_file,prev);
 
         std::cout << " indices" << prev <<"   "<< next<< std:: endl;
+        // unsigned int result;
+        // Convert vector of chars to string
+        std::string hexString(database_file.begin()+prev, database_file.begin()+next);
+
+        // Parse hex string to integer
         unsigned int result;
-        std::from_chars(database_file.data() + prev,database_file.data()+next-prev, result);
+        fmt::parse("{:x}", hexString, result);
+
         std::cout << " header bytes " << result << std:: endl;
         i=next;
 
