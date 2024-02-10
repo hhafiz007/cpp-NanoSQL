@@ -59,7 +59,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
         int prev = i+rowAddress;
         int next = processVarInt(database_file,prev);
 
-        std::cout << " indices" << prev <<"   "<< next<< std:: endl;
+       
         // unsigned int result;
         // Convert vector of chars to string
         // std::string hexString(database_file.begin()+prev, database_file.begin()+next);
@@ -73,8 +73,9 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
             result <<= 8;
             result |= int(database_file[j]);
         }
-
+         std::cout << " indices" << prev <<"   "<< next<<" "<<rowAddress+totalBytes << "   " << result std:: endl;
         i = next;
+
 
 
     }
