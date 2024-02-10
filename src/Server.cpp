@@ -362,7 +362,7 @@ int main(int argc, char* argv[]) {
 
         for (std::string ele : columnNames) {
 
-            std::cout<< "string     name " << ele << std::endl;
+            std::cout<< "columnName " << ele << std::endl;
         }
 
 
