@@ -5,6 +5,7 @@
 #include <variant>
 #include <charconv>
 #include <cmath>
+#include <regex>
 #include <sstream>
 #include <string>
 
@@ -196,9 +197,10 @@ std::vector<std::string> split(const std::string& s, char delimiter) {
     return tokens;
 }
 
-int getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string tableName,int & rootPage) {
+std::vector<std::string> getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string tableName,int & rootPage) {
 
     // std::cout << " tableName" << tableName;
+    std::string sqlStatement;
 
     for (std::vector table : tableData){
             if (table[1] == tableName){
@@ -207,9 +209,30 @@ int getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string ta
             }
 
             std :: cout<<" create table command is " << table[4] << std::endl;
+            sqlStatement = table[4];
+            
 
 
     }
+
+ std::vector<std::string> columnNames;
+    std::regex columnRegex("\\b\\w+\\b");
+    std::smatch match;
+
+    // Search for column names in the SQL statement
+    std::string::const_iterator searchStart(sqlStatement.cbegin());
+    while (std::regex_search(searchStart, sqlStatement.cend(), match, columnRegex)) {
+        columnNames.push_back(match.str());
+        std::cout << columnNames << match.str();
+        searchStart = match.suffix().first;
+    }
+
+    return columnNames;
+
+
+
+
+
 
     return 0;
 
