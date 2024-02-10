@@ -307,7 +307,7 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
             std :: cout << k <<" ";
         }
 
-        std :: cout << endl;
+        std :: cout << std:: endl;
 
 
     }
