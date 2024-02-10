@@ -216,7 +216,7 @@ std::vector<std::string> getRootPage(std::vector<std::vector<std::string>> &tabl
     }
 
 std::vector<std::string> columnNames;
-    std::regex columnRegex("\\b(?!\\b(?:PRIMARY|KEY|UNIQUE)\\b)\\b\\w+\\b"); // Column name pattern
+    std::regex columnRegex("\\b(?!\\b(?:PRIMARY|KEY|UNIQUE)\\b)\\b(\\w+)\\b"); // Column name pattern
     std::sregex_iterator iter(sqlStatement.begin(), sqlStatement.end(), columnRegex);
     std::sregex_iterator end;
 
