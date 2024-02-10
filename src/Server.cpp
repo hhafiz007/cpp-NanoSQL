@@ -295,7 +295,7 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
             columnBool[i] = 1;
         }
     }
-
+// kk
     
     for(std::vector ele : tableData){
         int index = 0;
