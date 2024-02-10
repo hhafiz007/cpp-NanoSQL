@@ -106,7 +106,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
         int startByte = next;
         int endExclusive = next + element;
         std:: string currHeader;
-        while startByte < endExclusive {
+        while (startByte < endExclusive) {
             currHeader = currHeader + database_file[startByte];
             startByte+=1;
         }
