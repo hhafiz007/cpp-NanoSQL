@@ -230,7 +230,7 @@ std::vector<std::string> columnNames;
     for( std::string column : tokens){
         std::cout << "tokens" << column << std::endl;
         std::vector<std::string> columnTokens = split(column, ' ');
-        columnNames.push_back(columnTokens[1]);
+        columnNames.push_back(columnTokens[0]);
 
 
     }
