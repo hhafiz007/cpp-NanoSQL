@@ -45,7 +45,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
     
     int i = rowAddress+1;
     while (i < rowAddress+totalBytes) {
-        std :: cout <<int(database_file[rowAddress]) << std :: endl;
+        std :: cout <<int(database_file[rowAddress+i]) << std :: endl;
         i+=1;
     }
 
