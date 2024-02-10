@@ -16,11 +16,11 @@ struct schemaRow {
     std::string sql;
 };
 
-// void getPayloadSize(std::ifstream &database_file,unsigned short rowAddress){
-//     database_file.seekg(rowAddress);
+void getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress){
+    database_file.seekg(rowAddress);
 
 
-// }
+ }
 
 // void getRowData(std::ifstream &database_file , unsigned short rowAddress){
     
@@ -45,10 +45,13 @@ void printTables(std::vector<char> &database_file , unsigned short num_table,int
         int startIndex = 2*i+start; 
         unsigned short page_address = (static_cast<unsigned char>(database_file[startIndex+1]) | (static_cast<unsigned char>(database_file[startIndex]) << 8));
         cellAddress.push_back(page_address);
+         std::cout << "Logs from your program will appear here" << page_address<<std::endl;
+        
+
     }
 
     for (int i = 0; i < cellAddress.size(); ++i) {
-        std::cout << cellAddress[i] <<std::endl;
+        get
     }
 
 
