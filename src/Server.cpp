@@ -27,7 +27,7 @@ int getRowID(std::vector<char> &database_file ,unsigned short rowAddress){
         i+=1;
     }
 
-    std::cout<<"printing row id bytes" << i <<std::endl;
+    std::cout<<"printing row id bytes" << database_file[start+i]  <<std::endl;
 
     return rowAddress+i+1;
 
@@ -44,7 +44,7 @@ int getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress){
         i+=1;
     }
 
-    std::cout<<"printing payload bytes" << i <<std::endl;
+    // std::cout<<"printing payload bytes" << <<std::endl;
 
     return rowAddress+i+1;
 
