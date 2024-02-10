@@ -1,6 +1,7 @@
 #include <cstring>
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 const int HEADER_SIZE = 100;
 const int pageHeader = 8;
