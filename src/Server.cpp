@@ -108,15 +108,17 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
         if (element >= 13) {
             element = std::ceil((element -13)/2);
         }
-        std::cout <<"printing header element" <<element<< std:: endl;
+   
     
         int startByte = next;
         int endExclusive = next + element;
+        std::cout <<"printing start element " <<element<<" end " << endExclusive<< std:: endl;
         std:: string currHeader;
         while (startByte < endExclusive) {
             currHeader = currHeader + database_file[startByte];
             startByte+=1;
         }
+        
         std::cout << "  header value   "<<currHeader<< std :: endl;
         next = endExclusive;
     }
