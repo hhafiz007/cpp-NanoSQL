@@ -54,7 +54,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
    
 
     
-     int i = rowAddress+1;
+    int i = rowAddress+1;
 
     while (i < rowAddress+totalBytes) {
       
@@ -125,6 +125,9 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
         
 
         }
+        else if (index == 3) {
+            std:: cout << currHeader<;
+        }
         
         
         next = endExclusive;
@@ -148,7 +151,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
 }
 
 
-void printTables(std::vector<char> &database_file , unsigned short num_table,int start) {
+void printTableLeafPage(std::vector<char> &database_file , unsigned short num_table,int start) {
     
     std::vector<unsigned short> cellAddress;
 
@@ -202,12 +205,12 @@ int main(int argc, char* argv[]) {
     std::vector<char> bytes(fileSize);
     database_file.read(bytes.data(), fileSize);
      database_file.seekg(16);  // Skip the first 16 bytes of the header
-        char buffer[2];
-        database_file.read(buffer, 2);
-        unsigned short page_size = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
-        database_file.seekg(HEADER_SIZE+3);
-        database_file.read(buffer, 2);
-        unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
+    char buffer[2];
+    database_file.read(buffer, 2);
+    unsigned short page_size = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
+    database_file.seekg(HEADER_SIZE+3);
+    database_file.read(buffer, 2);
+    unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
 
     // Close the file
     database_file.close();
@@ -235,7 +238,7 @@ int main(int argc, char* argv[]) {
         
 
     int start = 108;
-        printTables(bytes,num_table,start);
+    prinprintTableLeafPagetTables(bytes,num_table,start);
 
 
 
