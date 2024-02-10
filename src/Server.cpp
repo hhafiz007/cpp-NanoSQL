@@ -269,7 +269,7 @@ std::string parseSelectColumns(std::string &query) {
 
     if (std::regex_search(query, match, regex)) {
         content =  match[1].str();
-        std::cout << content<<content.size() std::endl;
+        std::cout << content<<content.size() <<std::endl;
     } 
 
 
