@@ -4,7 +4,6 @@
 #include <vector>
 #include <variant>
 #include <charconv>
-#include <boost/algorithm/hex.hpp>
 
 
 const int HEADER_SIZE = 100;
