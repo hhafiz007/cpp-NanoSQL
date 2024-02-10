@@ -270,10 +270,10 @@ std::vector<std::string> parseSelectColumns(std::string &query) {
     if (std::regex_search(query, match, regex)) {
         content =  match[1].str();
         std::cout << content<< std::endl;
-    } else {
-        return ""; // Return empty string if not found
-    }
+    } 
 
+
+    return selectColumns;
 
 
 
