@@ -238,7 +238,7 @@ int main(int argc, char* argv[]) {
         
 
     int start = 108;
-    prinprintTableLeafPagetTables(bytes,num_table,start);
+    printTableLeafPage(bytes,num_table,start);
 
 
 
