@@ -27,7 +27,7 @@ int getRowID(std::vector<char> &database_file ,unsigned short rowAddress){
         i+=1;
     }
 
-    std::cout<<"printing row id bytes" << database_file[rowAddress+i]  <<std::endl;
+    std::cout<<"printing row id bytes" << int(database_file[rowAddress+i])  <<std::endl;
 
     return rowAddress+i+1;
 
