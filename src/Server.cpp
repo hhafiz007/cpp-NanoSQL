@@ -33,6 +33,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
     int i = 0;
     bool isMSBSet = (static_cast<unsigned char>(database_file[i]) >> 7) & 1;
+     std::cout << "msb bit  " << isMSBSet<<std::endl;
 
     while (isMSBSet) {
         std::cout << "setting bit" << std::endl;
