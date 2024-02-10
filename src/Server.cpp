@@ -11,6 +11,7 @@
 
 const int HEADER_SIZE = 100;
 const int pageHeader = 8;
+bool printTables = false;
 
 struct schemaRow {
     // Member variables
@@ -126,7 +127,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 
         currRow.push_back(currHeader);
 
-        if (index == 1) {
+        if (index == 1 && printTables == true) {
             std::cout <<currHeader<<" ";
         
 
@@ -278,6 +279,7 @@ int main(int argc, char* argv[]) {
     int start = 108;
     
     std::vector <std::vector<std::string>> tableData; 
+    printTables  = true;
     printTableLeafPage(bytes,num_table,start,tableData);
 
 
