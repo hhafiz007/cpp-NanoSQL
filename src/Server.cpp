@@ -15,6 +15,24 @@ struct schemaRow {
     std::string sql;
 };
 
+
+void printTables(std::ifstream database_file , unsigned short num_table) {
+    database_file.seekg(108); 
+    int totalBytes = 2*num_table;
+    char buffer[totalBytes];
+    database_file.read(buffer, totalBytes);
+    std::vector<unsigned short> cellAddress;
+
+    // Calculate factorial
+    for (int i = 0; i < num_table; i++) {
+        int startIndex = 2*i; 
+        unsigned short page_address = (static_cast<unsigned char>(buffer[startIndex+1]) | (static_cast<unsigned char>(buffer[startIndex]) << 8));
+        cellAddress.push_back(page_address);
+    }
+    std::cout << "adresses of " << cellAddress << std::endl;
+}
+
+
 int main(int argc, char* argv[]) {
     // You can use print statements as follows for debugging, they'll be visible when running tests.
     std::cout << "Logs from your program will appear here" << std::endl;
@@ -58,18 +76,3 @@ int main(int argc, char* argv[]) {
 
 
 
-void printTables(std::ifstream database_file , unsigned short num_table) {
-    database_file.seekg(108); 
-    int totalBytes = 2*num_table;
-    char buffer[totalBytes];
-    database_file.read(buffer, totalBytes);
-    std::vector<unsigned short> cellAddress;
-
-    // Calculate factorial
-    for (int i = 0; i < num_table; i++) {
-        int startIndex = 2*i; 
-        unsigned short page_address = (static_cast<unsigned char>(buffer[startIndex+1]) | (static_cast<unsigned char>(buffer[startIndex]) << 8));
-        cellAddress.push_back(page_address);
-    }
-    std::cout << "adresses of " << cellAddress << std::endl;
-}
