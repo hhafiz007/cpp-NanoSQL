@@ -328,9 +328,9 @@ int main(int argc, char* argv[]) {
 
 
     }
-    else if (command.substr(0,15) == "SELECT COUNT(*)")  {
+    else if (command.substr(0,15) == "select count(*)")  {
         // std:: vector <vector<string>> tableData; 
-        std :: cout << command << " great work  "<<std::endl;
+        // std :: cout << command << " great work  "<<std::endl;
         int start=108;
         std::vector <std::vector<std::string>> tableData; 
 
@@ -362,7 +362,7 @@ int main(int argc, char* argv[]) {
 
 
     }
-    std:: cout << command.substr(0,15);
+    // std:: cout << command.substr(0,15);
     
     
     return 0;
