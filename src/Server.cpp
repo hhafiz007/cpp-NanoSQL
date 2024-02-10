@@ -236,11 +236,11 @@ std::vector<std::string> columnNames;
        
         if (index ==  0){
             columnNames.push_back(columnTokens[0]);
-            //  std::cout << "The token size is  " << columnTokens[0];
+             std::cout << "The token size is  " << columnTokens[0];
         }
         else{
                  columnNames.push_back(columnTokens[1]);
-                //   std::cout << "The token size is  " << columnTokens[1];
+                  std::cout << "The token size is  " << columnTokens[1];
 
         }
    
@@ -358,7 +358,7 @@ int main(int argc, char* argv[]) {
         
         int queryLength = tokens.size();
         int rootPage;
-        getRootPage(tableData,tokens[queryLength-1],rootPage);
+        std::vector<std::string> columnNames = getRootPage(tableData,tokens[queryLength-1],rootPage);
 
 
     }
