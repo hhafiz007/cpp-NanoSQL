@@ -16,7 +16,7 @@ struct schemaRow {
 };
 
 
-void printTables(std::ifstream database_file , unsigned short num_table) {
+void printTables(std::ifstream &database_file , unsigned short num_table) {
     database_file.seekg(108); 
     int totalBytes = 2*num_table;
     char buffer[totalBytes];
