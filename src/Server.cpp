@@ -227,6 +227,7 @@ std::vector<std::string> getRootPage(std::vector<std::vector<std::string>> &tabl
         columnNames.push_back(match[1].str());
         searchStart = match.suffix().first;
     }
+    std:: cout << "col names are " << columnNames[0] << " " << columnNames[1] << endl; 
 
     return columnNames;
 
