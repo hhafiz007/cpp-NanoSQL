@@ -200,20 +200,20 @@ std::vector<std::string> split(const std::string& s, char delimiter) {
 std::vector<std::string> getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string tableName,int & rootPage) {
 
     // std::cout << " tableName" << tableName;
-    std::string sqlStatement;
+std::string sqlStatement;
 
-    for (std::vector table : tableData){
-            if (table[1] == tableName){
-                // std::cout << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
-                rootPage =  int(table[3][0]);
-            }
+for (std::vector table : tableData){
+        if (table[1] == tableName){
+            // std::cout << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
+            rootPage =  int(table[3][0]);
+        }
 
-            std :: cout<<" create table command is " << table[4] << std::endl;
-            sqlStatement = table[4];
-            
+        std :: cout<<" create table command is " << table[4] << std::endl;
+        sqlStatement = table[4];
+        
 
 
-    }
+}
 
 std::vector<std::string> columnNames;
 
