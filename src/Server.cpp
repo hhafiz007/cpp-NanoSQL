@@ -16,7 +16,7 @@ struct schemaRow {
     std::string sql;
 };
 
-void getRowID(std::vector<char> &database_file ,unsigned short rowAddress){
+int getRowID(std::vector<char> &database_file ,unsigned short rowAddress){
     // database_file.seekg(rowAddress);
 
     // vector<int> getRowID;
@@ -33,7 +33,7 @@ void getRowID(std::vector<char> &database_file ,unsigned short rowAddress){
 
  }
 
-void getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress){
+int getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress){
     // database_file.seekg(rowAddress);
 
     // vector<int> payload;
