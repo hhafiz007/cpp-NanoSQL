@@ -290,7 +290,7 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
 
     for (int i = 0 ; i < m ; i+=1){
         columnBool[i] = 0;
-        if columnNames[i] == selectColumn{
+        if (columnNames[i] == selectColumn){
             std :: cout << "stting column" << columnNames[i];
             columnBool[i] = 1;
         }
@@ -405,7 +405,7 @@ int main(int argc, char* argv[]) {
         start = (rootPage-1)*4096;
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
 
-        std::vector<std::string> columnNames = getRootPage(tableData,tokens[queryLength-1],rootPage);
+        std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
         
         std:: string selectColumn = parseSelectColumns(command);
         
