@@ -66,6 +66,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
         std::cout << " indices" << prev <<"   "<< next<<" "<<rowAddress+totalBytes << "   " << result <<std:: endl;
         i = int(next);
         std::cout << " i" << i <<"   "<<std:: endl;
+        break;
 
     }
 
