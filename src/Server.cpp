@@ -63,17 +63,16 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
         std::cout << " indices" << prev <<"   "<< next<< std:: endl;
         // unsigned int result;
         // Convert vector of chars to string
-        std::string hexString(database_file.begin()+prev, database_file.begin()+next);
+        // std::string hexString(database_file.begin()+prev, database_file.begin()+next);
 
         // Parse hex string to integer
-        std::vector<unsigned char> bytes;
-        boost::algorithm::unhex(hexChars.begin()+prev, hexChars.begin()+next, std::back_inserter(bytes));
+        // boost::algorithm::unhex(hexChars.begin()+prev, hexChars.begin()+next, std::back_inserter(bytes));
 
     // Convert the little-endian bytes to integer
-        unsigned int result = 0;
-        for (size_t i = bytes.size(); i > 0; --i) {
+        int result = 0;
+        for ( j = prev ; j < next; j++) {
             result <<= 8;
-            result |= bytes[i - 1];
+            result |= int(database_file[j]);
         }
 
         i = next;
