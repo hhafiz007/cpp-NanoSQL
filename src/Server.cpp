@@ -59,11 +59,15 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
       
         int prev = i;
         int next = processVarInt(database_file,prev);
-        unsigned int result = 0;
-        for ( int j = prev ; j < next; j++) {
+        unsigned short result = 0;
+        int j = 0;
+        for (  j = prev ; j < next-1; j++) {
             result <<= 8;
-            result |=  int (database_file[j]);
+            unsigned short currByte = 
+            result |=  (static_cast<unsigned char>(database_file[prev+j]) >> 7) & 0b01111111;
         }
+        result <<= 8;
+        result |= int(database_file[prev+j]);
         std::cout << " indices" << prev <<"   "<< next<<" "<<rowAddress+totalBytes << "   " << result <<std:: endl;
         i = next;
        
