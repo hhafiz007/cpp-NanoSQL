@@ -295,6 +295,8 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
         if (columnNames[i] == selectColumn){
             // std :: cout << "tesstting column" << columnNames[i] <<" " << tableData.size();
             columnBool[i] = 1;
+
+            std :: cout << "index is " << i <<" "<<std::endl;
             index = i;
         }
     }
