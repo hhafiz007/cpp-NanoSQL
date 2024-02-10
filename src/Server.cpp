@@ -413,7 +413,7 @@ int main(int argc, char* argv[]) {
 
         printTableLeafPage(bytes,cellCount,start+8,tableData);
 
-        std :: cout << "back";
+        std :: cout << "back h";
 
         printSelectColumns(tableData, columnNames , selectColumn);
 
