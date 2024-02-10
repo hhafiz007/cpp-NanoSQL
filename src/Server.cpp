@@ -74,7 +74,7 @@ void printTables(std::vector<char> &database_file , unsigned short num_table,int
     }
 
     for (int i = 0; i < cellAddress.size(); ++i) {
-        start = getRowData(database_file,start);
+       getRowData(database_file,cellAddress[i]);
         break;
     }
 
