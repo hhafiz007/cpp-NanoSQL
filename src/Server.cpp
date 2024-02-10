@@ -36,7 +36,7 @@ struct schemaRow {
 // }
 
 
-void printTables(vector<char> &database_file , unsigned short num_table,int start) {
+void printTables(std::vector<char> &database_file , unsigned short num_table,int start) {
     
     std::vector<unsigned short> cellAddress;
 
