@@ -186,11 +186,13 @@ unsigned short getRootPage(std::vector<std::vector<std::string>> &tableData) {
     for (std::vector table : tableData){
             if (table[1] == "apples"){
                 std::cout << "rootPage" << "  " << table[2] << std::endl;
-                return int(table[2])
+                return unsigned short(table[2])
             }
 
 
     }
+
+    return 0;
 
 
 }
