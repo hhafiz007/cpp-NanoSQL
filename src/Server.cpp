@@ -108,16 +108,16 @@ int main(int argc, char* argv[]) {
     // Output the number of bytes read
     std::cout << "Number of bytes read: " << bytes.size() << std::endl;
 
-    return 0;
+  
 
-        printTables(database_file,num_table);
+    printTables(database_file,num_table);
 
         // unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8))
     
  
 
         
-    }
+    
     
     return 0;
 }
