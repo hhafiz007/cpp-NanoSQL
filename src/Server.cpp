@@ -219,7 +219,7 @@ std::vector<std::string> columnNames;
 
         std:: string contents;
    std::regex regex("\\(([^()]|(?R))*\\)"); // Pattern to match content within parentheses
-    std::sregex_iterator iter(input.begin(), input.end(), regex);
+    std::sregex_iterator iter(sqlStatement.begin(), sqlStatement.end(), regex);
     std::sregex_iterator end;
 
     for (; iter != end; ++iter) {
