@@ -230,16 +230,13 @@ std::vector<std::string> columnNames;
     int index = 0;
 
     for( std::string column : tokens){
-        std::cout << "tokens" << tokens.size() << std::endl;
+        std::cout << "  token s " << column << std::endl;
         std::vector<std::string> columnTokens = split(column, ' ');
         std::cout << "pani  " << columnNames[0];
 
-        if  (index == 0 ){
-                 columnNames.push_back(columnTokens[0]);
-        }
-        else{
-             columnNames.push_back(columnTokens[1]);
-        }
+       
+        columnNames.push_back(columnTokens[1]);
+        
        
         index+=1;
 
