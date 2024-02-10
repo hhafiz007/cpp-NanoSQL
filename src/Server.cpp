@@ -35,11 +35,13 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
     // vector<int> payload;
 
     int i = 0;
+    bool isMSBSet = (static_cast<unsigned char>(database_file[i]) >> 7) & 1;
 
-    while ((int(database_file[i]) >> 7) & 1) {
+    while (isMSBSet) {
           std::cout<<"setting bit" << std::endl;
 
         i+=1;
+        isMSBSet = (static_cast<unsigned char>(database_file[i]) >> 7) & 1;
     }
 
     std::cout<<"printing payload bytesa" << int(database_file[rowAddress+i])<<" " <<i  <<std::endl;
