@@ -269,7 +269,7 @@ std::string parseSelectColumns(std::string &query) {
 
     if (std::regex_search(query, match, regex)) {
         content =  match[1].str();
-        std::cout << content<<content.size() <<std::endl;
+        // std::cout << content<<content.size() <<std::endl;
     } 
 
 
@@ -280,6 +280,26 @@ std::string parseSelectColumns(std::string &query) {
 
 }
 
+
+void printSelectColumns(std::vector<std::vector<std::string>> &tableData, vector<std::string>  &columnNames, std::string selectColumn)
+{
+
+    int m = columnNames.size();
+
+    int columnBool[m];
+
+    for (int i = 0 ; i < m ; i+=1){
+        columnBool[i] = 0;
+        if columnNames[i] == selectColumn{
+            std :: cout << "stting column" << columnNames[i];
+            columnBool[i] = 1;
+        }
+    }
+
+
+
+
+}
 
 
 int main(int argc, char* argv[]) {
@@ -376,14 +396,32 @@ int main(int argc, char* argv[]) {
     }
     else {
         int start=108;
-        std::vector <std::vector<std::string>> tableData; 
-        printTableLeafPage(bytes,num_table,start,tableData);
+        std::vector <std::vector<std::string>> schemaData; 
+        printTableLeafPage(bytes,num_table,start,schemaData);
               std::vector<std::string> tokens = split(command, ' ');
         
         int queryLength = tokens.size();
         int rootPage;
+        start = (rootPage-1)*4096;
+        unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
+
         std::vector<std::string> columnNames = getRootPage(tableData,tokens[queryLength-1],rootPage);
+        
         std:: string selectColumn = parseSelectColumns(command);
+        
+        std::vector <std::vector<std::string>> tableData; 
+
+        printTableLeafPage(bytes,cellCount,start+8,tableData);
+
+        printSelectColumns(tableData, columnNames , selectColumn);
+
+
+
+
+
+
+
+
 
 
     }
