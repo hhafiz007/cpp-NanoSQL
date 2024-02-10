@@ -3,6 +3,8 @@
 #include <fstream>
 #include <vector>
 #include <variant>
+#include <charconv>
+
 
 const int HEADER_SIZE = 100;
 const int pageHeader = 8;
@@ -15,6 +17,13 @@ struct schemaRow {
     std::string rootPage;
     std::string sql;
 };
+
+unsigned int littleEndianToInt(const unsigned char* bytes) {
+    unsigned int result;
+    std::from_chars((const char*)bytes, (const char*)bytes + sizeof(unsigned int), result);
+    return result;
+}
+
 
 
 
@@ -45,8 +54,11 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
     
     int i = 1;
     while (i+rowAddress < rowAddress+totalBytes) {
-        std::cout<<"header bytes  " << i+rowAddress <<"    "<<rowAddress+totalBytes <<std::endl;
-         std::cout<<"header bytes  " << int(database_file[rowAddress+i])  <<std::endl;
+        int prev = i+rowAddress;
+        int next = processVarInt(database_file,prev)
+            unsigned int result;
+            std::from_chars(bytes.data(), next, result);
+            std::cout << " header bytes " << result << std:: endl;
         i+=1;
     }
 
