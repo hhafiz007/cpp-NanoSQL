@@ -294,11 +294,8 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
         // std::cout << columnNames[i]<<std::endl;
         if (columnNames[i] == selectColumn){
             // std :: cout << "tesstting column" << columnNames[i] <<" " << tableData.size();
-            
-
-            
             index = i-1;
-            std :: cout << "index is " << i <<" "<<std::endl;
+            std :: cout << "index is " << index <<" "<<std::endl;
             columnBool[index] = 1;
         }
     }
@@ -307,14 +304,10 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
     for(std::vector ele : tableData){
         // std::cout << index << std::endl;
         
-      
-           
+
         std::cout << ele[index] << std::endl;
 
           
-
-
-
     }
 
 
