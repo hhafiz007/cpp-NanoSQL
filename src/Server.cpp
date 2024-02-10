@@ -216,14 +216,15 @@ std::vector<std::string> getRootPage(std::vector<std::vector<std::string>> &tabl
     }
 
  std::vector<std::string> columnNames;
-    std::regex columnRegex("\\b\\w+\\b");
+
+    // Search for column names in the SQL statement
+    std::regex columnRegex("`?([a-zA-Z_][a-zA-Z0-9_]*)`?"); // Column name pattern
     std::smatch match;
 
     // Search for column names in the SQL statement
     std::string::const_iterator searchStart(sqlStatement.cbegin());
     while (std::regex_search(searchStart, sqlStatement.cend(), match, columnRegex)) {
-        columnNames.push_back(match.str());
-        std::cout << "columnNames" << match.str();
+        columnNames.push_back(match[1].str());
         searchStart = match.suffix().first;
     }
 
