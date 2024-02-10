@@ -119,7 +119,7 @@ void printTables(std::vector<char> &database_file , unsigned short num_table,int
         int startIndex = 2*i+start; 
         unsigned short page_address = (static_cast<unsigned char>(database_file[startIndex+1]) | (static_cast<unsigned char>(database_file[startIndex]) << 8));
         cellAddress.push_back(page_address);
-         std::cout << "Logs from your program will appear here" << page_address<<std::endl;
+         std::cout << "Logs from your program will appeaar here" << page_address<<std::endl;
         
 
     }
