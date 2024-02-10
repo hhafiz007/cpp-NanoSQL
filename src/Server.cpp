@@ -257,7 +257,7 @@ std::vector<std::string> columnNames;
 
 }
 
-std::vector<std::string> parseSelectColumns(std::string &query) {
+std::string parseSelectColumns(std::string &query) {
 
 
     std:: vector <std::string> selectColumns;
@@ -269,11 +269,11 @@ std::vector<std::string> parseSelectColumns(std::string &query) {
 
     if (std::regex_search(query, match, regex)) {
         content =  match[1].str();
-        std::cout << content<< std::endl;
+        std::cout << content<<content.size() std::endl;
     } 
 
 
-    return selectColumns;
+    return content;
 
 
 
@@ -383,7 +383,7 @@ int main(int argc, char* argv[]) {
         int queryLength = tokens.size();
         int rootPage;
         std::vector<std::string> columnNames = getRootPage(tableData,tokens[queryLength-1],rootPage);
-        std::vector<std::string> selectColumns = parseSelectColumns(command);
+        std:: string selectColumn = parseSelectColumns(command);
 
 
     }
