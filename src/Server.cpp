@@ -4,7 +4,7 @@
 #include <vector>
 #include <variant>
 #include <charconv>
-#include <fmt/core.h>
+#include <boost/algorithm/hex.hpp>
 
 
 const int HEADER_SIZE = 100;
@@ -66,11 +66,18 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
         std::string hexString(database_file.begin()+prev, database_file.begin()+next);
 
         // Parse hex string to integer
-        unsigned int result;
-        fmt::parse("{:x}", hexString, result);
+        std::vector<unsigned char> bytes;
+        boost::algorithm::unhex(hexChars.begin()+prev, hexChars.begin()+next, std::back_inserter(bytes));
 
-        std::cout << " header bytes " << result << std:: endl;
-        i=next;
+    // Convert the little-endian bytes to integer
+        unsigned int result = 0;
+        for (size_t i = bytes.size(); i > 0; --i) {
+            result <<= 8;
+            result |= bytes[i - 1];
+        }
+
+        i = next;
+
 
     }
 
