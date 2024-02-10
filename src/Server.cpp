@@ -234,67 +234,6 @@ std::vector<std::string> columnNames;
         // std::cout << "  token s " << tokens[index] << std::endl;
         std::vector<std::string> columnTokens = split(tokens[index], ' ');
        
-        if (index ==  0){
-            columnNames.push_back(columnTokens[0]);
-            //  std::cout << "The token size is  " << columnTokens[0];
-        }
-        else{
-                 columnNames.push_back(columnTokens[1]);
-                //   std::cout << "The token size is  " << columnTokens[1];
-
-        }
-   
-        index+=1;
-
-
-    }
-
-    
-
-   
-
-    return columnNames;
-
-}
-
-
-std::vector<std::string> getRootPage2(std::vector<std::vector<std::string>> &tableData,std:: string tableName,int &rootPage) {
-
-    // std::cout << " tableName" << tableName;
-std::string sqlStatement;
-
-for (std::vector table : tableData){
-        if (table[1] == tableName){
-            // std::cout << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
-            rootPage =  int(table[3][0]);
-            
-        }
-
-        // std :: cout<<" create table command is " << table[4] << std::endl;
-        sqlStatement = table[4];
-        
-
-
-}
-
-std::vector<std::string> columnNames;
-
-        std:: string contents;
-     std::regex regex("\\(([^()]*)\\)"); // Pattern to match content within parentheses
-    std::sregex_iterator iter(sqlStatement.begin(), sqlStatement.end(), regex);
-    std::sregex_iterator end;
-
-    for (; iter != end; ++iter) {
-        contents += (*iter)[0].str().substr(1, (*iter)[0].str().size() - 2); // Remove surrounding parentheses
-    }
-    std::vector<std::string> tokens = split(contents, ',');
-    std::cout << "contents  " << contents;
-    int index = 0;
-
-    while( index <tokens.size()){
-        // std::cout << "  token s " << tokens[index] << std::endl;
-        std::vector<std::string> columnTokens = split(tokens[index], ' ');
-       
         if (index ==  0 or columnTokens[0].size() >= 1){
             columnNames.push_back(columnTokens[0]);
             //  std::cout << "The token size is  " << columnTokens[0];
@@ -317,6 +256,31 @@ std::vector<std::string> columnNames;
     return columnNames;
 
 }
+
+std::vector<std::string> parseSelectColumns(std::string &query) {
+
+
+    std:: vector <std::string> selectColumns;
+
+    std::regex regex("SELECT\\s+(.*?)\\s+FROM", std::regex_constants::icase);
+    std::smatch match;
+
+    std:string content;
+
+    if (std::regex_search(query, match, regex)) {
+        content =  match[1].str();
+        std::cout << content<< endl;
+    } else {
+        return ""; // Return empty string if not found
+    }
+
+
+
+
+
+}
+
+
 
 int main(int argc, char* argv[]) {
     // You can use print statement;;s as follows for debugging, they'll be visible when running tests.
@@ -419,11 +383,7 @@ int main(int argc, char* argv[]) {
         int queryLength = tokens.size();
         int rootPage;
         std::vector<std::string> columnNames = getRootPage2(tableData,tokens[queryLength-1],rootPage);
-
-        for (std::string ele : columnNames) {
-
-            std::cout<< "columnName " << ele << std::endl;
-        }
+        std::vector<std::string> selectColumns = parseSelectColumns(command);
 
 
     }
