@@ -302,8 +302,10 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
 
         for ( std::string columnValue : ele ) {
 
+            // std::cout << columnValue << std::;
+            
             if (columnBool[index] == 1){
-                std::cout << columnValue << std::endl;
+                std::cout << "hello" << std::endl;
             }
 
             index += 1;
