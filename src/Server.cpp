@@ -299,6 +299,7 @@ int main(int argc, char* argv[]) {
         std::vector<std::string> tokens = split(command, ' ');
         
         int queryLength = tokens.size();
+        int rootPage;
         
         getRootPage(tableData,tokens[queryLength-1],rootPage);
         start = (rootPage-1)*4096;
