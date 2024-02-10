@@ -225,8 +225,18 @@ std::vector<std::string> columnNames;
     for (; iter != end; ++iter) {
         contents += (*iter)[0].str().substr(1, (*iter)[0].str().size() - 2); // Remove surrounding parentheses
     }
+    std::vector<std::string> tokens = split(command, ',');
 
-    std::cout << "pan" << contents;
+    for( std::column : tokens){
+        std::vector<std::string> columnTokens = split(command, ',');
+        columnNames.push_back(columnTokens[0]);
+
+
+    }
+
+    
+
+    std::cout << "pan" << columnNames[0] << " "<<columnNames[1];
 
     return columnNames;
 
