@@ -232,8 +232,17 @@ std::vector<std::string> columnNames;
     while( index <tokens.size()){
         std::cout << "  token s " << tokens[index] << std::endl;
         std::vector<std::string> columnTokens = split(tokens[index], ' ');
-        std::cout << "The token size is  " << columnTokens[1];
-        columnNames.push_back(columnTokens[1]);
+       
+        if (index ==  0){
+            columnNames.push_back(columnTokens[0]);
+             std::cout << "The token size is  " << columnTokens[0];
+        }
+        else{
+                 columnNames.push_back(columnTokens[1]);
+                  std::cout << "The token size is  " << columnTokens[1];
+
+        }
+   
         index+=1;
 
 
