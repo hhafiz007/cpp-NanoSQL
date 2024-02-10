@@ -21,6 +21,7 @@ struct schemaRow {
 
 int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
     // database_file.seekg(rowAddress);
+     std::cout<<"row Address" << rowAddress  <<std::endl;
 
     // vector<int> payload;
 
