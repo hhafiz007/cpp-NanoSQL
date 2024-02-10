@@ -223,19 +223,11 @@ std::vector<std::string> getRootPage(std::vector<std::vector<std::string>> &tabl
     std::string::const_iterator searchStart(sqlStatement.cbegin());
     while (std::regex_search(searchStart, sqlStatement.cend(), match, columnRegex)) {
         columnNames.push_back(match.str());
-        std::cout << columnNames << match.str();
+        std::cout << "columnNames" << match.str();
         searchStart = match.suffix().first;
     }
 
     return columnNames;
-
-
-
-
-
-
-    return 0;
-
 
 }
 
