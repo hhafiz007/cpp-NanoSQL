@@ -201,6 +201,13 @@ int main(int argc, char* argv[]) {
     // Read the file into a vector of bytes
     std::vector<char> bytes(fileSize);
     database_file.read(bytes.data(), fileSize);
+     database_file.seekg(16);  // Skip the first 16 bytes of the header
+        char buffer[2];
+        database_file.read(buffer, 2);
+        unsigned short page_size = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
+        database_file.seekg(HEADER_SIZE+3);
+        database_file.read(buffer, 2);
+        unsigned num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
 
     // Close the file
     database_file.close();
@@ -209,13 +216,7 @@ int main(int argc, char* argv[]) {
     if (command == ".dbinfo") {
 
         // Uncomment this to pass the first stage
-        database_file.seekg(16);  // Skip the first 16 bytes of the header
-        char buffer[2];
-        database_file.read(buffer, 2);
-        unsigned short page_size = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
-        database_file.seekg(HEADER_SIZE+3);
-        database_file.read(buffer, 2);
-        num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
+       
         std::cout << "database page size: " << page_size << std::endl;
         std::cout << "number of tables: " << num_table << std::endl;
         
