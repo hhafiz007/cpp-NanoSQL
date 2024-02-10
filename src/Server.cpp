@@ -57,6 +57,8 @@ void getRowData(std::vector<char> &database_file , unsigned short rowAddress){
     next = getPayloadSize(database_file,rowAddress);
     next = getRowID(database_file,next);
 
+    return next
+
     
 
 
@@ -85,6 +87,7 @@ void printTables(std::vector<char> &database_file , unsigned short num_table,int
 
     for (int i = 0; i < cellAddress.size(); ++i) {
         start = getRowData(database_file,start);
+        break;
     }
 
 
