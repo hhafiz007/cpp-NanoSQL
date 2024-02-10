@@ -29,26 +29,22 @@ unsigned int littleEndianToInt(const unsigned char* bytes) {
 
 
 int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
-    // database_file.seekg(rowAddress);
-     std::cout<<"row Address" << rowAddress  <<std::endl;
-
-    // vector<int> payload;
+    std::cout << "row Address: " << rowAddress << std::endl;
 
     int i = 0;
     bool isMSBSet = (static_cast<unsigned char>(database_file[i]) >> 7) & 1;
 
     while (isMSBSet) {
-          std::cout<<"setting bit" << std::endl;
-
-        i+=1;
+        std::cout << "setting bit" << std::endl;
+        i += 1;
         isMSBSet = (static_cast<unsigned char>(database_file[i]) >> 7) & 1;
     }
 
-    std::cout<<"printing payload bytesa" << int(database_file[rowAddress+i])<<" " <<i  <<std::endl;
+    std::cout << "printing payload bytes: " << static_cast<int>(database_file[rowAddress+i]) << " " << i << std::endl;
 
-    return rowAddress+i+1;
+    return rowAddress + i + 1;
+}
 
- }
 
  int processHeader(std::vector<char> &database_file ,unsigned short rowAddress, std::vector<int> &header ){
 
