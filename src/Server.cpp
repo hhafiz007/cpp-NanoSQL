@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <variant>
 
 const int HEADER_SIZE = 100;
 const int pageHeader = 8;
@@ -14,6 +15,25 @@ struct schemaRow {
     std::string rootPage;
     std::string sql;
 };
+
+void getPayloadSize(std::ifstream &database_file,unsigned short rowAddress){
+    database_file.seekg(rowAddress);
+
+
+}
+
+void getRowData(std::ifstream &database_file , unsigned short rowAddress){
+    
+    payloadSize = 
+
+
+
+
+
+
+
+
+}
 
 
 void printTables(std::ifstream &database_file , unsigned short num_table) {
@@ -31,8 +51,10 @@ void printTables(std::ifstream &database_file , unsigned short num_table) {
     }
 
     for (int i = 0; i < cellAddress.size(); ++i) {
-        std::cout << cellAddress[i] << " ";
+        getRowData(database_file,cellAddress[i]);
     }
+
+
    
 }
 
@@ -66,6 +88,28 @@ int main(int argc, char* argv[]) {
         unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
         std::cout << "database page size: " << page_size << std::endl;
         std::cout << "number of tables: " << num_table << std::endl;
+        if (!file.is_open()) {
+        std::cerr << "Error opening file." << std::endl;
+        return 1;
+    }
+
+    // Get the file size
+    database_file.seekg(0, std::ios::end);
+    std::streampos fileSize = file.tellg();
+    database_file.seekg(0, std::ios::beg);
+
+    // Read the file into a vector of bytes
+    std::vector<char> bytes(fileSize);
+    database_file.read(bytes.data(), fileSize);
+
+    // Close the file
+    database_file.close();
+
+    // Output the number of bytes read
+    std::cout << "Number of bytes read: " << bytes.size() << std::endl;
+
+    return 0;
+
         printTables(database_file,num_table);
 
         // unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8))
