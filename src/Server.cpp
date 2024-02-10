@@ -40,12 +40,13 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
  int processHeader(std::vector<char> &database_file ,unsigned short rowAddress, std::vector<int> &header ){
 
     int totalBytes = int(database_file[rowAddress]);
-    std::cout<<"header bytesa" << totalBytes  <<std::endl;
+    std::cout<<"header bytes  " << totalBytes  <<std::endl;
 
 
 
 
-    return rowAddress+1;
+
+    return rowAddress+1,2;
  }
 
 
@@ -59,6 +60,8 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
     next = processVarInt(database_file,next);
     next = processVarInt(database_file,next);
     next = processHeader(database_file,next,header);
+
+
 
 
     return next;
