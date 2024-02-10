@@ -43,7 +43,7 @@ void printTables(vector<char> &database_file , unsigned short num_table,int star
     // Calculate factorial
     for (int i = 0; i < num_table; i++) {
         int startIndex = 2*i+start; 
-        unsigned short page_address = (static_cast<unsigned char>(vector[startIndex+1]) | (static_cast<unsigned char>(vector[startIndex]) << 8));
+        unsigned short page_address = (static_cast<unsigned char>(database_file[startIndex+1]) | (static_cast<unsigned char>(database_file[startIndex]) << 8));
         cellAddress.push_back(page_address);
     }
 
