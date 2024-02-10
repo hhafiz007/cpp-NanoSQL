@@ -180,13 +180,12 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
    
 }
-
-unsigned short getRootPage(std::vector<std::vector<std::string>> &tableData) {
+int getRootPage(std::vector<std::vector<std::string>> &tableData) {
 
     for (std::vector table : tableData){
             if (table[1] == "apples"){
                 std::cout << "rootPage" << "  " << table[2] << std::endl;
-                return unsigned short(table[2])
+                return int(table[2])
             }
 
 
