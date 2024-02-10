@@ -230,7 +230,7 @@ std::vector<std::string> columnNames;
     int index = 0;
 
     for( std::string column : tokens){
-        std::cout << "tokens" << column << std::endl;
+        std::cout << "tokens" << tokens.size() << std::endl;
         std::vector<std::string> columnTokens = split(column, ' ');
         std::cout << "pani  " << columnNames[0];
 
