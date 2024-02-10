@@ -224,7 +224,7 @@ std::vector<std::string> columnNames;
         columnNames.push_back((*iter).str());
     }
 
-    std:: cout << "col names are " << columnNames[0] << " " << columnNames[1] <<std:: endl; 
+    std:: cout << "col names are " << columnNames[2] << " " << columnNames[3] <<std:: endl; 
 
     return columnNames;
 
