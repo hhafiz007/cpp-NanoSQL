@@ -197,7 +197,7 @@ std::vector<std::string> split(const std::string& s, char delimiter) {
     return tokens;
 }
 
-std::vector<std::string> getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string tableName,int & rootPage) {
+std::vector<std::string> getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string tableName,int &rootPage) {
 
     // std::cout << " tableName" << tableName;
 std::string sqlStatement;
