@@ -207,11 +207,11 @@ int main(int argc, char* argv[]) {
         unsigned short page_size = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
         database_file.seekg(HEADER_SIZE+3);
         database_file.read(buffer, 2);
-        unsigned num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
+        unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
 
     // Close the file
     database_file.close();
-    unsigned short num_table;
+    // unsigned short num_table;
 
     if (command == ".dbinfo") {
 
