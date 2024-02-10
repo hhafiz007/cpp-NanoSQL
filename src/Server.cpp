@@ -50,14 +50,14 @@ int getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress){
 
  }
 
-void getRowData(std::vector<char> &database_file , unsigned short rowAddress){
+int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
 
     int next = rowAddress;
     
     next = getPayloadSize(database_file,rowAddress);
     next = getRowID(database_file,next);
 
-    return next
+    return next;
 
     
 
