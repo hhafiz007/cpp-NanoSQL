@@ -53,7 +53,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
 
 
-    return rowAddress+1,2;
+    return rowAddress+1;
  }
 
 
@@ -101,7 +101,7 @@ void printTables(std::vector<char> &database_file , unsigned short num_table,int
 
     for (int i = 0; i < cellAddress.size(); ++i) {
        getRowData(database_file,cellAddress[i]);
-    //    break;
+       break;
         
     }
 
