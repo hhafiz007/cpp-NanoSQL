@@ -135,7 +135,7 @@ void printTables(std::vector<char> &database_file , unsigned short num_table,int
 
 
 int main(int argc, char* argv[]) {
-    // You can use print statements as follows for debugging, they'll be visible when running tests.
+    // You can use print statement;;s as follows for debugging, they'll be visible when running tests.
     std::cout << "Logs from your program will appear here" << std::endl;
 
     if (argc != 3) {
