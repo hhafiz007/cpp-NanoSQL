@@ -16,24 +16,14 @@ struct schemaRow {
     std::string sql;
 };
 
-int getRowID(std::vector<char> &database_file ,unsigned short rowAddress){
-    // database_file.seekg(rowAddress);
+int processHeaders {
 
-    // vector<int> getRowID;
 
-    int i = 0;
+}
 
-    while ((int(database_file[i]) >> 7) & 1){
-        i+=1;
-    }
 
-    std::cout<<"printing row id bytes" << int(database_file[rowAddress+i])  <<std::endl;
 
-    return rowAddress+i+1;
-
- }
-
-int getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress){
+int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
     // database_file.seekg(rowAddress);
 
     // vector<int> payload;
@@ -54,8 +44,9 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
 
     int next = rowAddress;
     
-    next = getPayloadSize(database_file,rowAddress);
-    next = getRowID(database_file,next);
+    next = processVarInt(database_file,rowAddress);
+    next = processVarInt(database_file,next);
+    next = processVarInt(database_file,next)
 
     return next;
 
