@@ -22,7 +22,7 @@ void getPayloadSize(std::vector<char> &database_file ,unsigned short rowAddress)
 
  }
 
-void getRowData(std::ifstream &database_file , unsigned short rowAddress){
+void getRowData(std::vector<char> &database_file , unsigned short rowAddress){
     
     
 
