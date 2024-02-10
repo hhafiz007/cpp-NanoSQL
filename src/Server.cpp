@@ -216,15 +216,17 @@ std::vector<std::string> getRootPage(std::vector<std::vector<std::string>> &tabl
     }
 
 std::vector<std::string> columnNames;
-    std::regex columnRegex("\\b(?!\\b(?:PRIMARY|KEY|UNIQUE)\\b)\\b(\\w+)\\b"); // Column name pattern
-    std::sregex_iterator iter(sqlStatement.begin(), sqlStatement.end(), columnRegex);
+
+        std:: string contents;
+   std::regex regex("\\(([^()]|(?R))*\\)"); // Pattern to match content within parentheses
+    std::sregex_iterator iter(input.begin(), input.end(), regex);
     std::sregex_iterator end;
 
     for (; iter != end; ++iter) {
-        columnNames.push_back((*iter).str());
+        contents += (*iter)[0].str().substr(1, (*iter)[0].str().size() - 2); // Remove surrounding parentheses
     }
 
-    std:: cout << "col names are " << columnNames[2] << " " << columnNames[3] <<std:: endl; 
+    cout << "pan" << contents;
 
     return columnNames;
 
