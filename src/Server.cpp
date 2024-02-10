@@ -201,7 +201,7 @@ int getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string ta
 
     for (std::vector table : tableData){
             if (table[1] == tableName){
-                std::cout << "rootPage   " <<tableName <<  "  " <<table[3][0] << std::endl;
+                std::cout << "rootPage   " <<tableName <<  " rootPage " <<table[3][0] << std::endl;
                 return int(table[3][0]);
             }
 
