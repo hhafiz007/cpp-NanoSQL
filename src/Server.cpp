@@ -227,12 +227,21 @@ std::vector<std::string> columnNames;
     }
     std::vector<std::string> tokens = split(contents, ',');
     std::cout << "contents  " << contents;
+    int index = 0;
 
     for( std::string column : tokens){
         std::cout << "tokens" << column << std::endl;
         std::vector<std::string> columnTokens = split(column, ' ');
         std::cout << "pani  " << columnNames[0];
-        columnNames.push_back(columnTokens[0]);
+
+        if  (index == 0 ){
+                 columnNames.push_back(columnTokens[0]);
+        }
+        else{
+             columnNames.push_back(columnTokens[1]);
+        }
+       
+        index+=1;
 
 
     }
