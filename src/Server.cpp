@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
        
     // Get the file size
     database_file.seekg(0, std::ios::end);
-    std::streampos fileSize = file.tellg();
+    std::streampos fileSize = database_file.tellg();
     database_file.seekg(0, std::ios::beg);
 
     // Read the file into a vector of bytes
