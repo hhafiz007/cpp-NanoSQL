@@ -305,7 +305,7 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
         // std::cout << index << std::endl;
         
 
-        std::cout << "hi"<< std::endl;
+        std::cout << ele[index]<< std::endl;
 
           
     }
