@@ -265,7 +265,7 @@ std::vector<std::string> parseSelectColumns(std::string &query) {
     std::regex regex("SELECT\\s+(.*?)\\s+FROM", std::regex_constants::icase);
     std::smatch match;
 
-    std:string content;
+    std::string content;
 
     if (std::regex_search(query, match, regex)) {
         content =  match[1].str();
