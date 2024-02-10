@@ -382,7 +382,7 @@ int main(int argc, char* argv[]) {
         
         int queryLength = tokens.size();
         int rootPage;
-        std::vector<std::string> columnNames = getRootPage2(tableData,tokens[queryLength-1],rootPage);
+        std::vector<std::string> columnNames = getRootPage(tableData,tokens[queryLength-1],rootPage);
         std::vector<std::string> selectColumns = parseSelectColumns(command);
 
 
