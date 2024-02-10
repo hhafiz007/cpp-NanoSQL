@@ -63,8 +63,8 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
         int j = 0;
         for (  j = prev ; j < next-1; j++) {
             result <<= 8;
-            unsigned short currByte = 
-            result |=  (static_cast<unsigned char>(database_file[prev+j]) >> 7) & 0b01111111;
+            unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
+            result |=  (currByte>> 7) & 0b01111111;
         }
         result <<= 8;
         result |= int(database_file[prev+j]);
