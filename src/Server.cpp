@@ -93,7 +93,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
 
 
-int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std::vector<vector<std::string>> &tableData){
+int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std::vector<std::vector<std::string>> &tableData){
 
     int next = rowAddress;
     std::vector<int> header; 
@@ -157,7 +157,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 }
 
 
-void printTableLeafPage(std::vector<char> &database_file , unsigned short num_table,int start,std::vector<vector<std::string>> &tableData) {
+void printTableLeafPage(std::vector<char> &database_file , unsigned short num_table,int start,std::vector<std::vector<std::string>> &tableData) {
     
     std::vector<unsigned short> cellAddress;
 
