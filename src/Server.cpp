@@ -119,7 +119,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
             startByte+=1;
         }
         
-        std::cout << "  header value   "<<currHeader<< std :: endl;
+        std::cout << "  header value   "<<currHeader.size()<< std :: endl;
         next = endExclusive;
     }
 
