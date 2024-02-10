@@ -5,6 +5,7 @@
 #include <variant>
 #include <charconv>
 #include <cmath>
+#include <string>
 
 
 const int HEADER_SIZE = 100;
@@ -180,11 +181,24 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
    
 }
-int getRootPage(std::vector<std::vector<std::string>> &tableData) {
+
+std::vector<std::string> split(const std::string& s, char delimiter) {
+    std::vector<std::string> tokens;
+    std::string token;
+    std::istringstream tokenStream(s);
+    
+    while (std::getline(tokenStream, token, delimiter)) {
+        tokens.push_back(token);
+    }
+    
+    return tokens;
+}
+
+int getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string tableName) {
 
     for (std::vector table : tableData){
-            if (table[1] == "apples"){
-                std::cout << "rootPage" << "  " << table[2] << std::endl;
+            if (table[1] == tableName){
+                std::cout << "rootPage   " <<tableName <<  "  " <<<< table[2] << std::endl;
                 return int(table[2][0]);
             }
 
@@ -259,6 +273,7 @@ int main(int argc, char* argv[]) {
         
 
     int start = 108;
+    
     std::vector <std::vector<std::string>> tableData; 
     printTableLeafPage(bytes,num_table,start,tableData);
 
@@ -271,7 +286,9 @@ int main(int argc, char* argv[]) {
         int start = 108;
         std::vector <std::vector<std::string>> tableData; 
         printTableLeafPage(bytes,num_table,start,tableData);
-        int rootPage = getRootPage(tableData);
+        td::vector<std::string> tokens = split(input, ' ');
+        int queryLength = tokens.size()
+        int rootPage = getRootPage(tableData,tokens[queryLength-1]);
 
 
 
