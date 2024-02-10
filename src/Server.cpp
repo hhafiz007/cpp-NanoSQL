@@ -16,10 +16,6 @@ struct schemaRow {
     std::string sql;
 };
 
-int processHeaders {
-
-
-}
 
 
 
