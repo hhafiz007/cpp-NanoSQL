@@ -30,7 +30,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
         i+=1;
     }
 
-    std::cout<<"printing payload bytes" << (hex_char - '0')  <<std::endl;
+    std::cout<<"printing payload bytes" << (database_file[i] - '0')  <<std::endl;
 
     return rowAddress+i+1;
 
