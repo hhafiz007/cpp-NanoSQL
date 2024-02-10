@@ -206,6 +206,7 @@ for (std::vector table : tableData){
         if (table[1] == tableName){
             // std::cout << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
             rootPage =  int(table[3][0]);
+            
         }
 
         // std :: cout<<" create table command is " << table[4] << std::endl;
@@ -344,7 +345,7 @@ int main(int argc, char* argv[]) {
         getRootPage(tableData,tokens[queryLength-1],rootPage);
         start = (rootPage-1)*4096;
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
-        std::cout <<cellCount << std::endl;
+        std::cout <<rootPage << std::endl;
 
 
 
