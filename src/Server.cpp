@@ -229,9 +229,9 @@ std::vector<std::string> columnNames;
     std::cout << "contents  " << contents;
     int index = 0;
 
-    for( std::string column : tokens){
-        std::cout << "  token s " << column << std::endl;
-        std::vector<std::string> columnTokens = split(column, ' ');
+    while( index <tokens.size()){
+        std::cout << "  token s " << tokens[index] << std::endl;
+        std::vector<std::string> columnTokens = split(tokens[index], ' ');
         std::cout << "pani  " << columnNames[0];
 
        
