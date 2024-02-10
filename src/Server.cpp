@@ -297,7 +297,7 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
             columnBool[i] = 1;
 
             std :: cout << "index is " << i <<" "<<std::endl;
-            index = i;
+            index = i-1;
         }
     }
 // kk
