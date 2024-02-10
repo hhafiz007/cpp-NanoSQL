@@ -226,20 +226,20 @@ std::vector<std::string> columnNames;
         contents += (*iter)[0].str().substr(1, (*iter)[0].str().size() - 2); // Remove surrounding parentheses
     }
     std::vector<std::string> tokens = split(contents, ',');
-    std::cout << "contents  " << contents;
+    // std::cout << "contents  " << contents;
     int index = 0;
 
     while( index <tokens.size()){
-        std::cout << "  token s " << tokens[index] << std::endl;
+        // std::cout << "  token s " << tokens[index] << std::endl;
         std::vector<std::string> columnTokens = split(tokens[index], ' ');
        
         if (index ==  0){
             columnNames.push_back(columnTokens[0]);
-             std::cout << "The token size is  " << columnTokens[0];
+            //  std::cout << "The token size is  " << columnTokens[0];
         }
         else{
                  columnNames.push_back(columnTokens[1]);
-                  std::cout << "The token size is  " << columnTokens[1];
+                //   std::cout << "The token size is  " << columnTokens[1];
 
         }
    
