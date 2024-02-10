@@ -208,7 +208,7 @@ for (std::vector table : tableData){
             rootPage =  int(table[3][0]);
         }
 
-        std :: cout<<" create table command is " << table[4] << std::endl;
+        // std :: cout<<" create table command is " << table[4] << std::endl;
         sqlStatement = table[4];
         
 
