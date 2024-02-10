@@ -226,7 +226,7 @@ std::vector<std::string> columnNames;
         contents += (*iter)[0].str().substr(1, (*iter)[0].str().size() - 2); // Remove surrounding parentheses
     }
 
-    cout << "pan" << contents;
+    std::cout << "pan" << contents;
 
     return columnNames;
 
