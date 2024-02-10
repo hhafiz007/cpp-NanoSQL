@@ -226,7 +226,7 @@ int main(int argc, char* argv[]) {
     
 
     }
-    else if ( command == '.tables')
+    else if ( command == ".tables")
     {
           std::ifstream database_file(database_file_path, std::ios::binary);
         if (!database_file) {
