@@ -102,6 +102,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
     next = processVarInt(database_file,next);
     
     next = processHeader(database_file,next,header);
+    int index = 0;
 
     for (int element : header) {
        
@@ -112,15 +113,22 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress){
     
         int startByte = next;
         int endExclusive = next + element;
-        std::cout <<"printing start element " <<startByte<<" end " << endExclusive<< std:: endl;
+        // std::cout <<"printing start element " <<startByte<<" end " << endExclusive<< std:: endl;
         std:: string currHeader;
         while (startByte < endExclusive) {
             currHeader = currHeader + database_file[startByte];
             startByte+=1;
         }
+
+        if (index == 1) {
+            std::cout <<currHeader;
         
-        std::cout << "  header value  %s "<<currHeader<< std :: endl;
+
+        }
+        
+        
         next = endExclusive;
+        index+=1;
     }
 
 
@@ -213,9 +221,37 @@ int main(int argc, char* argv[]) {
     int start = 108;
     
 
-    printTables(bytes,num_table,start);
+    
 
     
+
+    }
+    else if ( command == '.tables')
+    {
+          std::ifstream database_file(database_file_path, std::ios::binary);
+        if (!database_file) {
+            std::cerr << "Failed to open the database file" << std::endl;
+            return 1;
+        }
+
+        char buffer[2];
+        database_file.seekg(HEADER_SIZE+3);
+        database_file.read(buffer, 2);
+        unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
+       
+    // Get the file size
+    database_file.seekg(0, std::ios::end);
+    std::streampos fileSize = database_file.tellg();
+    database_file.seekg(0, std::ios::beg);
+
+    // Read the file into a vector of bytes
+    std::vector<char> bytes(fileSize);
+    database_file.read(bytes.data(), fileSize);
+
+    int start = 108;
+        printTables(bytes,num_table,start);
+
+
 
     }
     
