@@ -181,6 +181,20 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
    
 }
 
+unsigned short getRootPage(std::vector<std::vector<std::string>> &tableData) {
+
+    for (std::vector table : table){
+            if (table[1] == "apples"){
+                std::cout << "rootPage" << "  " << table[2] << std::endl;
+                return int(table[2])
+            }
+
+
+    }
+
+
+}
+
 
 int main(int argc, char* argv[]) {
     // You can use print statement;;s as follows for debugging, they'll be visible when running tests.
@@ -253,6 +267,9 @@ int main(int argc, char* argv[]) {
     else {
         // std:: vector <vector<string>> tableData; 
         int start = 108;
+        std::vector <std::vector<std::string>> tableData; 
+        printTableLeafPage(bytes,num_table,start,tableData);
+        int rootPage = getRootPage(tableData);
 
 
 
