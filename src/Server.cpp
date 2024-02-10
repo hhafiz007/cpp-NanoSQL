@@ -16,13 +16,13 @@ struct schemaRow {
     std::string sql;
 };
 
-void getPayloadSize(std::ifstream &database_file,unsigned short rowAddress){
-    database_file.seekg(rowAddress);
+// void getPayloadSize(std::ifstream &database_file,unsigned short rowAddress){
+//     database_file.seekg(rowAddress);
 
 
-}
+// }
 
-void getRowData(std::ifstream &database_file , unsigned short rowAddress){
+// void getRowData(std::ifstream &database_file , unsigned short rowAddress){
     
     
 
@@ -33,7 +33,7 @@ void getRowData(std::ifstream &database_file , unsigned short rowAddress){
 
 
 
-}
+// }
 
 
 void printTables(vector &database_file , unsigned short num_table,int start) {
