@@ -57,7 +57,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
         int prev = i+rowAddress;
         int next = processVarInt(database_file,prev);
         unsigned int result;
-        std::from_chars(bytes.data(), next, result);
+        std::from_chars(database_file.data() + prev,database_file.data()+next, result);
         std::cout << " header bytes " << result << std:: endl;
         i=next;
     }
