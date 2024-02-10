@@ -98,7 +98,7 @@ int main(int argc, char* argv[]) {
     // Close the file
     database_file.close();
 
-    // Output the number of bytes read
+    // Output the number of bytes read here
     std::cout << "Number of bytes read: " << bytes.size() << std::endl;
 
     int start = 108;
