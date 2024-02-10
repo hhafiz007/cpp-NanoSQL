@@ -295,7 +295,7 @@ std::vector<std::string> columnNames;
         // std::cout << "  token s " << tokens[index] << std::endl;
         std::vector<std::string> columnTokens = split(tokens[index], ' ');
        
-        if (index ==  0){
+        if (index ==  0 or columnTokens[0].size() >= 1){
             columnNames.push_back(columnTokens[0]);
             //  std::cout << "The token size is  " << columnTokens[0];
         }
@@ -420,10 +420,10 @@ int main(int argc, char* argv[]) {
         int rootPage;
         std::vector<std::string> columnNames = getRootPage2(tableData,tokens[queryLength-1],rootPage);
 
-        // for (std::string ele : columnNames) {
+        for (std::string ele : columnNames) {
 
-        //     std::cout<< "columnName " << ele << std::endl;
-        // }
+            std::cout<< "columnName " << ele << std::endl;
+        }
 
 
     }
