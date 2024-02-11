@@ -359,7 +359,7 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         std :: string rowData;
 
         rowData = columnNames[columnIndices[0]];
-        int k =1
+        int k =1;
 
         for (k = 1; k < columnIndices.size();k+=1)
         {
