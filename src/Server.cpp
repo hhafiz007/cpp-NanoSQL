@@ -188,7 +188,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
          if (printTables && debugStage ){
             std::cout << "cell address  " <<page_address<< "bytes are"<<std::endl; 
             std:: cout << "index " << startIndex<<" value " << int(database_file[startIndex]);
-            std:: cout << "2nd index " << startIndex+1<<" value " << int(database_file[startIndex+1])<<std::endl;
+            std:: cout << "   2nd index " << startIndex+1<<" value " << int(database_file[startIndex+1])<<std::endl;
         }
         
 
