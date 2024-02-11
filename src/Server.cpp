@@ -160,7 +160,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     std::vector<unsigned short> cellAddress;
 
     if (printTables){
-        std :: cout << start << std::endl; 
+        std :: cout << "the start is"<<start << std::endl; 
 
     }
 
