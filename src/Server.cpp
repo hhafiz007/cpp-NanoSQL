@@ -24,11 +24,6 @@ struct schemaRow {
     std::string sql;
 };
 
-unsigned int littleEndianToInt(const unsigned char* bytes) {
-    unsigned int result;
-    std::from_chars((const char*)bytes, (const char*)bytes + sizeof(unsigned int), result);
-    return result;
-}
 
 
 
@@ -219,7 +214,7 @@ std::vector<std::string> split(const std::string& s, char delimiter) {
     return tokens;
 }
 
-std::vector<std::string> getRootPage(std::vector<std::vector<std::string>> &tableData,std:: string tableName,int &rootPage) {
+std::vector<std::string> getRootPage(std::vector<std::vector<std::string> > &tableData,std:: string tableName,int &rootPage) {
 
     // std::cout << " tableName" << tableName;
 std::string sqlStatement;
@@ -404,7 +399,7 @@ int main(int argc, char* argv[]) {
 
     int start = 108;
     
-    std::vector <std::vector<std::string>> tableData; 
+    std::vector <std::vector<std::string> > tableData; 
     printTables  = true;
     printTableLeafPage(bytes,num_table,start,tableData);
 
@@ -414,7 +409,7 @@ int main(int argc, char* argv[]) {
     else if (command.substr(0,15) == "select count(*)")  {
         // std :: cout << command << " great work  "<<std::endl;
         int start=108;
-        std::vector <std::vector<std::string>> tableData; 
+        std::vector <std::vector<std::string> > tableData; 
 
         
         printTableLeafPage(bytes,num_table,start,tableData);
@@ -434,7 +429,7 @@ int main(int argc, char* argv[]) {
     }
     else {
         int start=108;
-        std::vector <std::vector<std::string>> schemaData; 
+        std::vector <std::vector<std::string> > schemaData; 
 
         printTables = true;
 
@@ -464,7 +459,7 @@ int main(int argc, char* argv[]) {
 
 
         
-        std::vector <std::vector<std::string>> tableData; 
+        std::vector <std::vector<std::string> > tableData; 
 
         // int newAddress = ((rootPage-1)*4096)+8;
         // std :: cout <<rootPage << "back here  " << newAddress  <<" ";
