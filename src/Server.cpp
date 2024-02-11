@@ -130,13 +130,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 
         if (index == 1 && printTables == true) {
             std::cout <<currHeader<<" ";
-        
-
         }
-        else if (index == 3) {
-            // std:: cout << currHeader;
-        }
-        
         
         next = endExclusive;
         index+=1;
@@ -413,6 +407,9 @@ int main(int argc, char* argv[]) {
     else {
         int start=108;
         std::vector <std::vector<std::string>> schemaData; 
+
+        printTables = true;
+        
         printTableLeafPage(bytes,num_table,start,schemaData);
               std::vector<std::string> tokens = split(command, ' ');
         
@@ -426,7 +423,7 @@ int main(int argc, char* argv[]) {
         start = (rootPage-1)*4096;
 
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
-        printTables = true;
+        
 
         // std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
         
