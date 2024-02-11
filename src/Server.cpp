@@ -322,6 +322,8 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
             index = i-1;
             // std :: cout << "tableData is " << tableData.size() <<" "<<std::endl;
             columnBool[index] = 1;
+
+            std :: cout << columnNames[i] << endl;
         }
     }
 // kk
