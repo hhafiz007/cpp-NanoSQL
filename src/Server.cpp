@@ -441,8 +441,8 @@ int main(int argc, char* argv[]) {
         
         std::vector <std::vector<std::string>> tableData; 
 
-        start = ((rootPage-1)*4096)+8;
-        std :: cout <<rootPage << "back here  " << start  <<" ";
+        int newAddress = ((rootPage-1)*4096)+8;
+        std :: cout <<rootPage << "back here  " << newAddress  <<" ";
       
 
         printTableLeafPage(bytes,cellCount,start,tableData);
