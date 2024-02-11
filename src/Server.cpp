@@ -326,6 +326,10 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
             // std :: cout << columnNames[i] << std::endl;
         }
     }
+
+    for (std::string columnNamecur : columnNames) {
+        std :: cout << columnNamecur <<" printed column name" << std:: endl;
+    }
 // kk
     
     for (int j = 0 ; j < tableData.size();j++){
