@@ -433,7 +433,7 @@ int main(int argc, char* argv[]) {
 
         // std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
 
-        std :: cout <<rootPage << "back here  " << start  <<" ";
+        
         
         std:: string selectColumn = parseSelectColumns(command);
 
@@ -442,6 +442,7 @@ int main(int argc, char* argv[]) {
         std::vector <std::vector<std::string>> tableData; 
 
         start += 8;
+        std :: cout <<rootPage << "back here  " << start  <<" ";
       
 
         printTableLeafPage(bytes,cellCount,start,tableData);
