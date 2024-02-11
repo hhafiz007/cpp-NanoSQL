@@ -134,7 +134,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 
         }
         else if (index == 3) {
-            // std:: cout << currHeader;
+            std:: cout << currHeader;
         }
         
         
