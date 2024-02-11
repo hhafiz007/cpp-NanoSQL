@@ -105,6 +105,9 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
     
     next = processVarInt(database_file,rowAddress);
     next = processVarInt(database_file,next);
+     if (debugStage){
+     std::cout <<"header start  " <<next<<" end " << std:: endl;
+        }
     
     next = processHeader(database_file,next,header);
     int index = 0;
