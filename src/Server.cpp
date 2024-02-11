@@ -303,7 +303,7 @@ std::string parseSelectColumns(std::string &query) {
             selectColumns = split(content, ',');
             for (std::string &column: selectColumns){
                 if (column[0] == ' '){
-                    column = column.substr(1,column.siz()-1);
+                    column = column.substr(1,column.size()-1);
 
                 }
                 std::cout <<"column name  "<< column << std :: endl;
