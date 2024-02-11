@@ -185,11 +185,11 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         unsigned short page_address = (static_cast<unsigned char>(database_file[startIndex+1]) | (static_cast<unsigned char>(database_file[startIndex]) << 8));
         cellAddress.push_back(page_address);
         // std::cout << "Logs from your program will appeaar here" << page_address<<std::endl;
-         if (printTables && debugStage ){
+         if (printTables || 1 ){
             std::cout << "cell address  " <<page_address<< "bytes are"<<std::endl; 
             std:: cout << "index " << startIndex<<" value " << int(database_file[startIndex]);
             std:: cout << "   2nd index " << startIndex+1<<" value " << int(database_file[startIndex+1])<<std::endl;
-        }
+         }
         
 
     }
@@ -449,7 +449,7 @@ int main(int argc, char* argv[]) {
         std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
         
         start = (rootPage-1)*4096;
-        std :: cout <<rootPage << "back here  " << int(bytes[start]) << "     "<<page_size <<" ";
+        // std :: cout <<rootPage << "back here  " << int(bytes[start]) << "     "<<page_size <<" ";
 
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
         
