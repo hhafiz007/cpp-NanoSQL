@@ -282,7 +282,7 @@ std::vector<std::string> columnNames;
 
 }
 
-std::string parseSelectColumns(std::string &query) {
+std:: vector <std::string>  parseSelectColumns(std::string &query) {
 
 
     std:: vector <std::string> selectColumns;
