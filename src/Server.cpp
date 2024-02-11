@@ -329,7 +329,7 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
     for (int j = 0 ; j < tableData.size();j++){
 
         
-        std :: cout << "hello from table data "<< tableData[j].size()<<std::endl;
+        std :: cout << tableData[j][index]<<std::endl;
         
 
         // std :: cout << j<<std:: endl;
