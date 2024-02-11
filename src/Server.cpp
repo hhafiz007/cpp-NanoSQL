@@ -358,10 +358,15 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         
         std :: string rowData;
 
-        rowData = tableData[j][columnIndices[0]];
-        int k =1;
 
-        for (k = 1; k < columnIndices.size();k+=1)
+        int k =columnIndices.size()-1;
+
+
+
+        rowData = tableData[j][columnIndices[k]];
+      
+
+        for (k = columnIndices.size()-2; k >= 0;k-=1)
         {
             rowData += '|'+tableData[j][columnIndices[k]];
         }
