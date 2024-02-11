@@ -295,7 +295,7 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
         if (columnNames[i] == selectColumn){
             // std :: cout << "tesstting column" << columnNames[i] <<" " << tableData.size();
             index = i-1;
-            std :: cout << "tableData is " << tableData.size() <<" "<<std::endl;
+            // std :: cout << "tableData is " << tableData.size() <<" "<<std::endl;
             columnBool[index] = 1;
         }
     }
@@ -307,7 +307,7 @@ void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::v
         std :: cout << tableData[j][index] << tableData.size()<<std::endl;
         
 
-        std :: cout << j<<std:: endl;
+        // std :: cout << j<<std:: endl;
 
 
     }
@@ -431,11 +431,12 @@ int main(int argc, char* argv[]) {
         
         std:: string selectColumn = parseSelectColumns(command);
 
-        std::cout << "The start value is " << int(bytes[start]) << "  " << std::endl;
         
         std::vector <std::vector<std::string>> tableData; 
 
-        printTableLeafPage(bytes,cellCount,start+8,tableData);
+        start += 8
+
+        printTableLeafPage(bytes,cellCount,start,tableData);
 
         // std :: cout << "back here  " << start  <<" ";
 
