@@ -294,7 +294,16 @@ std::string parseSelectColumns(std::string &query) {
 
     if (std::regex_search(query, match, regex)) {
         content =  match[1].str();
-        std::cout << content<<"  "<<content.size() <<std::endl;
+         size_t found = str.find(',');
+
+    // Check if the comma was found
+        if (found != std::string::npos) {
+            std::cout << "The string contains a comma at position " << found << std::endl;
+            std::cout << content<<"  "<<content.size() <<std::endl;
+        } else {
+            std::cout << "The string does not contain a comma." << std::endl;
+        }
+        
     } 
 
 
