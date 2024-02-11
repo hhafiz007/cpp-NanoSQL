@@ -105,17 +105,17 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
     
     next = processVarInt(database_file,rowAddress);
     next = processVarInt(database_file,next);
-     if (debugStage){
-     std::cout <<"header start  " <<next<<" end " << std:: endl;
-        }
+    //  if (debugStage){
+    //  std::cout <<"header start  " <<next<<" end " << std:: endl;
+    //     }
     
     next = processHeader(database_file,next,header);
     int index = 0;
     
     std::vector<std::string> currRow;
-        if (debugStage){
-     std::cout <<"header size  " <<header.size()<<" end " << std:: endl;
-        }
+    //     if (debugStage){
+    //  std::cout <<"header size  " <<header.size()<<" end " << std:: endl;
+    //     }
     for (int element : header) {
        
         if (element >= 13) {
@@ -180,6 +180,9 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         unsigned short page_address = (static_cast<unsigned char>(database_file[startIndex+1]) | (static_cast<unsigned char>(database_file[startIndex]) << 8));
         cellAddress.push_back(page_address);
         // std::cout << "Logs from your program will appeaar here" << page_address<<std::endl;
+         if (printTables && debugStage ){
+            std::cout << "cell address  " <<page_address<<std::endl; 
+        }
         
 
     }
