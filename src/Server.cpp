@@ -300,9 +300,7 @@ std::string parseSelectColumns(std::string &query) {
         if (found != std::string::npos) {
             std::cout << "The string contains a comma at position " << found << std::endl;
             std::cout << content<<"  "<<content.size() <<std::endl;
-        } else {
-            std::cout << "The string does not contain a comma." << std::endl;
-        }
+        } 
         
     } 
 
