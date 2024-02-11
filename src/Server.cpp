@@ -441,7 +441,7 @@ int main(int argc, char* argv[]) {
         
         std::vector <std::vector<std::string>> tableData; 
 
-        start += 8;
+        start = ((rootPage-1)*4096)+8;
         std :: cout <<rootPage << "back here  " << start  <<" ";
       
 
