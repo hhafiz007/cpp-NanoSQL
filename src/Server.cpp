@@ -434,7 +434,7 @@ int main(int argc, char* argv[]) {
         
         std::vector <std::vector<std::string>> tableData; 
 
-        start += 8
+        start += 8;
 
         printTableLeafPage(bytes,cellCount,start,tableData);
 
