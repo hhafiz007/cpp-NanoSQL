@@ -110,9 +110,9 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
     int index = 0;
     
     std::vector<std::string> currRow;
-
+        if (debugStage){
      std::cout <<"header size  " <<header.size()<<" end " << std:: endl;
-
+        }
     for (int element : header) {
        
         if (element >= 13) {
