@@ -443,9 +443,11 @@ int main(int argc, char* argv[]) {
 
         // int newAddress = ((rootPage-1)*4096)+8;
         // std :: cout <<rootPage << "back here  " << newAddress  <<" ";
+
+        int newAddress = 4054;
       
 
-        printTableLeafPage(bytes,cellCount,start+8,tableData);
+        printTableLeafPage(bytes,cellCount,newAddress,tableData);
 
         // std :: cout << "back here  " << start  <<" ";
 
