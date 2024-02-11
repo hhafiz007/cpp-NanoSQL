@@ -281,7 +281,7 @@ std::string parseSelectColumns(std::string &query) {
 }
 
 
-void printSelectColumns(std::vector<std::vector<std::string>> &tableData, std::vector<std::string>  &columnNames, std::string selectColumn)
+void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, std::vector<std::string>  &columnNames, std::string selectColumn)
 {
 
     int m = columnNames.size();
