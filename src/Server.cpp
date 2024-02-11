@@ -301,7 +301,11 @@ std::string parseSelectColumns(std::string &query) {
             std::cout << "The string contains a comma at position " << found << std::endl;
             std::cout << content<<"  "<<content.size() <<std::endl;
             selectColumns = split(content, ',');
-            for (std::string column: selectColumns){
+            for (std::string &column: selectColumns){
+                if (column[0] == ' '){
+                    column = column.substr(1,column.siz()-1);
+
+                }
                 std::cout <<"column name  "<< column << std :: endl;
             }
         }
