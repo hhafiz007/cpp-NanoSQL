@@ -348,6 +348,9 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
     }
 
     for (int columnNamecur : columnIndices) {
+        if (columnIndices.size() == 1){
+            break;
+        }
         std :: cout << columnNamecur <<" printed column number" << std:: endl;
     }
 // kk
