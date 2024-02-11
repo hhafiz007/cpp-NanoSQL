@@ -52,9 +52,9 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
     int totalBytes = int(database_file[rowAddress]);
 
-     if (debugStage){
-     std::cout <<"totalBytes  " <<totalBytes<<" end " << std:: endl;
-        }
+    //  if (debugStage){
+    //  std::cout <<"totalBytes  " <<totalBytes<<" end " << std:: endl;
+    //     }
     
    
 
@@ -105,9 +105,9 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
     
     next = processVarInt(database_file,rowAddress);
     next = processVarInt(database_file,next);
-     if (debugStage){
-     std::cout <<"header start  " <<next<<" end " << std:: endl;
-        }
+    //  if (debugStage){
+    //  std::cout <<"header start  " <<next<<" end " << std:: endl;
+    //     }
     
     next = processHeader(database_file,next,header);
     int index = 0;
@@ -125,9 +125,9 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
     
         int startByte = next;
         int endExclusive = next + element;
-        if (debugStage) {
-        std::cout <<"printing start element " <<startByte<<" end " << endExclusive<< std:: endl;
-        }
+        // if (debugStage) {
+        // std::cout <<"printing start element " <<startByte<<" end " << endExclusive<< std:: endl;
+        // }
         std:: string currHeader;
         while (startByte < endExclusive) {
             currHeader = currHeader + database_file[startByte];
@@ -177,13 +177,15 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     // Calculate factorialass b
     for (int i = 0; i < num_table; i++) {
         int startIndex = (2*i)+start; 
-        unsigned short page_address =  ((static_cast<unsigned char>(database_file[startIndex]) << 8) | static_cast<unsigned char>(database_file[startIndex+1]));
+        unsigned short byte1 = static_cast<unsigned char>(database_file[startIndex]);
+        unsigned short byte2 = static_cast<unsigned char>(database_file[startIndex+1]);
+        unsigned short page_address =   (byte1 << 8) | (byte2);
         cellAddress.push_back(page_address);
         // std::cout << "Logs from your program will appeaar here" << page_address<<std::endl;
          if (printTables || debugStage ){
             std::cout << "cell address  " <<page_address<<std::endl; 
-            std:: cout << "index " << startIndex<<" value " << int(database_file[startIndex]);
-            std:: cout << "   2nd index " << startIndex+1<<" value " << int(database_file[startIndex+1])<<std::endl;
+            std:: cout << "index " << startIndex<<" value " << byte1<<std::endl;
+            std:: cout << "   2nd index " << startIndex+1<<" value " << byte2<<std::endl;
          }
         
 
