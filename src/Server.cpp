@@ -181,7 +181,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
     for (int i = 0; i < cellAddress.size(); ++i) {
         if (printTables && debugStage ){
-            std::cout << "processing row" <<std::endl; 
+            std::cout << "processing row  " <<cellAddress[i]<<std::endl; 
         }
        getRowData(database_file,cellAddress[i],tableData);
     //    break;
