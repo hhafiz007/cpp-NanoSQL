@@ -334,9 +334,11 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
     std:: vector<int> columnIndices;
 
-    for (int i = 0 ; i < m ; i++){
+   
 
         for(std::string curColumn : selectColumn) {
+
+             for (int i = 0 ; i < m ; i++){
 
             if (columnNames[i] ==  curColumn){
 
@@ -347,13 +349,13 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         
     }
 
-    for (int columnNamecur : columnIndices) {
-        if (columnIndices.size() == 1){
-            break;
-        }
-        std :: cout << columnNamecur <<" printed column number" << std:: endl;
-    }
-// kk
+//     for (int columnNamecur : columnIndices) {
+//         if (columnIndices.size() == 1){
+//             break;
+//         }
+//         std :: cout << columnNamecur <<" printed column number" << std:: endl;
+//     }
+// // kk
     
     for (int j = 0 ; j < tableData.size();j++){
 
