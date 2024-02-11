@@ -426,6 +426,7 @@ int main(int argc, char* argv[]) {
         start = (rootPage-1)*4096;
 
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
+        printTables = true;
 
         // std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
         
