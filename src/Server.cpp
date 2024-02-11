@@ -132,10 +132,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
             std::cout <<currHeader<<" ";
         }
         
-         if (printTables) {
-        std::cout <<" current row is " << index<<std::endl;
-    }
-
+         
         next = endExclusive;
         index+=1;
     }
