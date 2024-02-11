@@ -13,6 +13,7 @@
 const int HEADER_SIZE = 100;
 const int pageHeader = 8;
 bool printTables = false;
+bool debugStage = false;
 
 struct schemaRow {
     // Member variables
@@ -177,7 +178,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     }
 
     for (int i = 0; i < cellAddress.size(); ++i) {
-        if (printTables ){
+        if (printTables && debugStage ){
             std::cout << "processing row" <<std::endl; 
         }
        getRowData(database_file,cellAddress[i],tableData);
@@ -437,6 +438,8 @@ int main(int argc, char* argv[]) {
         
 
         // std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
+
+        debugStage = true;
 
         
         
