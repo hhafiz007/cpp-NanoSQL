@@ -323,7 +323,7 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
             // std :: cout << "tableData is " << tableData.size() <<" "<<std::endl;
             columnBool[index] = 1;
 
-            std :: cout << columnNames[i] << endl;
+            std :: cout << columnNames[i] << std::endl;
         }
     }
 // kk
