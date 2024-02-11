@@ -189,9 +189,9 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         cellAddress.push_back(pageStart+page_address);
         // std::cout << "Logs from your program will appeaar here" << page_address<<std::endl;
          if (printTables || debugStage ){
-            std::cout << "cell address  " <<pageStart+page_address<<std::endl; 
-            std:: cout << "index " << startIndex<<" value " << byte1<<std::endl;
-            std:: cout << "   2nd index " << startIndex+1<<" value " << byte2<<std::endl;
+            // std::cout << "cell address  " <<pageStart+page_address<<std::endl; 
+            // std:: cout << "index " << startIndex<<" value " << byte1<<std::endl;
+            // std:: cout << "   2nd index " << startIndex+1<<" value " << byte2<<std::endl;
          }
         
 
@@ -439,7 +439,7 @@ int main(int argc, char* argv[]) {
         int start=108;
         std::vector <std::vector<std::string> > schemaData; 
 
-        printTables = true;
+        // printTables = true;
 
         printTableLeafPage(bytes,num_table,start,schemaData);
               std::vector<std::string> tokens = split(command, ' ');
