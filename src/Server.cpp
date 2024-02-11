@@ -426,7 +426,7 @@ int main(int argc, char* argv[]) {
         std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
         
         start = (rootPage-1)*4096;
-        std :: cout <<rootPage << "back here  " << start  <<" ";
+        // std :: cout <<rootPage << "back here  " << start  <<" ";
 
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
         
@@ -441,8 +441,8 @@ int main(int argc, char* argv[]) {
         
         std::vector <std::vector<std::string>> tableData; 
 
-        int newAddress = ((rootPage-1)*4096)+8;
-        std :: cout <<rootPage << "back here  " << newAddress  <<" ";
+        // int newAddress = ((rootPage-1)*4096)+8;
+        // std :: cout <<rootPage << "back here  " << newAddress  <<" ";
       
 
         printTableLeafPage(bytes,cellCount,start,tableData);
