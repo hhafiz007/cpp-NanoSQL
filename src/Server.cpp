@@ -298,15 +298,15 @@ std::string parseSelectColumns(std::string &query) {
 
     // Check if the comma was found
         if (found != std::string::npos) {
-            std::cout << "The string contains a comma at position " << found << std::endl;
-            std::cout << content<<"  "<<content.size() <<std::endl;
+            // std::cout << "The string contains a comma at position " << found << std::endl;
+            // std::cout << content<<"  "<<content.size() <<std::endl;
             selectColumns = split(content, ',');
             for (std::string &column: selectColumns){
                 if (column[0] == ' '){
                     column = column.substr(1,column.size()-1);
 
                 }
-                std::cout <<"column name  "<< column << std :: endl;
+                // std::cout <<"column name  "<< column << std :: endl;
             }
         }
         else{
@@ -316,7 +316,7 @@ std::string parseSelectColumns(std::string &query) {
     } 
 
 
-    return content;
+    return selectColumns;
 
 
 
@@ -324,25 +324,27 @@ std::string parseSelectColumns(std::string &query) {
 }
 
 
-void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, std::vector<std::string>  &columnNames, std::string selectColumn)
+void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, std::vector<std::string>  &columnNames, std::vector<std::string> selectColumn)
 {
 
     int m = columnNames.size();
 
-    int columnBool[m];
+    
     int index = 0;
 
-    for (int i = 0 ; i < m ; i++){
-        columnBool[i] = 0;
-        // std::cout << columnNames[i]<<std::endl;
-        if (columnNames[i] == selectColumn){
-            // std :: cout << "tesstting column" << columnNames[i] <<" " << tableData.size();
-            index = i;
-            // std :: cout << "tableData is " << tableData.size() <<" "<<std::endl;
-            columnBool[index] = 1;
+    std:: vector<int> columnIndices;
 
-            // std :: cout << columnNames[i] << std::endl;
+    for (int i = 0 ; i < m ; i++){
+
+        for(std::string curColumn : selectColumn) {
+
+            if (columnNames[i] ==  curColumn){
+
+                columnIndices.push_back(i);
+            }
         }
+        
+        
     }
 
     // for (std::string columnNamecur : columnNames) {
@@ -354,7 +356,19 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
         // std :: cout << columnNames[index] << std :: endl;
         
-        std :: cout << tableData[j][index]<<std::endl;
+        std :: string rowData;
+
+        rowData = columnNames[columnIndices[0]];
+        int k =1
+
+        for (k = 1; k < columnIndices.size();k+=1)
+        {
+            rowData += '|'+columnNames[columnIndices[k]];
+        }
+
+        std :: cout << rowData << std ::endl;
+
+
         
 
         // std :: cout << j<<std:: endl;
@@ -488,7 +502,7 @@ int main(int argc, char* argv[]) {
 
         
         
-        std:: string selectColumn = parseSelectColumns(command);
+        std:: vector <std::string> selectColumns = parseSelectColumns(command);
 
 
         
@@ -504,7 +518,7 @@ int main(int argc, char* argv[]) {
 
         // std :: cout << "back here  " << start  <<" ";
 
-        printSelectColumns(tableData, columnNames , selectColumn);
+        printSelectColumns(tableData, columnNames , selectColumns);
 
 
 
