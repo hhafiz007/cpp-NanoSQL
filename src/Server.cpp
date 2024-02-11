@@ -445,7 +445,7 @@ int main(int argc, char* argv[]) {
         // std :: cout <<rootPage << "back here  " << newAddress  <<" ";
       
 
-        printTableLeafPage(bytes,cellCount,start,tableData);
+        printTableLeafPage(bytes,cellCount,start+8,tableData);
 
         // std :: cout << "back here  " << start  <<" ";
 
