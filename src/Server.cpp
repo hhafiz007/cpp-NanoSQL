@@ -294,7 +294,7 @@ std::string parseSelectColumns(std::string &query) {
 
     if (std::regex_search(query, match, regex)) {
         content =  match[1].str();
-         size_t found = str.find(',');
+         size_t found = content.find(',');
 
     // Check if the comma was found
         if (found != std::string::npos) {
