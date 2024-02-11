@@ -449,7 +449,7 @@ int main(int argc, char* argv[]) {
         std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
         
         start = (rootPage-1)*4096;
-        // std :: cout <<rootPage << "back here  " << start  <<" ";
+        std :: cout <<rootPage << "back here  " << int(bytes[start])  <<" ";
 
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
         
