@@ -350,7 +350,7 @@ std:: vector <std::string>  parseSelectColumns(std::string &query) {
 
 
 
-void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, std::vector<std::string>  &columnNames, std::vector<std::string> selectColumn)
+void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, std::vector<std::string>  &columnNames, std::vector<std::string> selectColumn,MyTuple &filter)
 {
 
     int m = columnNames.size();
@@ -370,6 +370,10 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
                 columnIndices.push_back(i);
             }
+            if (filter.filter && columnNames[i] == filter.key)
+            {
+                index = i;
+            }
         }
         
         
@@ -388,6 +392,10 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         // std :: cout << columnNames[index] << std :: endl;
         
         std :: string rowData;
+
+        if (filter.filter && tableData[j][index] != filter.value){
+            continue;
+        }
 
         rowData = tableData[j][columnIndices[0]];
         int k =1;
@@ -598,7 +606,7 @@ int main(int argc, char* argv[]) {
 
         // std :: cout << "back here  " << start  <<" ";
 
-        printSelectColumns(tableData, columnNames , selectColumns);
+        printSelectColumns(tableData, columnNames , selectColumns,selectFilter);
 
 
 
