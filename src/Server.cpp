@@ -16,7 +16,7 @@ bool printTables = false;
 bool debugStage = false;
 
 struct MyTuple {
-    bool filter;
+    bool filter= false;
     std::string  key;
     std::string value;
 };
@@ -586,9 +586,13 @@ int main(int argc, char* argv[]) {
         
         std:: vector <std::string> selectColumns = parseSelectColumns(command);
 
-        debugStage = true;
+        
 
         MyTuple selectFilter = parseWhereFilter(command);
+
+        if (selectFilter.filter) {
+            std::cout << " filter true" << std::endl;
+        }
 
 
         
