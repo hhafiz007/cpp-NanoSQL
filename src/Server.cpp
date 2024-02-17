@@ -388,6 +388,10 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         
     }
 
+    if (filter.filter) {
+        std::cout <<"filter is off  "<<filter.key << filter.value<<std::endl;
+    }
+
 //     for (int columnNamecur : columnIndices) {
 //         if (columnIndices.size() == 1){
 //             break;
