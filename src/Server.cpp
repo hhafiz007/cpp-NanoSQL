@@ -425,7 +425,7 @@ MyTuple parseWhereFilter(std::string &query){
         ans.filter = true;
         if (debugStage)
         {
-            std::cout << " whereQuery  " <<whereQuery<<" "<<value<<std::endl;
+            std::cout << " where Query  " <<whereQuery<<" "<<value<<std::endl;
         }
 
 
