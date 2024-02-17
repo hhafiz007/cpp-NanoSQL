@@ -587,6 +587,9 @@ int main(int argc, char* argv[]) {
               std::vector<std::string> tokens = split(command, ' ');
         
         int queryLength = tokens.size();
+
+
+        std::cerr << "Debug3000: " << command << std::endl;
         
       
         
