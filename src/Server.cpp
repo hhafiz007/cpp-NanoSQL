@@ -10,9 +10,7 @@
 #include <string>
 #include<algorithm>
 
-#define DEBUG_PRINT(message) std::cout << "Debug: " << message << std::endl;
-
-
+#define DEBUG_MODE
 
 const int HEADER_SIZE = 100;
 const int pageHeader = 8;
@@ -444,7 +442,10 @@ MyTuple parseWhereFilter(std::string &query){
 
 
     size_t found = query.find("where");
-    DEBUG_PRINT(query);
+    #ifdef DEBUG_MODE
+    // Print debug message only in debug mode
+    std::cout << "Debug: " << query << std::endl;
+#endif
     MyTuple ans;
     if (found != std::string::npos) {
         // std::vector<std::string> tokens = split(query, "WHERE");
