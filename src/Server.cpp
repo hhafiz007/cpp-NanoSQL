@@ -329,7 +329,7 @@ std:: vector <std::string>  parseSelectColumns(std::string &query) {
                     column = column.substr(1,column.size()-1);
 
                 }
-                // std::cout <<"column name  "<< column << std :: endl;
+            std::cout <<"column name  "<< column << std :: endl;
             }
         }
         else{
