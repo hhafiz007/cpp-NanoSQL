@@ -130,9 +130,9 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
     
     next = processVarInt(database_file,rowAddress);
     next = processVarInt(database_file,next);
-     if (debugStage){
-     std::cout <<"header start  " <<next<<" end " << std:: endl;
-        }
+    //  if (debugStage){
+    //  std::cout <<"header start  " <<next<<" end " << std:: endl;
+    //     }
     
     next = processHeader(database_file,next,header);
     int index = 0;
@@ -194,10 +194,10 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     
     std::vector<unsigned short> cellAddress;
 
-    // if (debugStage){
-    //     std :: cout << "the start d is"<<start<<"  ro ws "<< num_table << std::endl; 
+    if (debugStage){
+        std :: cerr << "the start d is"<<start<<"  ro ws "<< num_table << std::endl; 
 
-    // }
+    }
 
     int pageStart = start-8;
 
