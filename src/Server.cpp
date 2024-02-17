@@ -496,7 +496,7 @@ MyTuple parseWhereFilter(std::string &query){
 
 std:: string parseTableName (std::string &query){
 
-  size_t fromPos = query.find("FROM");
+  size_t fromPos = query.find("from");
     if (fromPos != std::string::npos) {
         // Find the start of the table name
         size_t tableNameStart = fromPos + 5; // "FROM" + space
