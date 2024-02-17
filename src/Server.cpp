@@ -442,10 +442,7 @@ MyTuple parseWhereFilter(std::string &query){
 
 
     size_t found = query.find("where");
-    #ifdef DEBUG_MODE
-    // Print debug message only in debug mode
-    std::cout << "Debug: " << query << std::endl;
-#endif
+     std::cerr << "Debug: " << query << std::endl;
     MyTuple ans;
     if (found != std::string::npos) {
         // std::vector<std::string> tokens = split(query, "WHERE");
