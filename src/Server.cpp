@@ -493,7 +493,7 @@ MyTuple parseWhereFilter(std::string &query){
 
 }
 
-std:: string parseTableName (std::string command){
+std:: string parseTableName (std::string &query){
 
   size_t fromPos = query.find("FROM");
     if (fromPos != std::string::npos) {
