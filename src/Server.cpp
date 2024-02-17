@@ -410,8 +410,8 @@ MyTuple parseWhereFilter(std::string &query){
     size_t found = query.find("WHERE");
     MyTuple ans;
     if (found != std::string::npos) {
-        std::vector<std::string> tokens = split(query, "WHERE");
-        std:: whereQuery = tokens[1];
+        // std::vector<std::string> tokens = split(query, "WHERE");
+        std:: whereQuery = query.substr(found + 5);
         std::vector<std::string> whereTokens = split(query, '=');
         std::string key = whereTokens[0];
         std::string value = whereTokens[1];
