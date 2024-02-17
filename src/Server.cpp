@@ -32,7 +32,7 @@ std::string stripKey(const std::string& str) {
     size_t lastNonSpace = str.find_last_not_of(' ');
 
     // Extract the substring without leading and trailing zeroes
-    return str.substr(firstNonSpace, lastNonSpace - firstNonSpace + 1);
+    return str.substr(firstNonSpace+1, (lastNonSpace-1) - (firstNonSpace+1)+1);
 }
 
 std::string stripValue(const std::string& str) {
@@ -44,7 +44,7 @@ std::string stripValue(const std::string& str) {
     size_t lastNonSpace = str.find_last_not_of(' ');
 
     // Extract the substring without leading and trailing zeroes
-     return str.substr(firstNonSpace, lastNonSpace - firstNonSpace + 1);
+     return str.substr(firstNonSpace+2, (lastNonSpace-2) - (firstNonSpace+2)+1);
 }
 
 
