@@ -610,7 +610,7 @@ int main(int argc, char* argv[]) {
 
         printTableLeafPage(bytes,cellCount,newAddress,tableData);
 
-        // std :: cout << "back here  " << start  <<" ";
+        // std :: cout << "back here  " << start  <<" "; // change comments
 
         printSelectColumns(tableData, columnNames , selectColumns,selectFilter);
 
