@@ -599,7 +599,7 @@ int main(int argc, char* argv[]) {
         // std :: cout <<rootPage << "back here  " << newAddress  <<" ";
 
         int newAddress = start+8;
-                if (filter.filter) {
+                if (selectFilter.filter) {
             std::cout << " filter true" << std::endl;
         }
 
