@@ -574,7 +574,7 @@ int main(int argc, char* argv[]) {
     }
     else {
         int start=108;
-        std::cerr << "Debug200: " << command << std::endl;
+        std::cerr << "Debug2000: " << command << std::endl;
         std::vector <std::vector<std::string> > schemaData; 
 
         // printTables = true;
