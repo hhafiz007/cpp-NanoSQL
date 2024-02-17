@@ -603,7 +603,7 @@ int main(int argc, char* argv[]) {
         int rootPage;
         std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
 
-         std::cerr << "Debug4000: " << command << std::endl;
+         std::cerr << "Debug4000: " << rootPage << std::endl;
         
         start = (rootPage-1)*4096;
         std :: cerr <<rootPage << "back here  " << int(bytes[start]) << "     "<<page_size <<" ";
