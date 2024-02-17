@@ -358,7 +358,7 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
     int m = columnNames.size();
 
     if (filter.filter) {
-        std::cout <<"filter is on "<<filter.key << filter.value<<std::endl;
+        std::cout <<"filter is on  "<<filter.key << filter.value<<std::endl;
     }
 
 
