@@ -454,7 +454,7 @@ MyTuple parseWhereFilter(std::string &query){
         ans.value =stripValue(value);
         ans.filter = true;
 
-        std::cout << " where found "<<std::endl;
+        std::cout << " wheree found "<<std::endl;
        
 
 
