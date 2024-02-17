@@ -354,9 +354,6 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 {
 
     int m = columnNames.size();
-        if (filter.filter) {
-            std::cout << " filter true" << std::endl;
-        }
 
 
 
@@ -602,6 +599,10 @@ int main(int argc, char* argv[]) {
         // std :: cout <<rootPage << "back here  " << newAddress  <<" ";
 
         int newAddress = start+8;
+                if (filter.filter) {
+            std::cout << " filter true" << std::endl;
+        }
+
       
 
         printTableLeafPage(bytes,cellCount,newAddress,tableData);
