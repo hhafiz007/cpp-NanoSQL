@@ -25,11 +25,11 @@ struct MyTuple {
 
 std::string stripKey(const std::string& str) {
     // Find the position of the first non-zero character
-    size_t firstNonZero = str.find_first_not_of(' ');
+    size_t firstNonSpace = str.find_first_not_of(' ');
    
   
     // Find the position of the last non-zero character
-    size_t lastNonZero = str.find_last_not_of(' ');
+    size_t lastNonSpace = str.find_last_not_of(' ');
 
     // Extract the substring without leading and trailing zeroes
     return str.substr(firstNonSpace, lastNonSpace - firstNonSpace + 1);
@@ -37,11 +37,11 @@ std::string stripKey(const std::string& str) {
 
 std::string stripValue(const std::string& str) {
 // Find the position of the first non-zero character
-    size_t firstNonZero = str.find_first_not_of(' ');
+    size_t firstNonSpace = str.find_first_not_of(' ');
    
   
     // Find the position of the last non-zero character
-    size_t lastNonZero = str.find_last_not_of(' ');
+    size_t lastNonSpace = str.find_last_not_of(' ');
 
     // Extract the substring without leading and trailing zeroes
      return str.substr(firstNonSpace, lastNonSpace - firstNonSpace + 1);
