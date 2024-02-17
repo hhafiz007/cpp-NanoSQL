@@ -432,10 +432,10 @@ MyTuple parseWhereFilter(std::string &query){
 
     // std::cout << "Welcome to filtering "<<std::endl;
     // }
-   std::string str = &query;
+   
 
     // Convert each character in the string to lowercase
-    std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c) {
+    std::transform(query.begin(), query.end(), query.begin(), [](unsigned char c) {
         return std::tolower(c);
     });
 
