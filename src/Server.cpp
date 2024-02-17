@@ -360,9 +360,9 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
     int m = columnNames.size();
 
-    if (filter.filter) {
-        std::cout <<"filter is on  "<<filter.key << filter.value<<std::endl;
-    }
+    // if (filter.filter) {
+    //     std::cout <<"filter is on  "<<filter.key << filter.value<<std::endl;
+    // }
 
 
 
@@ -391,9 +391,9 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         
     }
 
-    if (filter.filter) {
-        std::cout <<"filterr is offff d ds"<<filter.key << filter.value<<std::endl;
-    }
+    // if (filter.filter) {
+    //     std::cout <<"filterr is offff d ds"<<filter.key << filter.value<<std::endl;
+    // }
 
 //     for (int columnNamecur : columnIndices) {
 //         if (columnIndices.size() == 1){
@@ -407,9 +407,9 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         // std :: cout << columnNames[index] << std :: endl;
         
         std :: string rowData;
-        if (filter.filter) {
-            std::cout << "we should be here" <<tableData[j][index];
-        }
+        // if (filter.filter) {
+        //     std::cout << "we should be here" <<tableData[j][index];
+        // }
 
 
 
@@ -469,7 +469,7 @@ MyTuple parseWhereFilter(std::string &query){
         ans.value =stripValue(value);
         ans.filter = true;
 
-        std::cout << " wheree found "<<std::endl;
+        // std::cout << " wheree found "<<std::endl;
        
 
 
@@ -656,7 +656,7 @@ int main(int argc, char* argv[]) {
         int newAddress = start+8;
         if (selectFilter.filter) {
             debugStage = true;
-            std::cout << " filter value=" <<selectFilter.value<< std::endl;
+            // std::cout << " filter value=" <<selectFilter.value<< std::endl;
         }
 
       
