@@ -354,6 +354,11 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 {
 
     int m = columnNames.size();
+        if (filter.filter) {
+            std::cout << " filter true" << std::endl;
+        }
+
+
 
     
     int index = 0;
@@ -386,11 +391,6 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 //         std :: cout << columnNamecur <<" printed column number" << std:: endl;
 //     }
 // // kk
-            if (filter.filter) {
-            std::cout << " filter true" << std::endl;
-        }
-
-
     for (int j = 0 ; j < tableData.size();j++){
 
         // std :: cout << columnNames[index] << std :: endl;
