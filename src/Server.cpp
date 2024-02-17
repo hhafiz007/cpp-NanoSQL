@@ -406,12 +406,12 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
 MyTuple parseWhereFilter(std::string &query){
 
-    if (debugStage){
+    // if (debugStage){
 
-    std::cout << "Welcome to filtering "<<std::endl;
-    }
+    // std::cout << "Welcome to filtering "<<std::endl;
+    // }
    
-    size_t found = query.find("WHERE");
+    size_t found = query.find("where");
     MyTuple ans;
     if (found != std::string::npos) {
         // std::vector<std::string> tokens = split(query, "WHERE");
