@@ -406,6 +406,8 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
 MyTuple parseWhereFilter(std::string &query){
 
+    std::cout << "Welcome to filtering "<<std::endl;
+
    
     size_t found = query.find("WHERE");
     MyTuple ans;
