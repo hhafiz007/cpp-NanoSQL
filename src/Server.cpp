@@ -329,7 +329,7 @@ std:: vector <std::string>  parseSelectColumns(std::string &query) {
                     column = column.substr(1,column.size()-1);
 
                 }
-            std::cout <<"column name  "<< column << std :: endl;
+            // std::cout <<"column name  "<< column << std :: endl;
             }
         }
         else{
@@ -435,7 +435,7 @@ MyTuple parseWhereFilter(std::string &query){
     size_t found = query.find("where");
     MyTuple ans;
     if (found != std::string::npos) {
-        // std::vector<std::string> tokens = split(query, "WHERE");
+        std::vector<std::string> tokens = split(query, "WHERE");
         std::string whereQuery = query.substr(found + 5);
         std::vector<std::string> whereTokens = split(whereQuery, '=');
         std::string key = whereTokens[0];
