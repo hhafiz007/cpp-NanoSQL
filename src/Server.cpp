@@ -614,7 +614,7 @@ int main(int argc, char* argv[]) {
         // ,,, std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
 
         
-        std::cerr << "Debug1: " << command << std::endl;
+        std::cerr << "Deebug1: " << command << std::endl;
         
         
         std:: vector <std::string> selectColumns = parseSelectColumns(command);
