@@ -414,6 +414,9 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
 
         if (filter.filter && tableData[j][index] != filter.value){
+            std::cerr <<" It did not get select because filter is "<< filter.key<<std::endl;
+             std::cerr <<" It did not get select because table value  is "<< tableData[j][index]<<std::endl;
+              std::cerr <<" It did not get select because filter is "<< filter.key<<std::endl;
             continue;
         }
 
