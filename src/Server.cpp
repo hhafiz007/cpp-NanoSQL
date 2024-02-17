@@ -393,6 +393,9 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         // std :: cout << columnNames[index] << std :: endl;
         
         std :: string rowData;
+        if (filter.filter) {
+            std::cout << " key" <<tableData[j][index];
+        }
 
         if (filter.filter && tableData[j][index] != filter.value){
             continue;
