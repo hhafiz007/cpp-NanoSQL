@@ -374,6 +374,7 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
              for (int i = 0 ; i < m ; i++){
 
+
             if (columnNames[i] ==  curColumn){
 
                 columnIndices.push_back(i);
@@ -400,8 +401,10 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         
         std :: string rowData;
         if (filter.filter) {
-            std::cout << " key" <<tableData[j][index];
+            std::cout << "we should be here" <<tableData[j][index];
         }
+
+
 
         if (filter.filter && tableData[j][index] != filter.value){
             continue;
