@@ -600,7 +600,7 @@ int main(int argc, char* argv[]) {
 
         int newAddress = start+8;
                 if (selectFilter.filter) {
-            std::cout << " filter true" << std::endl;
+            std::cout << " filtner true" << std::endl;
         }
 
       
