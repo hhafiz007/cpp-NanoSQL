@@ -407,7 +407,7 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 MyTuple parseWhereFilter(std::string &query){
 
    
-    size_t found = content.find("WHERE");
+    size_t found = query.find("WHERE");
     MyTuple ans;
     if (found != std::string::npos) {
         std::vector<std::string> tokens = split(query, "WHERE");
