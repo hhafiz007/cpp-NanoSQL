@@ -602,7 +602,7 @@ int main(int argc, char* argv[]) {
         // std :: cout <<rootPage << "back here  " << newAddress  <<" ";
 
         int newAddress = start+8;
-                if (selectFilter.filter) {
+        if (selectFilter.filter) {
             std::cout << " filtner. value" <<selectFilter.value<< std::endl;
         }
 
