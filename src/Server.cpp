@@ -28,11 +28,11 @@ std::string stripZeroes(const std::string& str) {
     size_t firstNonZero = str.find_first_not_of('0');
     if (firstNonZero == std::string::npos) {
         // If the string consists of all zeroes, return "0"
-        return "0";
+        return " ";
     }
 
     // Find the position of the last non-zero character
-    size_t lastNonZero = str.find_last_not_of('0');
+    size_t lastNonZero = str.find_last_not_of(' ');
 
     // Extract the substring without leading and trailing zeroes
     return str.substr(firstNonZero, lastNonZero - firstNonZero + 1);
@@ -411,14 +411,14 @@ MyTuple parseWhereFilter(std::string &query){
     MyTuple ans;
     if (found != std::string::npos) {
         // std::vector<std::string> tokens = split(query, "WHERE");
-        std:: whereQuery = query.substr(found + 5);
+        std::string whereQuery = query.substr(found + 5);
         std::vector<std::string> whereTokens = split(query, '=');
         std::string key = whereTokens[0];
         std::string value = whereTokens[1];
     
-        MyTuple.key = stripZeroes(key);
-        MyTuple.value =stripZeroes(value);
-        MyTuple.filter = true;
+        ans.key = stripZeroes(key);
+        ans.value =stripZeroes(value);
+        ans.filter = true;
         if (debugStage)
         {
             std::cout << " Key Value"<<key<<" "<<value<<std::endl;
@@ -432,11 +432,11 @@ MyTuple parseWhereFilter(std::string &query){
 
     }
     else {
-        MyTuple.filter = false;
+        ans.filter = false;
         
     }
 
-    return MyTuple;
+    return ans;
 
 
 
