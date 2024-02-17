@@ -386,7 +386,11 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 //         std :: cout << columnNamecur <<" printed column number" << std:: endl;
 //     }
 // // kk
-    
+            if (selectFilter.filter) {
+            std::cout << " filter true" << std::endl;
+        }
+
+
     for (int j = 0 ; j < tableData.size();j++){
 
         // std :: cout << columnNames[index] << std :: endl;
@@ -589,10 +593,6 @@ int main(int argc, char* argv[]) {
         
 
         MyTuple selectFilter = parseWhereFilter(command);
-
-        if (selectFilter.filter) {
-            std::cout << " filter true" << std::endl;
-        }
 
 
         
