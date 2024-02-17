@@ -602,15 +602,15 @@ int main(int argc, char* argv[]) {
         // std :: cout <<rootPage << "back here  " << newAddress  <<" ";
 
         int newAddress = start+8;
-        if (selectFilter.filter) {
-            std::cout << " filter value=" <<selectFilter.value<< std::endl;
-        }
+        // if (selectFilter.filter) {
+        //     std::cout << " filter value=" <<selectFilter.value<< std::endl;
+        // }
 
       
 
         printTableLeafPage(bytes,cellCount,newAddress,tableData);
 
-        std :: cout << "back here  " << start  <<" ";
+        // std :: cout << "back here  " << start  <<" ";
 
         printSelectColumns(tableData, columnNames , selectColumns,selectFilter);
 
