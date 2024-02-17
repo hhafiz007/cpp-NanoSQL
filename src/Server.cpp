@@ -499,11 +499,16 @@ std:: string parseTableName (std::string &query){
   size_t fromPos = query.find("from");
     if (fromPos != std::string::npos) {
         // Find the start of the table name
+        // std::cerr << " from "
         size_t tableNameStart = fromPos + 5; // "FROM" + space
         // Find the end of the table name
         size_t tableNameEnd = query.find_first_of(" \n\r\t,", tableNameStart);
         if (tableNameEnd != std::string::npos) {
             // Extract the table name
+            return query.substr(tableNameStart, tableNameEnd - tableNameStart);
+        }
+        else{
+            tableNameEnd = len(query);
             return query.substr(tableNameStart, tableNameEnd - tableNameStart);
         }
     }
