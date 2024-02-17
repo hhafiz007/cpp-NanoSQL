@@ -508,7 +508,7 @@ std:: string parseTableName (std::string &query){
             return query.substr(tableNameStart, tableNameEnd - tableNameStart);
         }
         else{
-            tableNameEnd = len(query);
+            tableNameEnd = (query.size());
             return query.substr(tableNameStart, tableNameEnd - tableNameStart);
         }
     }
