@@ -606,7 +606,7 @@ int main(int argc, char* argv[]) {
          std::cerr << "Debug4000: " << command << std::endl;
         
         start = (rootPage-1)*4096;
-        // std :: cout <<rootPage << "back here  " << int(bytes[start]) << "     "<<page_size <<" ";
+        std :: cerr <<rootPage << "back here  " << int(bytes[start]) << "     "<<page_size <<" ";
 
         unsigned short cellCount=(static_cast<unsigned char>(bytes[start+4]) | (static_cast<unsigned char>(bytes[start+3]) << 8));
         
