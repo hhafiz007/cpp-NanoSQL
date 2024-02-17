@@ -256,6 +256,7 @@ for (std::vector table : tableData){
         if (table[1] == tableName){
             // std::cout << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
             rootPage =  int(table[3][0]);
+            std:cerr <<" table name " <<tableName <<" page number" << table[3][0] << endl;
             
         }
 
