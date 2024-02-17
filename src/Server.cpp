@@ -603,7 +603,7 @@ int main(int argc, char* argv[]) {
 
         int newAddress = start+8;
         if (selectFilter.filter) {
-            std::cout << " filtner. value" <<selectFilter.value<< std::endl;
+            std::cout << " filter value=" <<selectFilter.value<< std::endl;
         }
 
       
