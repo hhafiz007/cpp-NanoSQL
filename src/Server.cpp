@@ -386,7 +386,7 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 //         std :: cout << columnNamecur <<" printed column number" << std:: endl;
 //     }
 // // kk
-            if (selectFilter.filter) {
+            if (filter.filter) {
             std::cout << " filter true" << std::endl;
         }
 
