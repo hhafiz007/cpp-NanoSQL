@@ -389,7 +389,7 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
     }
 
     if (filter.filter) {
-        std::cout <<"filter is off d ds"<<filter.key << filter.value<<std::endl;
+        std::cout <<"filterr is off d ds"<<filter.key << filter.value<<std::endl;
     }
 
 //     for (int columnNamecur : columnIndices) {
