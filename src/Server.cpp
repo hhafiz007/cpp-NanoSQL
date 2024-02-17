@@ -194,10 +194,10 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     
     std::vector<unsigned short> cellAddress;
 
-    if (debugStage){
-        std :: cerr << "the start d is"<<start<<"  ro ws "<< num_table << std::endl; 
+    // if (debugStage){
+    //     std :: cerr << "the start d is"<<start<<"  ro ws "<< num_table << std::endl; 
 
-    }
+    // }
 
     int pageStart = start-8;
 
