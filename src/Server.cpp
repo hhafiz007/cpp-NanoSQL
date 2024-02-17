@@ -493,6 +493,23 @@ MyTuple parseWhereFilter(std::string &query){
 
 }
 
+std:: string parseTableName (std::string command){
+
+  size_t fromPos = query.find("FROM");
+    if (fromPos != std::string::npos) {
+        // Find the start of the table name
+        size_t tableNameStart = fromPos + 5; // "FROM" + space
+        // Find the end of the table name
+        size_t tableNameEnd = query.find_first_of(" \n\r\t,", tableNameStart);
+        if (tableNameEnd != std::string::npos) {
+            // Extract the table name
+            return query.substr(tableNameStart, tableNameEnd - tableNameStart);
+        }
+    }
+    return "";
+    
+}
+
 
 int main(int argc, char* argv[]) {
     // You can use print statement;;s as follows for debugging, they'll be visible when running tests.
@@ -593,17 +610,15 @@ int main(int argc, char* argv[]) {
         // printTables = true;
 
         printTableLeafPage(bytes,num_table,start,schemaData);
-              std::vector<std::string> tokens = split(command, ' ');
-        
-        int queryLength = tokens.size();
-
-
+             
         std::cerr << "Debug3000: " << command << std::endl;
+
+        std :: string tableName = parseTableName(command);
         
       
         
         int rootPage;
-        std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
+        std::vector<std::string> columnNames = getRootPage(schemaData,tableName,rootPage);
 
          std::cerr << "Debug4000: " << rootPage << std::endl;
         
