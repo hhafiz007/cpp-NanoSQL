@@ -440,11 +440,7 @@ MyTuple parseWhereFilter(std::string &query){
         ans.key = stripKey(key);
         ans.value =stripValue(value);
         ans.filter = true;
-        if (debugStage)
-        {
-            std::cout << "whereQu ery" <<ans.key<<""<<ans.value<<std::endl;
-        }
-
+       
 
 
 
@@ -456,6 +452,12 @@ MyTuple parseWhereFilter(std::string &query){
         ans.filter = false;
         
     }
+
+     if (debugStage)
+        {
+            std::cout << "whereQu ery" <<ans.key<<""<<ans.value<<std::endl;
+        }
+
 
     return ans;
 
