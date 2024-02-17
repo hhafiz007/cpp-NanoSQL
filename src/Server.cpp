@@ -15,14 +15,28 @@ const int pageHeader = 8;
 bool printTables = false;
 bool debugStage = false;
 
-struct schemaRow {
-    // Member variables
-    int type;
-    std::string name;
-    std::string tblName;
-    std::string rootPage;
-    std::string sql;
+struct MyTuple {
+    bool filter;
+    std::string  key;
+    std::string value;
 };
+
+
+
+std::string stripZeroes(const std::string& str) {
+    // Find the position of the first non-zero character
+    size_t firstNonZero = str.find_first_not_of('0');
+    if (firstNonZero == std::string::npos) {
+        // If the string consists of all zeroes, return "0"
+        return "0";
+    }
+
+    // Find the position of the last non-zero character
+    size_t lastNonZero = str.find_last_not_of('0');
+
+    // Extract the substring without leading and trailing zeroes
+    return str.substr(firstNonZero, lastNonZero - firstNonZero + 1);
+}
 
 
 
@@ -324,6 +338,9 @@ std:: vector <std::string>  parseSelectColumns(std::string &query) {
 }
 
 
+
+
+
 void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, std::vector<std::string>  &columnNames, std::vector<std::string> selectColumn)
 {
 
@@ -380,6 +397,47 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
 
     }
+
+
+
+
+
+}
+
+MyTuple parseWhereFilter(std::string &query){
+
+   
+    size_t found = content.find("WHERE");
+    MyTuple ans;
+    if (found != std::string::npos) {
+        std::vector<std::string> tokens = split(query, "WHERE");
+        std:: whereQuery = tokens[1];
+        std::vector<std::string> whereTokens = split(query, '=');
+        std::string key = whereTokens[0];
+        std::string value = whereTokens[1];
+    
+        MyTuple.key = stripZeroes(key);
+        MyTuple.value =stripZeroes(value);
+        MyTuple.filter = true;
+        if (debugStage)
+        {
+            std::cout << " Key Value"<<key<<" "<<value<<std::endl;
+        }
+
+
+
+
+
+
+
+    }
+    else {
+        MyTuple.filter = false;
+        
+    }
+
+    return MyTuple;
+
 
 
 
@@ -503,11 +561,15 @@ int main(int argc, char* argv[]) {
 
         // std::vector<std::string> columnNames = getRootPage(schemaData,tokens[queryLength-1],rootPage);
 
-        debugStage = true;
+        
 
         
         
         std:: vector <std::string> selectColumns = parseSelectColumns(command);
+
+        debugStage = true;
+
+        MyTuple selectFilter = parseWhereFilter(command);
 
 
         
