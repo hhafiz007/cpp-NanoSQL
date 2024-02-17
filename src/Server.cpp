@@ -8,6 +8,7 @@
 #include <regex>
 #include <sstream>
 #include <string>
+#include<algorithm>
 
 
 const int HEADER_SIZE = 100;
@@ -431,7 +432,14 @@ MyTuple parseWhereFilter(std::string &query){
 
     // std::cout << "Welcome to filtering "<<std::endl;
     // }
-   
+   std::string str = &query;
+
+    // Convert each character in the string to lowercase
+    std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c) {
+        return std::tolower(c);
+    });
+
+
     size_t found = query.find("where");
     MyTuple ans;
     if (found != std::string::npos) {
