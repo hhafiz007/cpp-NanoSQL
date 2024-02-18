@@ -93,7 +93,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned long rowAddress){
         unsigned long next = processVarInt(database_file,prev);
         unsigned short result = 0;
         unsigned long j ;
-        for (  j = 0 ; j +prev < next-1; j++) {
+        for (  j = 0 ; j +prev < next; j++) {
             result <<= 8;
             unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
             // std :: cout << currByte << " curr byte "<<int(database_file[prev+j])<<std:: endl;
