@@ -198,7 +198,7 @@ int  getLeafPage(std::vector<char> &database_file, int start){
 
     
     if (int(pageType) == interiorTablePage) {
-        start +=8;
+        start +=12;
         unsigned short byte1 = static_cast<unsigned char>(database_file[start]);
         unsigned short byte2 = static_cast<unsigned char>(database_file[start+1]);
         unsigned short page_address =   (byte1 << 8) | (byte2);
