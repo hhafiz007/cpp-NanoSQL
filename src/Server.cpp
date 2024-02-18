@@ -194,6 +194,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 int  getLeafPage(std::vector<char> &database_file, int start){
 
     unsigned short pageType = static_cast<unsigned char>(database_file[start]);
+     std::cerr << " debug: The interior page start is" << pageStart << "  "<<std::endl;
 
     
     if (int(pageType) == interiorTablePage) {
