@@ -130,7 +130,26 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
     std::vector<int> header; 
     
     next = processVarInt(database_file,rowAddress);
+
+    unsigned long prev = next;
+
     next = processVarInt(database_file,next);
+
+    unsigned short result = 0;
+    unsigned long j ;
+    for (  j = 0 ; j +prev < next-1; j++) {
+        result <<= 8;
+        unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
+        // std :: cout << currByte << " curr byte "<<int(database_file[prev+j])<<std:: endl;
+        result |=  (currByte) & 0b01111111;
+        
+    }
+    result <<= 8;
+    unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
+    result |= currByte;
+
+
+
     //  if (debugStage){
     //  std::cout <<"header start  " <<next<<" end " << std:: endl;
     //     }
@@ -168,7 +187,7 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
         
         if (debugStage && index == 0) {
 
-            std::cerr << currHeader.size()<<" "<<index<<" "<<startByte<<" "<<endExclusive<<" ";
+            currRow[0] = result;
         }
          
         next = endExclusive;
