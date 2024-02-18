@@ -756,9 +756,12 @@ int main(int argc, char* argv[]) {
         
         for (std::vector row : tableData){
 
+            int index = 0;
+
             for (std::string value : row) {
 
-                std::cerr << int(value)<<"  "; 
+                std::cerr << "index is "<<index<< <<value<<"  "; 
+                index+=1
             }
 
             std::cerr <<std::endl;
