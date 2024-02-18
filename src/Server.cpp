@@ -168,12 +168,14 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
         
         if (debugStage) {
 
-            std::cerr << currHeader<<"  "<<std::endl;
+            std::cerr << currHeader<<"  ";
         }
          
         next = endExclusive;
         index+=1;
     }
+
+    std::cerr << std::endl;
 
    
     tableData.push_back(currRow);
