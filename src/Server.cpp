@@ -760,7 +760,7 @@ int main(int argc, char* argv[]) {
 
             for (std::string value : row) {
 
-                std::cerr << "index is "<<index<< <<value<<"  "; 
+                std::cerr << "index is "<<index<< " value "<<value<<"  "; 
                 index+=1;
             }
 
