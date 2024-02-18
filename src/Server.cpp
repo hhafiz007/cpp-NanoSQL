@@ -837,23 +837,23 @@ int main(int argc, char* argv[]) {
         std :: cerr << "back here  " << tableData[0].size()  <<" "<<tableData.size()<<std::endl; // change comments kk mm mm ss nn nn
 
 
-        
-        // for (std::vector row : tableData){
+         int index = 0;
+        for (std::vector row : tableData){
 
-        //     int index = 0;
+           
 
-        //     for (std::string value : row) {
+            for (std::string value : row) {
 
-        //         std::cerr << "index is "<<index<< " value "<<value<<"  "; 
-        //         index+=1;
-        //     }
+                std::cerr << "index is "<<index<< " value "<<value<<"  "; 
+                index+=1;
+            }
 
-        //     std::cerr <<std::endl;
-        //     // break;
+            std::cerr <<std::endl;
+            // break;
 
 
 
-        // }    
+        }    
 
 
         printSelectColumns(tableData, columnNames , selectColumns,selectFilter);
