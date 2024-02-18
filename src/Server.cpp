@@ -168,7 +168,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
         
         if (debugStage) {
 
-            std::cerr << currHeader <"  "<<std::endl;
+            std::cerr << currHeader<<"  "<<std::endl;
         }
          
         next = endExclusive;
