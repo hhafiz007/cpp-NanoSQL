@@ -290,6 +290,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     for (unsigned short startAddress: leafAddresses){
 
         start = startAddress+8;
+        std::cerr<<"Page start is "<< startAddress<<"  ";
 
 
     // Calculate factorialass b
