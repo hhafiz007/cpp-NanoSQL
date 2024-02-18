@@ -203,9 +203,22 @@ int  getLeafPage(std::vector<char> &database_file, int start){
         start +=12;
         unsigned short byte1 = static_cast<unsigned char>(database_file[start]);
         unsigned short byte2 = static_cast<unsigned char>(database_file[start+1]);
-        unsigned short page_address =   (byte1 << 8) | (byte2);
-        std::cerr << " debug: The next  interior page start is" << page_address << "  "<<std::endl;
-        return getLeafPage(database_file,pageStart+page_address);
+        unsigned short page_address =   ((byte1 << 8) | (byte2))+pageStart;
+
+
+        uint32_t result1 = static_cast<uint32_t>(database_file[page_address]);
+        uint32_t result2 = static_cast<uint32_t>(database_file[page_address+1]);
+        uint32_t result3 = static_cast<uint32_t>(database_file[page_address+2]);
+        uint32_t result4 = static_cast<uint32_t>(database_file[page_address+3]);
+
+        unsigned short result =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
+
+
+
+
+    
+        std::cerr << " debug: The next  interior page start is" << result << "  "<<std::endl;
+        return getLeafPage(database_file,result);
     }
 
 
