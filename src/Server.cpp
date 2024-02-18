@@ -750,7 +750,7 @@ int main(int argc, char* argv[]) {
         
         printTableLeafPage(bytes,cellCount,newAddress,tableData);
 
-        std :: cerr << "back here  " << tableData[0].size()  <<" "; // change comments kk mm mm ss nn nn
+        std :: cerr << "back here  " << tableData[0].size()  <<" "<<std::endl; // change comments kk mm mm ss nn nn
 
 
         
@@ -758,7 +758,7 @@ int main(int argc, char* argv[]) {
 
             for (std::string value : row) {
 
-                std::cerr << value<<"  "; 
+                std::cerr << int(value)<<"  "; 
             }
 
             std::cerr <<std::endl;
