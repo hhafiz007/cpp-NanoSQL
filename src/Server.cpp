@@ -163,7 +163,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
         currRow.push_back(currHeader);
 
         
-            std::cout <<currHeader<<"  "<<std::endl;
+            std::cerr <<currHeader<<"  "<<std::endl;
         
         
          
