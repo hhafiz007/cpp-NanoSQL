@@ -211,14 +211,15 @@ int  getLeafPage(std::vector<char> &database_file, int start){
         uint32_t result3 = static_cast<uint32_t>(database_file[page_address+2]);
         uint32_t result4 = static_cast<uint32_t>(database_file[page_address+3]);
 
-        unsigned short result =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
+        uint32_t result =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
+        int nextAdress = (result-1)*4096
 
 
 
 
     
-        std::cerr << " debug: The next  interior page start is" << result << "  "<<std::endl;
-        return getLeafPage(database_file,result);
+        std::cerr << " debug: The next  interior page start is" << nextAdress << "  "<<std::endl;
+        return getLeafPage(database_file,newAddress);
     }
 
 
