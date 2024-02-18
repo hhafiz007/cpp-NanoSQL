@@ -231,7 +231,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
 
     if (int(pageType) == interiorTablePage) {
-        pageStart = getLeafPage(database_file,page_address)
+        pageStart = getLeafPage(database_file,pageStart)
         start = pageStart+8
         std::cerr << " debug: The page start is" << pageStart << "  "<<std::endl;
 
