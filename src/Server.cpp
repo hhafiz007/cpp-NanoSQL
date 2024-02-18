@@ -257,7 +257,7 @@ leafAddresses.push_back(start);
 
 void printTableLeafPage(std::vector<char> &database_file , unsigned short num_table,unsigned long start,std::vector<std::vector<std::string>> &tableData) {
     
-    std::vector<unsigned short> cellAddress;
+    
 
     // if (debugStage){
     //     std :: cerr << "the start d is"<<start<<"  ro ws "<< num_table << std::endl; 
@@ -309,10 +309,10 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         }
 
         
-
+    std::vector<unsigned short> cellAddress;
 
     // Calculate factorialass b
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < num_table; i++) {
         int startIndex = (2*i)+start; 
         unsigned short byte1 = static_cast<unsigned char>(database_file[startIndex]);
         unsigned short byte2 = static_cast<unsigned char>(database_file[startIndex+1]);
