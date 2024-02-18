@@ -280,11 +280,8 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         debugStage = true;
         pageStart = getLeafPage(database_file,pageStart,leafAddresses);
         start = pageStart+8;
-        unsigned short byte1 = static_cast<unsigned char>(database_file[pageStart+3]);
-        unsigned short byte2 = static_cast<unsigned char>(database_file[pageStart+4]);
-     num_table =   (byte1 << 8) | (byte2);
-        std::cerr << " debug: The page start is" << pageStart << " num_tables "<<num_table<<std::endl;
-
+        
+      
 
     }
     else{
@@ -295,10 +292,21 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     for (unsigned short startAddress: leafAddresses){
 
         start = startAddress+8;
-        if (pageStart == 0) {
+        if (startAddress == 0) {
             start = 108;
         }
         std::cerr<<"Page start is "<< startAddress<<"  ";
+
+        if (startAddress != 0) {
+
+            unsigned short byte1 = static_cast<unsigned char>(database_file[startAddress+3]);
+        unsigned short byte2 = static_cast<unsigned char>(database_file[startAddress+4]);
+        num_table =   (byte1 << 8) | (byte2);
+
+
+        }
+
+        
 
 
     // Calculate factorialass b
