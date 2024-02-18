@@ -138,13 +138,13 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
     unsigned short result = 0;
     unsigned long j ;
     for (  j = 0 ; j +prev < next-1; j++) {
-        result <<= 8;
+        result <<= 7;
         unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
         // std :: cout << currByte << " curr byte "<<int(database_file[prev+j])<<std:: endl;
         result |=  (currByte) & 0b01111111;
         
     }
-    result <<= 8;
+    result <<= 7;
     unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
     result |= currByte;
 
