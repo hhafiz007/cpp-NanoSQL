@@ -253,10 +253,15 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     if (int(pageType) == interiorTablePage) {
         pageStart = getLeafPage(database_file,pageStart);
         start = pageStart+8;
-        std::cerr << " debug: The page start is" << pageStart << "  "<<std::endl;
+        unsigned short byte1 = static_cast<unsigned char>(database_file[pageStart+3]);
+        unsigned short byte2 = static_cast<unsigned char>(database_file[startIndex+4]);
+     num_table =   (byte1 << 8) | (byte2);
+        std::cerr << " debug: The page start is" << pageStart << " num_tables "<<num_table<<std::endl;
 
 
     }
+
+
 
 
 
