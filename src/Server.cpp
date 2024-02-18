@@ -168,7 +168,7 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
         
         if (debugStage && index == 0) {
 
-            std::cerr << currHeader.size()<<" "<<index<<" ";
+            std::cerr << currHeader.size()<<" "<<index<<" "<<startByte<<" "<<endExclusive;
         }
          
         next = endExclusive;
