@@ -74,7 +74,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 }
 
 
- int processHeader(std::vector<char> &database_file ,unsigned short rowAddress, std::vector<int> &header ){
+ int processHeader(std::vector<char> &database_file ,unsigned long rowAddress, std::vector<int> &header ){
 
     int totalBytes = int(database_file[rowAddress]);
 
@@ -124,7 +124,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
 
 
 
-int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std::vector<std::vector<std::string>> &tableData){
+int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::vector<std::vector<std::string>> &tableData){
 
     int next = rowAddress;
     std::vector<int> header; 
@@ -314,7 +314,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     //   std::cerr<<"total  cell is "<< num_table<<"  "<<start<<std::endl;
 
         
-    std::vector<unsigned short> cellAddress;
+    std::vector<unsigned long> cellAddress;
 
     // Calculate factorialass b
     for (int i = 0; i < num_table; i++) {
