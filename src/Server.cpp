@@ -179,16 +179,22 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
             startByte+=1;
         }
 
-        currRow.push_back(currHeader);
+         if (index == 0) {
+            // std::cerr << "cur row is " <<result<<"  "<<std::endl;
+             currRow.push_back(result);
+        }
+        else{
+             currRow.push_back(currHeader);
+            
+        }
+
+       
 
         if (index == 1 && printTables == true) {
             std::cout <<currHeader<<"  "<<std::endl;
         }
         
-        if (index == 0) {
-            // std::cerr << "cur row is " <<result<<"  "<<std::endl;
-            currRow[0] = result;
-        }
+       
          
         next = endExclusive;
         index+=1;
