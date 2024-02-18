@@ -209,11 +209,13 @@ int  getLeafPage(std::vector<char> &database_file, int start,std::vector<uint32_
     if (int(pageType) == interiorTablePage) {
         unsigned short num_table = (static_cast<unsigned char>(database_file[pageStart+4]) | (static_cast<unsigned char>(database_file[pageStart+3]) << 8));
         start +=12;
-        std::cerr << " total interior page  is" << num_table << "  "<<std::endl;
+        
         
 
 
         for (int i = 0; i < num_table; i++) {
+
+       
 
         
         int startIndex = (2*i)+start; 
@@ -231,12 +233,11 @@ int  getLeafPage(std::vector<char> &database_file, int start,std::vector<uint32_
         uint32_t result =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
         int nextAdress = (result-1)*4096;
 
-
-
-
     
         // std::cerr << " debug: The next  interior page start is" << nextAdress << "  "<<std::endl;
          getLeafPage(database_file,nextAdress,leafAddresses);
+
+          std::cerr << " total interior page  is" << num_table << " curr page is  "<<i<<" "<<std::endl;
         }
     }
 
