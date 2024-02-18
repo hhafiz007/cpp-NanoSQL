@@ -181,7 +181,7 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
 
          if (index == 0) {
             // std::cerr << "cur row is " <<result<<"  "<<std::endl;
-             currRow.push_back(result);
+             currRow.push_back(std::to_string(result););
         }
         else{
              currRow.push_back(currHeader);
