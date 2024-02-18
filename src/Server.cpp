@@ -280,6 +280,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         debugStage = true;
         pageStart = getLeafPage(database_file,pageStart,leafAddresses);
         start = pageStart+8;
+        std::cerr<<"total leaf pages is "<< leafAddresses.size()<<"  ";
         
       
 
