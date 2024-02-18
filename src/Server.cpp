@@ -266,7 +266,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
 
-    std::vector<uint32_t> leafAddresses;
+    std::vector<unsigned short> leafAddresses;
 
 
     std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
@@ -282,9 +282,14 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
 
     }
+    else{
+        leafAddresses.push_back(unsigned_short(pageStart))
+    }
 
 
+    for (unsigned_short startAddress: leafAddresses){
 
+        start = startAddress+8;
 
 
     // Calculate factorialass b
@@ -313,7 +318,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         
     }
 
-
+    }
    
 }
 
