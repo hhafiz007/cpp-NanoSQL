@@ -294,8 +294,10 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     for (unsigned long startAddress: leafAddresses){
 
         start = startAddress+8;
+        pageStart = startAddress;
         if (startAddress == 0) {
             start = 108;
+        
         }
         std::cerr<<"Page start is "<< startAddress<<"  ";
 
