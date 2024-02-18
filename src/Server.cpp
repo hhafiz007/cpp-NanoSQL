@@ -197,21 +197,29 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 }
 
 
-int  getLeafPage(std::vector<char> &database_file, int start){
+int  getLeafPage(std::vector<char> &database_file, int start,std::vector<uint32_t> &leafAddresses){
 
     unsigned short pageType = static_cast<unsigned char>(database_file[start]);
     int pageStart = start;
+
     std::cerr << " debug: The interior page start is" << start << "  "<<std::endl;
     std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
 
     
     if (int(pageType) == interiorTablePage) {
+        unsigned short num_table = (static_cast<unsigned char>(database_file[pageStart+4]) | (static_cast<unsigned char>(database_file[pageStart+3]) << 8));
         start +=12;
-        unsigned short byte1 = static_cast<unsigned char>(database_file[start]);
-        unsigned short byte2 = static_cast<unsigned char>(database_file[start+1]);
-        unsigned short page_address =   ((byte1 << 8) | (byte2))+pageStart;
+        
 
-         std::cerr << " debug: The cell address is" << page_address<< "  "<<std::endl;
+
+        for (int i = 0; i < num_table; i++) {
+
+        
+        int startIndex = (2*i)+start; 
+
+        unsigned short byte1 = static_cast<unsigned char>(database_file[startIndex]);
+        unsigned short byte2 = static_cast<unsigned char>(database_file[startIndex+1]);
+        unsigned short page_address =   ((byte1 << 8) | (byte2))+pageStart;
 
 
         uint32_t result1 = static_cast<uint32_t>(database_file[page_address]);
@@ -226,14 +234,17 @@ int  getLeafPage(std::vector<char> &database_file, int start){
 
 
     
-        std::cerr << " debug: The next  interior page start is" << nextAdress << "  "<<std::endl;
+        // std::cerr << " debug: The next  interior page start is" << nextAdress << "  "<<std::endl;
         return getLeafPage(database_file,nextAdress);
+        }
     }
 
 
 
-    return start;
+    leafAddresses.push_back(start);
 }
+
+
 
 
 void printTableLeafPage(std::vector<char> &database_file , unsigned short num_table,int start,std::vector<std::vector<std::string>> &tableData) {
@@ -253,12 +264,14 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
 
+    std::vector<uint32_t> leafAddresses;
+
 
     std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
 
     if (int(pageType) == interiorTablePage) {
         debugStage = true;
-        pageStart = getLeafPage(database_file,pageStart);
+        pageStart = getLeafPage(database_file,pageStart,leafAddresses);
         start = pageStart+8;
         unsigned short byte1 = static_cast<unsigned char>(database_file[pageStart+3]);
         unsigned short byte2 = static_cast<unsigned char>(database_file[pageStart+4]);
