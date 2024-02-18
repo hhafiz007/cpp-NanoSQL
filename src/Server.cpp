@@ -202,7 +202,7 @@ int  getLeafPage(std::vector<char> &database_file, unsigned long  start,std::vec
     unsigned short pageType = static_cast<unsigned char>(database_file[start]);
     unsigned long pageStart = start;
 
-    std::cerr << " debug: The interior page start is" << start << "  "<<std::endl;
+    // std::cerr << " debug: The interior page start is" << start << "  "<<std::endl;
    
 
     
@@ -226,22 +226,22 @@ int  getLeafPage(std::vector<char> &database_file, unsigned long  start,std::vec
                 unsigned long  result4 = static_cast<unsigned char>(database_file[page_address+3]);
                
                 unsigned long  result =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
-                  std::cerr << " debug: The next   page result is" << result << "  "<<std::endl;
+                //   std::cerr << " debug: The next   page result is" << result << "  "<<std::endl;
 
 
                 int nextAdress = (result-1)*4096;
 
             
-                std::cerr << " debug: The next  interior page start is" << nextAdress << "  "<<std::endl;
+                // std::cerr << " debug: The next  interior page start is" << nextAdress << "  "<<std::endl;
                 int j = getLeafPage(database_file,nextAdress,leafAddresses);
                 i+=1;
 
-                std::cerr << " total interior page  is" << num_table << " curr page is  "<<i<<" "<<num_table<<" "<<std::endl;
+                // std::cerr << " total interior page  is" << num_table << " curr page is  "<<i<<" "<<num_table<<" "<<std::endl;
         }
     }
     else
     {
-         std::cerr << " debug: pputting page type is" << start << "  "<<std::endl;
+        //  std::cerr << " debug: pputting page type is" << start << "  "<<std::endl;
 leafAddresses.push_back(start);
 
     }
@@ -275,13 +275,13 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     std::vector<unsigned long> leafAddresses;
 
 
-    std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
+    // std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
 
     if (int(pageType) == interiorTablePage) {
         debugStage = true;
         pageStart = getLeafPage(database_file,pageStart,leafAddresses);
         start = pageStart+8;
-        std::cerr<<"total leaf pages is "<< leafAddresses.size()<<"  ";
+        // std::cerr<<"total leaf pages is "<< leafAddresses.size()<<"  ";
         
       
 
@@ -297,7 +297,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         if (startAddress == 0) {
             start = 108;
         }
-        std::cerr<<"Page start is "<< startAddress<<"  ";
+        // std::cerr<<"Page start is "<< startAddress<<"  ";
 
         if (startAddress != 0) {
 
