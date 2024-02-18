@@ -186,7 +186,7 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
         }
         
         if (index == 0) {
-            std::cerr << "cur row is " <<result<<"  "<<std::endl;
+            // std::cerr << "cur row is " <<result<<"  "<<std::endl;
             currRow[0] = result;
         }
          
@@ -355,14 +355,14 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     std::cerr<<"Page start is "<< startAddress<<"  celllls are "<< num_table <<" addresses are"<<\
     cellAddress.size()<<std::endl;
 
-     if (tableData.size() > 56) {
-            break;
-        }
+    //  if (tableData.size() > 56) {
+    //         break;
+    //     }
         
 
     for (int i = 0; i < cellAddress.size(); ++i) {
         
-     std::cerr << "processing row  " <<cellAddress[i]<<std::endl; 
+    //  std::cerr << "processing row  " <<cellAddress[i]<<std::endl; 
         
        getRowData(database_file,cellAddress[i],tableData);
     //    if (tableData.size() > 58) {
