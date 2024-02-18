@@ -166,10 +166,10 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
             std::cout <<currHeader<<"  "<<std::endl;
         }
         
-        if (debugStage) {
+        // if (debugStage) {
 
-            std::cerr << currHeader<<" "<<index<<" ";
-        }
+        //     std::cerr << currHeader<<" "<<index<<" ";
+        // }
          
         next = endExclusive;
         index+=1;
@@ -338,6 +338,10 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         
        getRowData(database_file,cellAddress[i],tableData);
         // std::cerr << "the table size  is  " <<tableData.size()<<std::endl; 
+
+        if (tableData.size() > 200) {
+            break;
+        }
     //    break;
         
     }
