@@ -175,7 +175,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
         index+=1;
     }
 
-    std::cerr <<" total columns are are" << currRow.size() << std::endl;
+    std::cerr <<" total colucolsmns are are" << currRow.size() << std::endl;
 
    
     tableData.push_back(currRow);
