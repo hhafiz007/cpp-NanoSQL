@@ -162,9 +162,9 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 
         currRow.push_back(currHeader);
 
-      
-            std::cerr <<currHeader<<"  ";
-        
+        if (index == 1 && printTables == true) {
+            std::cout <<currHeader<<"  ";
+        }
         
          
         next = endExclusive;
