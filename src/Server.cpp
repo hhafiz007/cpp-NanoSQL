@@ -349,7 +349,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     }
 
     std::cerr << "the table size  is  " <<tableData.size()<<std::endl; 
-     if (tableData.size() > 100) {
+     if (tableData.size() > 56) {
             break;
         }
     
