@@ -333,7 +333,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     // std::cerr << "processing row  " <<cellAddress[i]<<std::endl; 
         
        getRowData(database_file,cellAddress[i],tableData);
-        std::cerr << "the table size  is  " <<tableData.size()<<std::endl; 
+        // std::cerr << "the table size  is  " <<tableData.size()<<std::endl; 
     //    break;
         
     }
@@ -529,7 +529,7 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
 
         if (filter.filter && filterIndex != filter.value){
-            std::cerr <<" It did not get select because filter is "<< filter.key<<std::endl;
+            std::cerr <<" It did not get select because filter is "<< filter.key << " table size is "<< tableData.size()<<std::endl;
              std::cerr <<" It did not get select because table value  is "<< filterIndex<<std::endl;
               std::cerr <<" It did not get select because table index value  is "<< index<<std::endl;
             continue;
