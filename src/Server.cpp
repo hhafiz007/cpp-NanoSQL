@@ -166,10 +166,10 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
             std::cout <<currHeader<<"  "<<std::endl;
         }
         
-        // if (debugStage) {
+        if (debugStage) {
 
-        //     std::cerr << currHeader<<" "<<index<<" ";
-        // }
+            std::cerr << currHeader<<" "<<index<<" ";
+        }
          
         next = endExclusive;
         index+=1;
@@ -336,9 +336,9 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     std::cerr<<"Page start is "<< startAddress<<"  celllls are "<< num_table <<" addresses are"<<\
     cellAddress.size()<<std::endl;
 
-    //  if (tableData.size() > 58) {
-    //         break;
-    //     }
+     if (tableData.size() > 56) {
+            break;
+        }
         
 
     for (int i = 0; i < cellAddress.size(); ++i) {
@@ -546,9 +546,9 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         return std::tolower(c);
     });
         if (filter.filter && filterIndex != filter.value){
-            std::cerr <<" It did not get select because filter is "<< filter.key << " table size is "<< tableData.size()<<std::endl;
-             std::cerr <<" It did not get select because table value  is "<< filterIndex<<std::endl;
-              std::cerr <<" It did not get select because table j value  is "<< j<<" "<<index<<" "<< tableData[j][1]<<std::endl;
+            // std::cerr <<" It did not get select because filter is "<< filter.key << " table size is "<< tableData.size()<<std::endl;
+            //  std::cerr <<" It did not get select because table value  is "<< filterIndex<<std::endl;
+            //   std::cerr <<" It did not get select because table j value  is "<< j<<" "<<index<<" "<< tableData[j][1]<<std::endl;
             continue;
         }
 
