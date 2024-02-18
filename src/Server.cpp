@@ -750,7 +750,7 @@ int main(int argc, char* argv[]) {
         
         printTableLeafPage(bytes,cellCount,newAddress,tableData);
 
-        std :: cerr << "back here  " << tableData.size()  <<" "; // change comments kk mm mm ss nn nn
+        std :: cerr << "back here  " << tableData[0].size()  <<" "; // change comments kk mm mm ss nn nn
 
         printSelectColumns(tableData, columnNames , selectColumns,selectFilter);
 
