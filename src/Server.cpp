@@ -361,9 +361,9 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     // std::cerr<<"Page start is "<< startAddress<<"  celllls are "<< num_table <<" addresses are"<<\
     cellAddress.size()<<std::endl;
 
-     if (tableData.size() >= 57) {
-            break;
-        }
+    //  if (tableData.size() >= 57) {
+    //         break;
+    //     }
         
 
     for (int i = 0; i < cellAddress.size(); ++i) {
@@ -371,9 +371,9 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     //  std::cerr << "processing row  " <<cellAddress[i]<<std::endl; 
         
        getRowData(database_file,cellAddress[i],tableData);
-       if (tableData.size() >= 57) {
-            break;
-        }
+    //    if (tableData.size() >= 57) {
+    //         break;
+    //     }
     
 
        
@@ -849,11 +849,12 @@ int main(int argc, char* argv[]) {
 
                     
                 std::cerr << "index is "<<index<< " value "<<value<<"  "; 
+                 std::cerr <<std::endl;
                     }
             }
             index+=1;
 
-            std::cerr <<std::endl;
+           
             // break;
 
 
