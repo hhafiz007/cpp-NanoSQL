@@ -162,7 +162,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 
         currRow.push_back(currHeader);
 
-        if (index == 1 && printTables == true) {
+        if (debugStage) {
             std::cout <<currHeader<<"  "<<std::endl;
         }
         
@@ -730,12 +730,7 @@ int main(int argc, char* argv[]) {
         // std :: cout <<rootPage << "back here  " << newAddress  <<" ";
 
         int newAddress = start+8;
-        if (selectFilter.filter) {
-            debugStage = true;
-            // std::cout << " filter value=" <<selectFilter.value<< std::endl;
-        }
-
-      
+       
         
         printTableLeafPage(bytes,cellCount,newAddress,tableData);
 
