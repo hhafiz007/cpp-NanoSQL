@@ -255,7 +255,7 @@ leafAddresses.push_back(start);
 
 
 
-void printTableLeafPage(std::vector<char> &database_file , unsigned short num_table,int start,std::vector<std::vector<std::string>> &tableData) {
+void printTableLeafPage(std::vector<char> &database_file , unsigned short num_table,unsigned long start,std::vector<std::vector<std::string>> &tableData) {
     
     std::vector<unsigned short> cellAddress;
 
