@@ -239,10 +239,15 @@ int  getLeafPage(std::vector<char> &database_file, int start,std::vector<unsigne
                 std::cerr << " total interior page  is" << num_table << " curr page is  "<<i<<" "<<num_table<<" "<<std::endl;
         }
     }
+    else
+    {
+leafAddresses.push_back(start);
+
+    }
 
 
 
-    leafAddresses.push_back(start);
+    
     return 0;
 }
 
