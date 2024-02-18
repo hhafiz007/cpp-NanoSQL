@@ -235,7 +235,7 @@ int  getLeafPage(std::vector<char> &database_file, int start,std::vector<uint32_
 
     
         // std::cerr << " debug: The next  interior page start is" << nextAdress << "  "<<std::endl;
-        return getLeafPage(database_file,nextAdress,leafAddresses);
+         getLeafPage(database_file,nextAdress,leafAddresses);
         }
     }
 
