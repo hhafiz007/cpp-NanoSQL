@@ -348,7 +348,7 @@ std::vector<std::string> columnNames;
         contents += (*iter)[0].str().substr(1, (*iter)[0].str().size() - 2); // Remove surrounding parentheses
     }
     std::vector<std::string> tokens = split(contents, ',');
-    std::cerr << "contents  are" << contents<<"  \n"<<sqlStatement<<"  ";
+    // std::cerr << "contents  are" << contents<<"  \n"<<sqlStatement<<"  ";
     int index = 0;
 
     while( index <tokens.size()){
@@ -710,7 +710,7 @@ int main(int argc, char* argv[]) {
         std::vector<std::string> columnNames = getRootPage(schemaData,tableName,rootPage);
 
         for (std::string col : columnNames) {
-            std::cerr << "col name is " << columnNames.size()<<std::endl;
+            std::cerr << "col name is " << col<<std::endl;
         }
 
          std::cerr << "Debug4000: " << rootPage <<"   "<<tableName <<std::endl;
