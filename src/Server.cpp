@@ -213,7 +213,7 @@ int  getLeafPage(std::vector<char> &database_file, int start,std::vector<uint32_
         
 
 
-        for (int i = 0; i < num_table; i++) {
+        for (int i = 0; i < int(num_table); i++) {
 
        
 
