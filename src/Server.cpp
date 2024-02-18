@@ -194,6 +194,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 int  getLeafPage(std::vector<char> &database_file, int start){
 
     unsigned short pageType = static_cast<unsigned char>(database_file[start]);
+    int pageStart = start;
      std::cerr << " debug: The interior page start is" << start << "  "<<std::endl;
 
     
@@ -203,7 +204,7 @@ int  getLeafPage(std::vector<char> &database_file, int start){
         unsigned short byte2 = static_cast<unsigned char>(database_file[start+1]);
         unsigned short page_address =   (byte1 << 8) | (byte2);
         std::cerr << " debug: The next  interior page start is" << page_address << "  "<<std::endl;
-        return getLeafPage(database_file,page_address);
+        return getLeafPage(database_file,pageStart+page_address);
     }
 
 
