@@ -535,7 +535,7 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
             continue;
         }
 
-        std::cout<<"welcome for printing"<<std::endl;
+        std::cerr<<"welcome for printing"<<std::endl;
 
         rowData = tableData[j][columnIndices[0]];
         int k =1;
