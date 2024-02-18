@@ -201,7 +201,7 @@ int  getLeafPage(std::vector<char> &database_file, int start){
         unsigned short byte1 = static_cast<unsigned char>(database_file[start]);
         unsigned short byte2 = static_cast<unsigned char>(database_file[start+1]);
         unsigned short page_address =   (byte1 << 8) | (byte2);
-        return getLeafPage(database_file,page_address)
+        return getLeafPage(database_file,page_address);
     }
 
 
