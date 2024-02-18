@@ -299,7 +299,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
             start = 108;
         
         }
-        std::cerr<<"Page start is "<< startAddress<<"  ";
+        // std::cerr<<"Page start is "<< startAddress<<"  ";
 
         if (startAddress != 0) {
 
@@ -310,7 +310,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
         }
 
-      std::cerr<<"total  cell is "<< num_table<<"  "<<start<<std::endl;
+    //   std::cerr<<"total  cell is "<< num_table<<"  "<<start<<std::endl;
 
         
     std::vector<unsigned short> cellAddress;
@@ -341,7 +341,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     //    break;
         
     }
-    break;
+    
 
     }
    
@@ -529,9 +529,9 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
         return std::tolower(c);
     });
         if (filter.filter && filterIndex != filter.value){
-            std::cerr <<" It did not get select because filter is "<< filter.key << " table size is "<< tableData.size()<<std::endl;
-             std::cerr <<" It did not get select because table value  is "<< filterIndex<<std::endl;
-              std::cerr <<" It did not get select because table j value  is "<< j<<" "<<index<<" "<< tableData[j][1]<<std::endl;
+            // std::cerr <<" It did not get select because filter is "<< filter.key << " table size is "<< tableData.size()<<std::endl;
+            //  std::cerr <<" It did not get select because table value  is "<< filterIndex<<std::endl;
+            //   std::cerr <<" It did not get select because table j value  is "<< j<<" "<<index<<" "<< tableData[j][1]<<std::endl;
             continue;
         }
 
@@ -792,26 +792,26 @@ int main(int argc, char* argv[]) {
         
         printTableLeafPage(bytes,cellCount,newAddress,tableData);
 
-        std :: cerr << "back here  " << tableData[0].size()  <<" "<<std::endl; // change comments kk mm mm ss nn nn
+        std :: cerr << "back here  " << tableData[0].size()  <<" "<<tableData.size()<<std::endl; // change comments kk mm mm ss nn nn
 
 
         
-        for (std::vector row : tableData){
+        // for (std::vector row : tableData){
 
-            int index = 0;
+        //     int index = 0;
 
-            for (std::string value : row) {
+        //     for (std::string value : row) {
 
-                std::cerr << "index is "<<index<< " value "<<value<<"  "; 
-                index+=1;
-            }
+        //         std::cerr << "index is "<<index<< " value "<<value<<"  "; 
+        //         index+=1;
+        //     }
 
-            std::cerr <<std::endl;
-            break;
+        //     std::cerr <<std::endl;
+        //     break;
 
 
 
-        }    
+        // }    
 
 
         printSelectColumns(tableData, columnNames , selectColumns,selectFilter);
