@@ -323,7 +323,7 @@ for (std::vector table : tableData){
       std::cerr << "Deebugtable Name: " << tableName << std::endl;
     //  std::cerr <<" table name " <<tableName <<" page number" << table[3][0] << std::endl;
         if (table[1] == tableName){
-            // std::cout << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
+            std::cerr << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
             rootPage =  int(table[3][0]);
            
             
