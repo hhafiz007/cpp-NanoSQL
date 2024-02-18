@@ -218,15 +218,17 @@ int  getLeafPage(std::vector<char> &database_file, int start,std::vector<uint32_
                 unsigned short byte1 = static_cast<unsigned char>(database_file[startIndex]);
                 unsigned short byte2 = static_cast<unsigned char>(database_file[startIndex+1]);
                 unsigned short page_address =   ((byte1 << 8) | (byte2))+pageStart;
-                std::cerr << " debug: The next   page address is" << page_address << "  "<<std::endl;
+               
+
+                unsigned long result1 = static_cast<unsigned char>(database_file[page_address]);
+                unsigned long  result2 = static_cast<unsigned char>(database_file[page_address+1]);
+                unsigned long  result3 = static_cast<unsigned char>(database_file[page_address+2]);
+                unsigned long  result4 = static_cast<unsigned char>(database_file[page_address+3]);
+               
+                unsigned long  result =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
+                  std::cerr << " debug: The next   page result is" << result << "  "<<std::endl;
 
 
-                uint32_t result1 = static_cast<uint32_t>(database_file[page_address]);
-                uint32_t result2 = static_cast<uint32_t>(database_file[page_address+1]);
-                uint32_t result3 = static_cast<uint32_t>(database_file[page_address+2]);
-                uint32_t result4 = static_cast<uint32_t>(database_file[page_address+3]);
-
-                uint32_t result =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
                 int nextAdress = (result-1)*4096;
 
             
