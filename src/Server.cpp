@@ -299,7 +299,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
             start = 108;
         
         }
-        
+         
 
         if (startAddress != 0) {
 
@@ -336,6 +336,11 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     std::cerr<<"Page start is "<< startAddress<<"  cells are "<< num_table <<" addresses are"<<\
     cellAddress.size()<<std::endl;
 
+     if (tableData.size() > 56) {
+            break;
+        }
+        
+
     for (int i = 0; i < cellAddress.size(); ++i) {
         
     // std::cerr << "processing row  " <<cellAddress[i]<<std::endl; 
@@ -349,9 +354,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     }
 
     std::cerr << "the table size  is  " <<tableData.size()<<std::endl; 
-     if (tableData.size() > 56) {
-            break;
-        }
+   
     
 
     }
