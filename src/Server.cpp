@@ -291,7 +291,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     }
 
 
-    for (unsigned short startAddress: leafAddresses){
+    for (unsigned long startAddress: leafAddresses){
 
         start = startAddress+8;
         if (startAddress == 0) {
