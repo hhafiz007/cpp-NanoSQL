@@ -213,11 +213,11 @@ int  getLeafPage(std::vector<char> &database_file, int start,std::vector<uint32_
         while (i < int(num_table)) {
 
     
-                // int startIndex = (2*i)+start; 
+                int startIndex = (2*i)+start; 
 
-                // unsigned short byte1 = static_cast<unsigned char>(database_file[startIndex]);
-                // unsigned short byte2 = static_cast<unsigned char>(database_file[startIndex+1]);
-                // unsigned short page_address =   ((byte1 << 8) | (byte2))+pageStart;
+                unsigned short byte1 = static_cast<unsigned char>(database_file[startIndex]);
+                unsigned short byte2 = static_cast<unsigned char>(database_file[startIndex+1]);
+                unsigned short page_address =   ((byte1 << 8) | (byte2))+pageStart;
 
 
                 // uint32_t result1 = static_cast<uint32_t>(database_file[page_address]);
