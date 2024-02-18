@@ -337,7 +337,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     // std::cerr << "processing row  " <<cellAddress[i]<<std::endl; 
         
        getRowData(database_file,cellAddress[i],tableData);
-        // std::cerr << "the table size  is  " <<tableData.size()<<std::endl; 
+    std::cerr << "the table size  is  " <<tableData.size()<<std::endl; 
 
         if (tableData.size() > 200) {
             break;
@@ -800,22 +800,22 @@ int main(int argc, char* argv[]) {
 
 
         
-        // for (std::vector row : tableData){
+        for (std::vector row : tableData){
 
-        //     int index = 0;
+            int index = 0;
 
-        //     for (std::string value : row) {
+            for (std::string value : row) {
 
-        //         std::cerr << "index is "<<index<< " value "<<value<<"  "; 
-        //         index+=1;
-        //     }
+                std::cerr << "index is "<<index<< " value "<<value<<"  "; 
+                index+=1;
+            }
 
-        //     std::cerr <<std::endl;
-        //     break;
+            std::cerr <<std::endl;
+            // break;
 
 
 
-        // }    
+        }    
 
 
         printSelectColumns(tableData, columnNames , selectColumns,selectFilter);
