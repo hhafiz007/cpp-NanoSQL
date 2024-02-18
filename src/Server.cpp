@@ -348,7 +348,7 @@ std::vector<std::string> columnNames;
         contents += (*iter)[0].str().substr(1, (*iter)[0].str().size() - 2); // Remove surrounding parentheses
     }
     std::vector<std::string> tokens = split(contents, ',');
-    // std::cerr << "contents  are" << contents<<"  \n"<<sqlStatement<<"  ";
+    /std::cerr << "contents  are"<<sqlStatement<<"  ";
     int index = 0;
 
     while( index <tokens.size()){
@@ -751,6 +751,8 @@ int main(int argc, char* argv[]) {
         printTableLeafPage(bytes,cellCount,newAddress,tableData);
 
         std :: cerr << "back here  " << tableData[0].size()  <<" "; // change comments kk mm mm ss nn nn
+
+
 
         printSelectColumns(tableData, columnNames , selectColumns,selectFilter);
 
