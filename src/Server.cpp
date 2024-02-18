@@ -753,6 +753,20 @@ int main(int argc, char* argv[]) {
         std :: cerr << "back here  " << tableData[0].size()  <<" "; // change comments kk mm mm ss nn nn
 
 
+        
+        for (std::vector row : tableData){
+
+            for (std::string value : row) {
+
+                std::cerr << value<<"  "; 
+            }
+
+            std::cerr <<std::endl;
+
+
+
+        }    
+
 
         printSelectColumns(tableData, columnNames , selectColumns,selectFilter);
 
