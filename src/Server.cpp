@@ -219,7 +219,7 @@ int  getLeafPage(std::vector<char> &database_file, int start){
 
     
         std::cerr << " debug: The next  interior page start is" << nextAdress << "  "<<std::endl;
-        return getLeafPage(database_file,newAddress);
+        return getLeafPage(database_file,nextAdress);
     }
 
 
