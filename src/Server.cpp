@@ -168,14 +168,14 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
         
         if (debugStage) {
 
-            std::cerr << currHeader<<" "<<index<<" ";
+            // std::cerr << currHeader<<" "<<index<<" ";
         }
          
         next = endExclusive;
         index+=1;
     }
 
-    std::cerr <<" total colucolsmns are are" << currRow.size() << std::endl;
+    // std::cerr <<" total colucolsmns are are" << currRow.size() << std::endl;
 
    
     tableData.push_back(currRow);
@@ -707,6 +707,10 @@ int main(int argc, char* argv[]) {
         
         int rootPage;
         std::vector<std::string> columnNames = getRootPage(schemaData,tableName,rootPage);
+
+        for (std::string col : columnNames) {
+            std::cerr << "col name is " << col;<<std::endl
+        }
 
          std::cerr << "Debug4000: " << rootPage <<"   "<<tableName <<std::endl;
         
