@@ -243,6 +243,7 @@ int  getLeafPage(std::vector<char> &database_file, int start,std::vector<uint32_
 
 
     leafAddresses.push_back(start);
+    return 0;
 }
 
 
