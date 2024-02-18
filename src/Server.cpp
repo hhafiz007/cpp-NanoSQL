@@ -308,6 +308,8 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
         }
 
+      std::cerr<<"total  cell is "<< num_table<<"  "<<start<<std::endl;
+
         
     std::vector<unsigned short> cellAddress;
 
