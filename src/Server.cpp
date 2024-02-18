@@ -283,11 +283,11 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
     }
     else{
-        leafAddresses.push_back(unsigned short(pageStart))
+        leafAddresses.push_back((pageStart))
     }
 
 
-    for (unsigned_short startAddress: leafAddresses){
+    for (unsigned short startAddress: leafAddresses){
 
         start = startAddress+8;
 
