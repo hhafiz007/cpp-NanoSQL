@@ -761,7 +761,7 @@ int main(int argc, char* argv[]) {
             for (std::string value : row) {
 
                 std::cerr << "index is "<<index<< <<value<<"  "; 
-                index+=1
+                index+=1;
             }
 
             std::cerr <<std::endl;
