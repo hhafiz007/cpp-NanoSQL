@@ -220,10 +220,10 @@ int  getLeafPage(std::vector<char> &database_file, int start,std::vector<uint32_
                 unsigned short page_address =   ((byte1 << 8) | (byte2))+pageStart;
 
 
-                // uint32_t result1 = static_cast<uint32_t>(database_file[page_address]);
-                // uint32_t result2 = static_cast<uint32_t>(database_file[page_address+1]);
-                // uint32_t result3 = static_cast<uint32_t>(database_file[page_address+2]);
-                // uint32_t result4 = static_cast<uint32_t>(database_file[page_address+3]);
+                uint32_t result1 = static_cast<uint32_t>(database_file[page_address]);
+                uint32_t result2 = static_cast<uint32_t>(database_file[page_address+1]);
+                uint32_t result3 = static_cast<uint32_t>(database_file[page_address+2]);
+                uint32_t result4 = static_cast<uint32_t>(database_file[page_address+3]);
 
                 // uint32_t result =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
                 // int nextAdress = (result-1)*4096;
