@@ -196,7 +196,7 @@ int  getLeafPage(std::vector<char> &database_file, int start){
     unsigned short pageType = static_cast<unsigned char>(database_file[start]);
     int pageStart = start;
     std::cerr << " debug: The interior page start is" << start << "  "<<std::endl;
-    std::cerr << " debug: The page type is" << database_file[start] << "  "<<std::endl;
+    std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
 
     
     if (int(pageType) == interiorTablePage) {
