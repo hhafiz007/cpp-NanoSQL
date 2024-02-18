@@ -55,7 +55,7 @@ std::string stripValue(const std::string& str) {
 
 
 
-int processVarInt(std::vector<char> &database_file ,unsigned short rowAddress){
+int processVarInt(std::vector<char> &database_file ,unsigned long rowAddress){
     // std::cout << "row Address: " << rowAddress << std::endl;
 
     int i = 0;
