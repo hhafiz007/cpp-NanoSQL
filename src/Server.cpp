@@ -333,6 +333,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     // std::cerr << "processing row  " <<cellAddress[i]<<std::endl; 
         
        getRowData(database_file,cellAddress[i],tableData);
+        std::cerr << "the table size  is  " <<tableData.size()<<std::endl; 
     //    break;
         
     }
