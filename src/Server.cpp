@@ -336,7 +336,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     std::cerr<<"Page start is "<< startAddress<<"  cells are "<< num_table <<" addresses are"<<\
     cellAddress.size()<<std::endl;
 
-     if (tableData.size() > 56) {
+     if (tableData.size() > 58) {
             break;
         }
         
