@@ -205,10 +205,10 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         pageStart=0;
     } 
 
-    unsigned short pageType = static_cast<unsigned char>(database_file[start]);
+    unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
 
 
-    std::cerr << " debug: The page type is" << pageType << std::endl;
+    std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
 
 
 
