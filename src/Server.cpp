@@ -212,7 +212,7 @@ int  getLeafPage(std::vector<char> &database_file, int start){
         uint32_t result4 = static_cast<uint32_t>(database_file[page_address+3]);
 
         uint32_t result =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
-        int nextAdress = (result-1)*4096
+        int nextAdress = (result-1)*4096;
 
 
 
