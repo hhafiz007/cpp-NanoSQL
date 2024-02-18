@@ -309,7 +309,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
 
         }
-        std::cerr<<"Page start is "<< startAddress<<"  cells are "<< num_table <<" ";
+        
 
     //   std::cerr<<"total  cell is "<< num_table<<"  "<<start<<std::endl;
 
@@ -332,6 +332,9 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         
 
     }
+
+    std::cerr<<"Page start is "<< startAddress<<"  cells are "<< num_table <<" addresses are"<<\
+    cellAddress.size()<<std::endl;
 
     for (int i = 0; i < cellAddress.size(); ++i) {
         
