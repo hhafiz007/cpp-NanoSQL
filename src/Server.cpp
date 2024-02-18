@@ -85,14 +85,14 @@ int processVarInt(std::vector<char> &database_file ,unsigned long rowAddress){
    
 
     
-    int i = rowAddress+1;
+    unsigned long i = rowAddress+1;
 
     while (i < rowAddress+totalBytes) {
       
-        int prev = i;
-        int next = processVarInt(database_file,prev);
+        unsigned long  prev = i;
+        unsigned long next = processVarInt(database_file,prev);
         unsigned short result = 0;
-        int j ;
+        unsigned long j ;
         for (  j = 0 ; j +prev < next-1; j++) {
             result <<= 8;
             unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
@@ -149,8 +149,8 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
         }
    
     
-        int startByte = next;
-        int endExclusive = next + element;
+        unsigned long startByte = next;
+        unsigned long  endExclusive = next + element;
         // if (debugStage) {
         // std::cout <<"printing start element " <<startByte<<" end " << endExclusive<< std:: endl;
         // }
