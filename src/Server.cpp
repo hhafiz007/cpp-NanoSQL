@@ -203,7 +203,7 @@ int  getLeafPage(std::vector<char> &database_file, unsigned long  start,std::vec
     unsigned long pageStart = start;
 
     std::cerr << " debug: The interior page start is" << start << "  "<<std::endl;
-    std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
+   
 
     
     if (pageType == interiorTablePage) {
@@ -241,6 +241,7 @@ int  getLeafPage(std::vector<char> &database_file, unsigned long  start,std::vec
     }
     else
     {
+         std::cerr << " debug: pputting page type is" << start << "  "<<std::endl;
 leafAddresses.push_back(start);
 
     }
