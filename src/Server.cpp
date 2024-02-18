@@ -709,7 +709,7 @@ int main(int argc, char* argv[]) {
         std::vector<std::string> columnNames = getRootPage(schemaData,tableName,rootPage);
 
         for (std::string col : columnNames) {
-            std::cerr << "col name is " << col;<<std::endl
+            std::cerr << "col name is " << col<<std::endl;
         }
 
          std::cerr << "Debug4000: " << rootPage <<"   "<<tableName <<std::endl;
