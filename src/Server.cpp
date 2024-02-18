@@ -489,9 +489,9 @@ void printSelectColumns(   std::vector <std::vector<std::string>> &tableData, st
 
 
         if (filter.filter && filterIndex != filter.value){
-            // std::cerr <<" It did not get select because filter is "<< filter.key<<std::endl;
-            //  std::cerr <<" It did not get select because table value  is "<< tableData[j][index]<<std::endl;
-            //   std::cerr <<" It did not get select because table first value  is "<< tableData[][index]<<std::endl;
+            std::cerr <<" It did not get select because filter is "<< filter.key<<std::endl;
+             std::cerr <<" It did not get select because table value  is "<< filterIndex<<std::endl;
+              std::cerr <<" It did not get select because table index value  is "<< index<<std::endl;
             continue;
         }
 
@@ -754,21 +754,21 @@ int main(int argc, char* argv[]) {
 
 
         
-        for (std::vector row : tableData){
+        // for (std::vector row : tableData){
 
-            int index = 0;
+        //     int index = 0;
 
-            for (std::string value : row) {
+        //     for (std::string value : row) {
 
-                std::cerr << "index is "<<index<< " value "<<value<<"  "; 
-                index+=1;
-            }
+        //         std::cerr << "index is "<<index<< " value "<<value<<"  "; 
+        //         index+=1;
+        //     }
 
-            std::cerr <<std::endl;
+        //     std::cerr <<std::endl;
 
 
 
-        }    
+        // }    
 
 
         printSelectColumns(tableData, columnNames , selectColumns,selectFilter);
