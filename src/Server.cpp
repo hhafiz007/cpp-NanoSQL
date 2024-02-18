@@ -844,8 +844,12 @@ int main(int argc, char* argv[]) {
 
             for (std::string value : row) {
 
+                if (value == "Matris Ater Clementia (New Earth)")
+                    {
+
+                    
                 std::cerr << "index is "<<index<< " value "<<value<<"  "; 
-                
+                    }
             }
             index+=1;
 
