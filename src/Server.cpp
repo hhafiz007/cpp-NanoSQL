@@ -299,7 +299,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
             start = 108;
         
         }
-        std::cerr<<"Page start is "<< startAddress<<"  ";
+        
 
         if (startAddress != 0) {
 
@@ -309,6 +309,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
 
         }
+        std::cerr<<"Page start is "<< startAddress<<"  cells are "<< num_table <<" ";
 
     //   std::cerr<<"total  cell is "<< num_table<<"  "<<start<<std::endl;
 
