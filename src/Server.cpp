@@ -312,7 +312,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
 
     // Calculate factorialass b
-    for (int i = 0; i < num_table; i++) {
+    for (int i = 0; i < 20; i++) {
         int startIndex = (2*i)+start; 
         unsigned short byte1 = static_cast<unsigned char>(database_file[startIndex]);
         unsigned short byte2 = static_cast<unsigned char>(database_file[startIndex+1]);
