@@ -348,7 +348,7 @@ std::vector<std::string> columnNames;
         contents += (*iter)[0].str().substr(1, (*iter)[0].str().size() - 2); // Remove surrounding parentheses
     }
     std::vector<std::string> tokens = split(contents, ',');
-    /std::cerr << "contents  are"<<sqlStatement<<"  ";
+    std::cerr << "contents  are"<<sqlStatement<<"  ";
     int index = 0;
 
     while( index <tokens.size()){
