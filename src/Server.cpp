@@ -272,7 +272,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
         unsigned short byte2 = static_cast<unsigned char>(database_file[startIndex+1]);
         unsigned short page_address =   (byte1 << 8) | (byte2);
         cellAddress.push_back(pageStart+page_address);
-        // std::cout << "Logs from your program will appeaar here" << page_address<<std::endl;
+        std::cerr << "Logs from your program will appeaar here" << page_address<<std::endl;
          if (printTables || debugStage ){
             // std::cout << "cell address  " <<pageStart+page_address<<std::endl; 
             // std:: cout << "index " << startIndex<<" value " << byte1<<std::endl;
