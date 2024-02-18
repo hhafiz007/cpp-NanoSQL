@@ -16,6 +16,7 @@ const int HEADER_SIZE = 100;
 const int pageHeader = 8;
 bool printTables = false;
 bool debugStage = false;
+const int interiorTablePage = 5;
 
 struct MyTuple {
     bool filter= false;
@@ -190,6 +191,25 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 }
 
 
+int  getLeafPage(std::vector<char> &database_file, int start){
+
+    unsigned short pageType = static_cast<unsigned char>(database_file[start]);
+
+    
+    if (int(pageType) == interiorTablePage) {
+        start +=8
+        unsigned short byte1 = static_cast<unsigned char>(database_file[start]);
+        unsigned short byte2 = static_cast<unsigned char>(database_file[start+1]);
+        unsigned short page_address =   (byte1 << 8) | (byte2);
+        return getLeafPage(database_file,page_address)
+    }
+
+
+
+    return start;
+}
+
+
 void printTableLeafPage(std::vector<char> &database_file , unsigned short num_table,int start,std::vector<std::vector<std::string>> &tableData) {
     
     std::vector<unsigned short> cellAddress;
@@ -209,6 +229,14 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
 
 
     std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
+
+    if (int(pageType) == interiorTablePage) {
+        pageStart = getLeafPage(database_file,page_address)
+        start = pageStart+8
+        std::cerr << " debug: The page start is" << pageStart << "  "<<std::endl;
+
+
+    }
 
 
 
