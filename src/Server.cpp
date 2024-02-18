@@ -162,7 +162,7 @@ int getRowData(std::vector<char> &database_file , unsigned short rowAddress,std:
 
         currRow.push_back(currHeader);
 
-        if (index == 1 && printTables == true) {
+        if (debugStage) {
             std::cout <<currHeader<<"  "<<std::endl;
         }
         
@@ -251,6 +251,7 @@ void printTableLeafPage(std::vector<char> &database_file , unsigned short num_ta
     std::cerr << " debug: The page type is" << pageType << "  "<<std::endl;
 
     if (int(pageType) == interiorTablePage) {
+        debugStage = true;
         pageStart = getLeafPage(database_file,pageStart);
         start = pageStart+8;
         unsigned short byte1 = static_cast<unsigned char>(database_file[pageStart+3]);
