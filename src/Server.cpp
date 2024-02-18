@@ -205,6 +205,8 @@ int  getLeafPage(std::vector<char> &database_file, int start){
         unsigned short byte2 = static_cast<unsigned char>(database_file[start+1]);
         unsigned short page_address =   ((byte1 << 8) | (byte2))+pageStart;
 
+         std::cerr << " debug: The cell address is" << page_address<< "  "<<std::endl;
+
 
         uint32_t result1 = static_cast<uint32_t>(database_file[page_address]);
         uint32_t result2 = static_cast<uint32_t>(database_file[page_address+1]);
