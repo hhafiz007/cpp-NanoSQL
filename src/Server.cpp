@@ -413,12 +413,12 @@ for (std::vector table : tableData){
         if (table[1] == tableName ){
             // std::cerr << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
             rootPage =  int(table[3][0]);
-             sqlStatement = table[4];
+            sqlStatement = table[4];
         }
         
         if (table[1]=="idx_companies_country"){
             // std::cerr << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
-            rootPage =  int(table[3][0]);
+            rootPage =  table[3];
             std::cerr <<"the indesx is "<< rootPage<<std::endl;
              
         }
