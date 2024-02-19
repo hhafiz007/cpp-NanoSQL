@@ -833,6 +833,11 @@ int main(int argc, char* argv[]) {
             // std::cout << " filter value=" <<selectFilter.value<< std::endl;
         }
 
+        if (tableName == "idx_companies_country"){
+            std::cout << "Welcome to index parsing"<<std::endl;
+            return 0;
+        }
+    
       
         
         printTableLeafPage(bytes,cellCount,newAddress,tableData);
