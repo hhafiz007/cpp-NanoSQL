@@ -19,5 +19,9 @@ const int COLUMNS_COMMAND = 2;
 // Function declaration for printHello
 void printHello();
 void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPage,std::string indexValue);
+void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long pageStart,std::vector<unsigned long> rowIds);
+int processRowData(std::vector<char> &database_file , unsigned long rowAddress,std::vector<unsigned long> rowIds);
+int processHeaderIndex(std::vector<char> &database_file ,unsigned long rowAddress, std::vector<int> &header );
+int processVarIntIndex(std::vector<char> &database_file ,unsigned long rowAddress);
 
 #endif // GIT_STARTER_CPP_COMMAND_H
