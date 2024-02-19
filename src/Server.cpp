@@ -835,6 +835,7 @@ int main(int argc, char* argv[]) {
 
         if (rootPage != 2){
             std::cout << "Welcome to index parsing"<<std::endl;
+            printHello();
             return 0;
         }
     
@@ -845,25 +846,25 @@ int main(int argc, char* argv[]) {
         std :: cerr << "back here  " << tableData[0].size()  <<" "<<tableData.size()<<std::endl; // change comments kk mm mm ss nn nn
 
 
-         int index = 0;
-        for (std::vector row : tableData){
+        //  int index = 0;
+        // for (std::vector row : tableData){
 
            
 
-            for (std::string value : row) {
+        //     for (std::string value : row) {
 
-                if (value == "Matris Ater Clementia (New Earth)")
-                    {
+        //         if (value == "Matris Ater Clementia (New Earth)")
+        //             {
 
                     
-                std::cerr << "index is "<<index<< " value "<<value<<"  "; 
-                 std::cerr <<std::endl;
-                    }
-            }
-            index+=1;
+        //         std::cerr << "index is "<<index<< " value "<<value<<"  "; 
+        //          std::cerr <<std::endl;
+        //             }
+        //     }
+        //     index+=1;
 
            
-            // break;
+        //     // break;
 
 
 
