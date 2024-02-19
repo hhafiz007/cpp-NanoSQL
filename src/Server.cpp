@@ -428,6 +428,8 @@ for (std::vector table : tableData){
             // std::cerr << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
             rootPage =  int(table[3][0]);
             sqlStatement = table[4];
+             std::cerr <<"the indesx is "<< rootPage<<"  sql statement is "<< table[4] <<std::endl;
+            std::cerr <<"the name  is "<< table[1]<<"  type  is "<< table[0] <<std::endl;
         }
         
         if (table[1]=="idx_companies_country"){
