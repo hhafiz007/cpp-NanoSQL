@@ -219,14 +219,14 @@ void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPa
 
     for(int i = 0 ; i < database_file.size();i+=4096)
     {
-    unsigned long pageStart = i;
+    unsigned long pageStart = i/4;
 
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
     
     if(pageType == 2)
     {
         
-     std::cout <<" The page start is" << i <<endl;
+     std::cout <<" The page start is" << pageStart <<endl;
      std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(database_file[i]) <<" "<<endl;
     }
 
