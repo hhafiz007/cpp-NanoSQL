@@ -11,14 +11,14 @@
 #include<algorithm>
 using namespace std;
 
-void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPage) {
+void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPage,string indexValue) {
     
    
     unsigned long pageStart = (rootPage)*4096;
    
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
 
-    cout << " welcome to root page" << rootPage <<"  "<<pageType<<"  "<<pageStart<<endl;
+    cout << " welcome to root page" << rootPage <<"  "<<indexValue<<"  "<<pageStart<<endl;
 
 
     
