@@ -217,17 +217,17 @@ void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPa
 
 
 
-    for(int i = 0 ; i < database_file.size();i+=4096)
+    for(int i = 0 ; i < database_file.size();i+=1)
     {
     unsigned long pageStart = i;
 
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
     
-    // if (pageType == 2) {
+    {
     // cout << " welcome to  page  " << pageType <<"  "<<pageStart<<"  "<<database_file[pageStart]<<endl;
 
-    // std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(database_file[3705]) << std::endl;
-    // }
+    std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(database_file[i]) <<" ";
+    }
 
     }
     
