@@ -407,7 +407,7 @@ std::vector<std::string> getRootPage(std::vector<std::vector<std::string> > &tab
 std::string sqlStatement;
 
 for (std::vector table : tableData){
-      std::cerr << "Deebugtable Name: " << tableName <<"curr table is "<<table[1]<< std::endl;
+      std::cerr << "Deebugtable Name: " << tableName <<"curr table is "<<table[1]<<"  "<<table[0]<<" " << std::endl;
     //  std::cerr <<" table name " <<tableName <<" page number" << table[3][0] << std::endl;
         if (table[1] == tableName){
             // std::cerr << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
