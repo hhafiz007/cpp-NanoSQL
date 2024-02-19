@@ -833,7 +833,7 @@ int main(int argc, char* argv[]) {
             // std::cout << " filter value=" <<selectFilter.value<< std::endl;
         }
 
-        if (tableName == "idx_companies_country"){
+        if (rootPage != 2){
             std::cout << "Welcome to index parsing"<<std::endl;
             return 0;
         }
