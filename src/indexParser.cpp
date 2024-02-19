@@ -48,7 +48,7 @@ int processVarIntIndex(std::vector<char> &database_file ,unsigned long rowAddres
     while (i < rowAddress+totalBytes) {
       
         unsigned long  prev = i;
-        unsigned long next = processVarInt(database_file,prev);
+        unsigned long next = processVarIntIndex(database_file,prev);
         unsigned short result = 0;
         unsigned long j ;
         for (  j = 0 ; j +prev < next-1; j++) {
@@ -166,7 +166,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
             
             unsigned short byte1 = static_cast<unsigned char>(database_file[startAddress+3]);
             unsigned short byte2 = static_cast<unsigned char>(database_file[startAddress+4]);
-            num_table =   (byte1 << 8) | (byte2);
+            unsigned short num_table =   (byte1 << 8) | (byte2);
             start = startAddress+12;
             std::vector<unsigned long> cellAddress;
              for (int i = 0; i < num_table; i++) {
