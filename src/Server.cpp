@@ -175,10 +175,8 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
         // std::cout <<"printing start element " <<startByte<<" end " << endExclusive<< std:: endl;
         // }
 
-        if (startByte == 3705) {
+       
 
-            std::cerr<<" Lets print "<< int(database_file[startByte]);
-        }
         std:: string currHeader;
         while (startByte < endExclusive) {
             currHeader = currHeader + database_file[startByte];
@@ -192,6 +190,11 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
         else{
              currRow.push_back(currHeader);
             
+        }
+
+        if (index == 3) {
+            // std::cerr << "cur row is " <<result<<"  "<<std::endl;
+              std::cerr<<" Lets print "<< int(database_file[startByte]);
         }
 
        
