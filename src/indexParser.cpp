@@ -140,8 +140,12 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
 
+    cout << " welcome to first page" << pageType <<"  "<<endl;
+
     unsigned long startAddress = pageStart;
     if (int(pageType) == interiorIndexPage) {
+
+        cout << " welcome to first page" << pageType <<"  "<<endl;
             
             unsigned short byte1 = static_cast<unsigned char>(database_file[startAddress+3]);
             unsigned short byte2 = static_cast<unsigned char>(database_file[startAddress+4]);
@@ -204,7 +208,7 @@ void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPa
     
    
     unsigned long pageStart = (rootPage)*4096;
-    cout << " welcome to root page" << rootPage <<"  "<<indexValue<<"  "<<pageStart<<endl;
+    
     std::vector<unsigned long> rowIds;
     parseInteriorIndexPages(database_file,pageStart,rowIds);
 
