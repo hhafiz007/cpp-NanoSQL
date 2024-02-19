@@ -17,6 +17,6 @@ const int COLUMNS_COMMAND = 2;
 
 // Function declaration for printHello
 void printHello();
-void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPage);
+void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPage,string indexValue);
 
 #endif // GIT_STARTER_CPP_COMMAND_H
