@@ -82,7 +82,7 @@ int processVarIntIndex(std::vector<char> &database_file ,unsigned long rowAddres
 
 
 
-int processRowData(std::vector<char> &database_file , unsigned long rowAddress,vector<unsigned long> rowIds){
+int processRowData(std::vector<char> &database_file , unsigned long rowAddress,std::vector<unsigned long> rowIds){
     unsigned long next = rowAddress;
     std::vector<int> header; 
     next = processVarIntIndex(database_file,rowAddress);
