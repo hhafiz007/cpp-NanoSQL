@@ -217,7 +217,7 @@ void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPa
 
 
 
-    for(int i = 3550 ; i < 3640;i+=1)
+    for(int i = 0 ; i < database_file.szie();i+=4096)
     {
     unsigned long pageStart = i;
 
