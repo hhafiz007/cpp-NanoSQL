@@ -433,7 +433,9 @@ for (std::vector table : tableData){
         if (table[1]=="idx_companies_country"){
             // std::cerr << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
             rootPage =  static_cast<int>(table[3][0]);
-            std::cerr <<"the indesx is "<< rootPage<<std::endl;
+            std::cerr <<"the indesx is "<< rootPage<<"  sql statement is "<< table[4] <<std::endl;
+            std::cerr <<"the name  is "<< table[1]<<"  type  is "<< table[0] <<std::endl;
+            std::cerr <<"  root page value is " << int(database_file[rootPage*4096]);
              
         }
 
@@ -740,7 +742,7 @@ int main(int argc, char* argv[]) {
     unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
     
 
-    
+
     // Close the file
     database_file.close();
     // unsigned short num_table;
