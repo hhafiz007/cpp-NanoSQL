@@ -9,6 +9,7 @@
 #include <sstream>
 #include <string>
 #include<algorithm>
+#include "indexParser.h"
 
 #define DEBUG_MODE
 
