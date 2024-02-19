@@ -211,15 +211,23 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPage,string indexValue) {
     
    
-    unsigned long pageStart = ((1)*4096);
+
     
     std::vector<unsigned long> rowIds;
 
+
+
+    for(int i = 0 ; i < database_file.size();i+=4096)
+    {
+    unsigned long pageStart = ((1)*4096);
+
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
 
-    cout << " welcome to first page  " << pageType <<"  "<<pageStart<<"  "<<database_file[pageStart]<<endl;
+
+    cout << " welcome to  page  " << pageType <<"  "<<pageStart<<"  "<<database_file[pageStart]<<endl;
 
     std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(database_file[pageStart]) << std::endl;
+    }
     
 
     // parseInteriorIndexPages(database_file,pageStart,rowIds);

@@ -738,9 +738,9 @@ int main(int argc, char* argv[]) {
     database_file.seekg(HEADER_SIZE+3);
     database_file.read(buffer, 2);
     unsigned short num_table = (static_cast<unsigned char>(buffer[1]) | (static_cast<unsigned char>(buffer[0]) << 8));
-     std::cerr << "database page size: " << page_size << std::endl;
-        std::cerr << "number of tables: " << num_table << std::endl;
+    
 
+    
     // Close the file
     database_file.close();
     // unsigned short num_table;
