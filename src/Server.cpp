@@ -79,7 +79,7 @@ int processVarInt(std::vector<char> &database_file ,unsigned long rowAddress){
     int totalBytes = int(database_file[rowAddress]);
 
     //  if (debugStage){
-    //  std::cout <<"totalBytes  " <<totalBytes<<" end " << std:: endl;
+    //  std::cout <<"totalBytes  " <<totalBytes<<" end " << std:: endl;;
     //     }
     
    
