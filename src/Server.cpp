@@ -435,7 +435,7 @@ for (std::vector table : tableData){
             rootPage =  static_cast<int>(table[3][0]);
             std::cerr <<"the indesx is "<< rootPage<<"  sql statement is "<< table[4] <<std::endl;
             std::cerr <<"the name  is "<< table[1]<<"  type  is "<< table[0] <<std::endl;
-            std::cerr <<"  root page value is " << int(database_file[rootPage*4096]);
+       
              
         }
 
