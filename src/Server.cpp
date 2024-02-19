@@ -129,7 +129,7 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
 
     unsigned long next = rowAddress;
 
-    std::cerr<<" rowAddress "<< rowAddress <<std::endl;
+    // std::cerr<<" rowAddress "<< rowAddress <<std::endl;
 
     std::vector<int> header; 
     
@@ -191,7 +191,7 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
             startByte+=1;
         }
 
-        std:: cerr << " cur header" << currHeader<<std::endl;
+        //std:: cerr << " cur header" << currHeader<<std::endl;
 
          if (index == 0) {
             // std::cerr << "cur row is " <<result<<"  "<<std::endl;
