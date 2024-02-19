@@ -176,7 +176,7 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
         // }
           if (index == 3) {
             // std::cerr << "cur row is " <<result<<"  "<<std::endl;
-              std::cerr<<" Lets print "<< int(database_file[startByte]);
+              std::cerr<<" Lets print "<< startByte <<"   "<<int(database_file[startByte]);
         }
 
 
