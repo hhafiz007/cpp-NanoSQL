@@ -203,7 +203,7 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
       
        
 
-        if (index == 1 && printTables == true) {
+        if (index == 1 ) {
             std::cout <<currHeader<<"  "<<std::endl;
         }
         
