@@ -1,3 +1,6 @@
+#ifndef GIT_STARTER_CPP_COMMAND_H
+#define GIT_STARTER_CPP_COMMAND_H
+
 #include <cstring>
 #include <string>
 #include <vector>
