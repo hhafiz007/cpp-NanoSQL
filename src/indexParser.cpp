@@ -13,7 +13,7 @@ using namespace std;
 
 const int interiorIndexPage = 2;
 
-int processVarIntIndex(std::vector<char> &database_file ,unsigned long rowAddress){
+unsigned long processVarIntIndex(std::vector<char> &database_file ,unsigned long rowAddress){
     // std::cout << "row Address: " << rowAddress << std::endl;
 
     int i = 0;
@@ -32,7 +32,7 @@ int processVarIntIndex(std::vector<char> &database_file ,unsigned long rowAddres
 }
 
 
- int processHeaderIndex(std::vector<char> &database_file ,unsigned long rowAddress, std::vector<int> &header ){
+unsigned longprocessHeaderIndex(std::vector<char> &database_file ,unsigned long rowAddress, std::vector<int> &header ){
 
     int totalBytes = int(database_file[rowAddress]);
 
@@ -82,7 +82,7 @@ int processVarIntIndex(std::vector<char> &database_file ,unsigned long rowAddres
 
 
 
-unsigned long processRowData(std::vector<char> &database_file , unsigned long rowAddress){
+unsigned long processRowData(std::vector<char> &database_file , unsigned long rowAddress,std::vector<unsigned long> rowIds){
     unsigned long next = rowAddress;
     std::vector<int> header; 
     next = processVarIntIndex(database_file,rowAddress);
@@ -170,7 +170,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                
                 unsigned long  leftPointer =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
 
-                unsigned long next = processRowData(database_file,cellAddress[i]+4);
+                unsigned long next = processRowData(database_file,cellAddress[i]+4,rowIds);
 
 
 
