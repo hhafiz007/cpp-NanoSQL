@@ -82,7 +82,7 @@ int processVarIntIndex(std::vector<char> &database_file ,unsigned long rowAddres
 
 
 
-int processRowData(std::vector<char> &database_file , unsigned long rowAddress,std::vector<unsigned long> rowIds){
+int processRowData(std::vector<char> &database_file , unsigned long rowAddress){
     unsigned long next = rowAddress;
     std::vector<int> header; 
     next = processVarIntIndex(database_file,rowAddress);
@@ -170,7 +170,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                
                 unsigned long  leftPointer =   ((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4));
 
-                next = processRowData(database_file,cellAddress[i]+4,rowIds);
+                next = processRowData(database_file,cellAddress[i]+4);
 
 
 
