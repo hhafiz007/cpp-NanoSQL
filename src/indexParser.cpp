@@ -140,7 +140,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
 
-    cout << " welcome to first page" << pageType <<"  "<<endl;
+    cout << " welcome to first page" << pageType <<"  "<<pageStart<<endl;
 
     unsigned long startAddress = pageStart;
     if (int(pageType) == interiorIndexPage) {
