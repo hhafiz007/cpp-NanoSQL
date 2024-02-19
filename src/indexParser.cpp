@@ -9,6 +9,8 @@
 #include <sstream>
 #include <string>
 #include<algorithm>
+#include <iostream>
+#include <iomanip>
 using namespace std;
 
 const int interiorIndexPage = 2;
@@ -216,6 +218,9 @@ void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPa
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
 
     cout << " welcome to first page  " << pageType <<"  "<<pageStart<<"  "<<database_file[pageStart]<<endl;
+
+    std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(database_file[pageStart]) << std::endl;
+    
 
     // parseInteriorIndexPages(database_file,pageStart,rowIds);
 
