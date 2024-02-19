@@ -111,35 +111,14 @@ int processRowData(std::vector<char> &database_file , unsigned long rowAddress,v
 
         std:: cerr << " cur header from index" << currHeader<<std::endl;
 
-         if (index == 0) {
-            // std::cerr << "cur row is " <<result<<"  "<<std::endl;
-             currRow.push_back(std::to_string(result));
-        }
-        else{
-             currRow.push_back(currHeader);
+       
+        currRow.push_back(currHeader);
             
-        }
-
-      
-       
-
-        if (index == 1 && printTables == true) {
-            std::cout <<currHeader<<"  "<<std::endl;
-        }
-        
-       
-         
         next = endExclusive;
         index+=1;
     }
 
-    // std::cerr <<" total colucolsmns are are" << currRow.size() << std::endl;
-
-   
-    tableData.push_back(currRow);
-
-
-
+ 
 
     return next;
 
