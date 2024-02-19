@@ -32,7 +32,7 @@ unsigned long processVarIntIndex(std::vector<char> &database_file ,unsigned long
 }
 
 
-unsigned longprocessHeaderIndex(std::vector<char> &database_file ,unsigned long rowAddress, std::vector<int> &header ){
+unsigned long processHeaderIndex(std::vector<char> &database_file ,unsigned long rowAddress, std::vector<int> &header ){
 
     int totalBytes = int(database_file[rowAddress]);
 
