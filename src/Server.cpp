@@ -836,7 +836,7 @@ int main(int argc, char* argv[]) {
 
         if (rootPage != 2){
             std::cout << "Welcome to index parsing"<<std::endl;
-            printIndexLeafPage(database_file,rootPage);
+            printIndexLeafPage(bytes,rootPage);
             return 0;
         }
     
