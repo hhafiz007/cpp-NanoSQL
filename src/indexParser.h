@@ -3,6 +3,7 @@
 
 #include <cstring>
 #include <string>
+#include <string>
 #include <vector>
 
 // Constants for command types
@@ -17,6 +18,6 @@ const int COLUMNS_COMMAND = 2;
 
 // Function declaration for printHello
 void printHello();
-void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPage,string indexValue);
+void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPage,std::string indexValue);
 
 #endif // GIT_STARTER_CPP_COMMAND_H
