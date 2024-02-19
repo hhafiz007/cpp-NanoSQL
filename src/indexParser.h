@@ -1,18 +1,18 @@
-#ifndef GIT_STARTER_CPP_COMMAND_H
-#define GIT_STARTER_CPP_COMMAND_H
-
 #include <cstring>
 #include <string>
 #include <vector>
 
-#define COUNT_COMMAND 1
-#define COLUMNS_COMMAND 2
+// Constants for command types
+const int COUNT_COMMAND = 1;
+const int COLUMNS_COMMAND = 2;
 
-#define COLUMN_TYPE_TEXT 1
-#define COLUMN_TYPE_INTEGER 2
+// Constants for column types
+enum ColumnType {
+    COLUMN_TYPE_TEXT = 1,
+    COLUMN_TYPE_INTEGER = 2
+};
 
+// Function declaration for printHello
+void printHello();
 
-
-printHello();
-
-#endif //GIT_STARTER_CPP_COMMAND_H
+#endif // GIT_STARTER_CPP_COMMAND_H
