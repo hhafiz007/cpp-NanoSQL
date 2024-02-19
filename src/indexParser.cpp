@@ -240,7 +240,7 @@ void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPa
         
 
 
-        // for (unsigned long startAddress: leafAddresses){ jjj
+        //  bfor (unsigned long startAddress: leafAddresses){ jjj
 
         //     start = startAddress+8;
         //     pageStart = startAddress;
