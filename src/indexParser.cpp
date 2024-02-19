@@ -13,13 +13,81 @@ using namespace std;
 
 const int interiorIndexPage = 2;
 
+int processVarIntIndex(std::vector<char> &database_file ,unsigned long rowAddress){
+    // std::cout << "row Address: " << rowAddress << std::endl;
+
+    int i = 0;
+    bool isMSBSet = (static_cast<unsigned char>(database_file[rowAddress+i]) >> 7) & 1;
+    //  std::cout << "msb bit  " << isMSBSet<<std::endl;
+
+    while (isMSBSet) {
+        // std::cout << "setting bit" << std::endl;
+        i += 1;
+        isMSBSet = (static_cast<unsigned char>(database_file[rowAddress+i]) >> 7) & 1;
+    }
+
+    // std::cout << "printing payload bytes: " << static_cast<int>(database_file[rowAddress+i]) << std::endl;
+
+    return rowAddress + i + 1;
+}
+
+
+ int processHeaderIndex(std::vector<char> &database_file ,unsigned long rowAddress, std::vector<int> &header ){
+
+    int totalBytes = int(database_file[rowAddress]);
+
+    //  if (debugStage){
+    //  std::cout <<"totalBytes  " <<totalBytes<<" end " << std:: endl;;
+    //     }
+    
+   
+
+    
+    unsigned long i = rowAddress+1;
+
+    while (i < rowAddress+totalBytes) {
+      
+        unsigned long  prev = i;
+        unsigned long next = processVarInt(database_file,prev);
+        unsigned short result = 0;
+        unsigned long j ;
+        for (  j = 0 ; j +prev < next-1; j++) {
+            result <<= 8;
+            unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
+            // std :: cout << currByte << " curr byte "<<int(database_file[prev+j])<<std:: endl;
+            result |=  (currByte) & 0b01111111;
+            
+        }
+        result <<= 8;
+        unsigned short currByte = static_cast<unsigned char>(database_file[prev+j]) ;
+        result |= currByte;
+        header.push_back(result);
+        // std::cout << " indices" << prev <<"   "<< next<<" "<<rowAddress+totalBytes << "   " << result <<std:: endl;
+        i = next;
+       
+        // break;
+        
+
+    }
+
+    
+    
+
+
+
+
+
+    return i;
+ }
+
+
 
 int processRowData(std::vector<char> &database_file , unsigned long rowAddress,vector<unsigned long> rowIds){
     unsigned long next = rowAddress;
     std::vector<int> header; 
-    next = processVarInt(database_file,rowAddress);
+    next = processVarIntIndex(database_file,rowAddress);
    
-    next = processHeader(database_file,next,header);
+    next = processHeaderIndex(database_file,next,header);
     int index = 0;
     
     std::vector<std::string> currRow;
