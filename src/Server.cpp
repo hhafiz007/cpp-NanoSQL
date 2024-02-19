@@ -128,6 +128,9 @@ int processVarInt(std::vector<char> &database_file ,unsigned long rowAddress){
 int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::vector<std::vector<std::string>> &tableData){
 
     unsigned long next = rowAddress;
+
+    std::cerr<<" rowAddress "<< rowAddress <<endl;
+
     std::vector<int> header; 
     
     next = processVarInt(database_file,rowAddress);
