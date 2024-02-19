@@ -156,6 +156,8 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                 cellAddress.push_back(pageStart+page_address);
              }
 
+             cout << "total cells " <<cellAddress.size()<<endl; 
+
              for (int i = 0; i < cellAddress.size(); ++i) {
 
 
