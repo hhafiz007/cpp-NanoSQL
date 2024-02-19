@@ -419,7 +419,7 @@ for (std::vector table : tableData){
         if (table[1]=="idx_companies_country"){
             // std::cerr << "rootPage   " <<tableName <<  " number " <<int(table[3][0]) << std::endl;
             rootPage =  int(table[3][0]);
-            std::cerr <<"the indesx is "<< table[3][0] <<std::endl;
+            std::cerr <<"the indesx is "<< rootPage<<std::endl;
              
         }
 
