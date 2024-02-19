@@ -11,7 +11,7 @@
 #include<algorithm>
 using namespace std;
 
-const interiorIndexPage = 2;
+const int interiorIndexPage = 2;
 
 
 int processRowData(std::vector<char> &database_file , unsigned long rowAddress,vector<unsigned long> rowIds){
