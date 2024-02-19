@@ -129,7 +129,7 @@ int getRowData(std::vector<char> &database_file , unsigned long rowAddress,std::
 
     unsigned long next = rowAddress;
 
-    std::cerr<<" rowAddress "<< rowAddress <<endl;
+    std::cerr<<" rowAddress "<< rowAddress <<std::endl;
 
     std::vector<int> header; 
     
