@@ -209,7 +209,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPage,string indexValue) {
     
    
-    unsigned long pageStart = (rootPage)*4096;
+    unsigned long pageStart = (rootPage-1)*4096;
     
     std::vector<unsigned long> rowIds;
 
