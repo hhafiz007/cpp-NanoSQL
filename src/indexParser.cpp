@@ -213,7 +213,7 @@ void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPa
 
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
 
-    cout << " welcome to first page" << pageType <<"  "<<pageStart<<"  "<<database_file[pageStart]<<endl;
+    cout << " welcome to first page  " << pageType <<"  "<<pageStart<<"  "<<database_file[pageStart]<<endl;
 
     // parseInteriorIndexPages(database_file,pageStart,rowIds);
 
