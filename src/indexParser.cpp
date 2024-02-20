@@ -11,7 +11,13 @@
 #include<algorithm>
 #include <iostream>
 #include <iomanip>
+#include <set>
+
+
 using namespace std;
+
+
+set<string> mySet;
 
 const int interiorIndexPage = 2;
 
@@ -129,7 +135,11 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
 
         if (index == 0 )
         {
+            if (mySet.find(currHeader) != mySet.end())
+            {
              std:: cout <<currHeader<<"  ";
+             mySet.insert(currHeader);
+            }
             // return 1;
         }
         else if (index == 0 && currHeader == indexValue) {
