@@ -122,7 +122,7 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
             rowIds.size();
         }
 
-        // std:: cout << " cur header from index" <<index<<"  " << currHeader<<std::endl;
+        std:: cout << " cur header from index" <<index<<"  " << currHeader<<std::endl;
 
        
         currRow.push_back(currHeader);
@@ -208,7 +208,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                  if (pageType == 10){
 
                 childAddress=cellAddress[i];
-                // cout << "  Processing child " << childAddress << endl;
+                cout << "  Processing child " << childAddress << endl;
             }
 
                 unsigned long next = processRowData(database_file,childAddress,rowIds);
