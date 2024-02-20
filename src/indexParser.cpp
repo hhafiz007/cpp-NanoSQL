@@ -111,7 +111,7 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
             startByte+=1;
         }
 
-        std:: cerr << " cur header from index" << currHeader<<std::endl;
+        std:: cerr << " cur header from index" <<index<<"  " << currHeader<<std::endl;
 
        
         currRow.push_back(currHeader);
