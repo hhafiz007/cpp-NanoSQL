@@ -113,7 +113,7 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
 
         if (index == 0 && currHeader > "eritrea")
         {
-             std:: cerr << " I am greater" <<"  " << currHeader<<std::endl;
+             std:: cout << " I am greater" <<"  " << currHeader<<std::endl;
             return 1;
         }
         else if (currHeader == "eritrea") {
