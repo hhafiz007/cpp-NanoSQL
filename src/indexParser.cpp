@@ -106,9 +106,25 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
       
 
         std:: string currHeader;
+
+             if (index == 1) {
+                unsigned short result = 0;
+                unsigned long j ;
+                for (  j = startByte ; j < endExclusive; j++) {
+                    result <<= 8;
+                    unsigned short currByte = static_cast<unsigned char>(database_file[j]) ;
+                    // std :: cout << currByte << " curr byte "<<int(database_file[prev+j])<<std:: endl;
+                    result |=  (currByte);
+                }
+                cout << "  rowID  " << result << endl;
+             
+
+
+        }else{
         while (startByte < endExclusive) {
             currHeader = currHeader + database_file[startByte];
             startByte+=1;
+        }
         }
 
         if (index == 0 && currHeader > indexValue)
@@ -121,6 +137,10 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
             rowIds.push_back(1);
             rowIds.size();
         }
+
+   
+
+
 
         std:: cout << " cur header from index" <<index<<"  " << currHeader<<std::endl;
 
