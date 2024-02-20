@@ -11,13 +11,16 @@
 #include<algorithm>
 #include <iostream>
 #include <iomanip>
+#include <map>
 #include <set>
+
 
 
 using namespace std;
 
 
 set<string> mySet;
+map<std::string, int> myMap;
 
 const int interiorIndexPage = 2;
 
@@ -135,6 +138,7 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
 
         if (index == 0 )
         {
+            myMap[currHeader] += 1;
             if (mySet.find(currHeader) == mySet.end())
             {
              std:: cout <<currHeader<<"  ";
@@ -283,6 +287,8 @@ void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPa
     
 
     parseInteriorIndexPages(database_file,pageStart,rowIds,indexValue);
+
+    cout << myMap << endl;
 
 
 
