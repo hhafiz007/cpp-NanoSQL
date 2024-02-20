@@ -111,6 +111,15 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
             startByte+=1;
         }
 
+        if (index == 0 && currHeader > "eritrea")
+        {
+            return 1;
+        }
+        else if (currHeader == "eritrea") {
+            rowIds.push_back(1);
+            rowIds.size();
+        }
+
         std:: cerr << " cur header from index" <<index<<"  " << currHeader<<std::endl;
 
        
@@ -147,6 +156,8 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
     unsigned long startAddress = pageStart;
     if (int(pageType) == interiorIndexPage) {
 
+        bool flag = false;
+
         cout << " welcome to interior page" << pageType <<"  "<<endl;
             
             unsigned short byte1 = static_cast<unsigned char>(database_file[startAddress+3]);
@@ -164,6 +175,8 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
              cout << "total cells " <<cellAddress.size()<<endl; 
 
+             
+
              for (int i = 0; i < cellAddress.size(); ++i) {
 
 
@@ -180,6 +193,13 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
                 unsigned long next = processRowData(database_file,cellAddress[i]+4,rowIds);
 
+                if (next == 1) {
+                    flag = true;
+                    parseInteriorIndexPages(database_file,leftPointer,rowIds);
+                    break;
+
+                }
+
 
 
 
@@ -187,6 +207,10 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
     
             
+        }
+
+        if (flag) {
+            break;
         }
         
 
