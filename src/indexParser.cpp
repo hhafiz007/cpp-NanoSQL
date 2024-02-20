@@ -206,7 +206,9 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
                 unsigned long childAddress = cellAddress[i]+4;
                  if (pageType == 10){
+
                 childAddress=cellAddress[i];
+                cout << "  Processing child " << childAddress << endl;
             }
 
                 unsigned long next = processRowData(database_file,childAddress,rowIds);
