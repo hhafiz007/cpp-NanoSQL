@@ -95,6 +95,8 @@ unsigned long processHeaderIndex(std::vector<char> &database_file ,unsigned long
 
 unsigned long processRowData(std::vector<char> &database_file , unsigned long rowAddress,std::vector<unsigned long> rowIds,string indexValue){
     unsigned long next = rowAddress;
+
+    unsigned long rowStartByte = rowAddress;
     std::vector<int> header; 
     next = processVarIntIndex(database_file,rowAddress);
    
@@ -132,8 +134,8 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
 
         }else{
         while (startByte < endExclusive) {
-            unsigned short currByte = static_cast<unsigned char>(database_file[startByte]) ;
-            cout <<currByte  <<" ";
+            // unsigned short currByte = static_cast<unsigned char>(database_file[startByte]) ;
+            // cout <<currByte  <<" ";
             currHeader = currHeader + database_file[startByte];
             startByte+=1;
         }
@@ -169,6 +171,13 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
         next = endExclusive;
         index+=1;
     }
+
+     while (rowStartByte < endExclusive) {
+            unsigned short currByte = static_cast<unsigned char>(database_file[startByte]) ;
+            cout <<currByte  <<" ";
+            // currHeader = currHeader + database_file[startByte];
+            startByte+=1;
+        }
 
  
 
