@@ -199,6 +199,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                 unsigned long next = processRowData(database_file,cellAddress[i]+4,rowIds);
 
                 if (next == 1) {
+                    cout << " welcome to next  address" << leftPointer <<"  "<<endl;
                     flag = true;
                     parseInteriorIndexPages(database_file,leftPointer,rowIds,indexValue);
                     break;
