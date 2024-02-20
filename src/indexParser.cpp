@@ -150,9 +150,9 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
             }
              return 1;
         }
-        else if (index == 0 && currHeader == indexValue) {
-            std:: cout << " I am equal" <<"  " << currHeader<<std::endl;
-            rowIds.push_back(1);
+        else if (index == 0 ) {
+            std:: cout << " I am 0" <<"  " << currHeader<<std::endl;
+            
         }
 
    
