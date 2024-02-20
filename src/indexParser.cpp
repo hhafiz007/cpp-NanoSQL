@@ -116,13 +116,13 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
              std:: cout << " I am greater" <<"  " << currHeader<<std::endl;
             return 1;
         }
-        else if (currHeader == "eritrea") {
+        else if (index == 0 && currHeader == "eritrea") {
             std:: cout << " I am equal" <<"  " << currHeader<<std::endl;
             rowIds.push_back(1);
             rowIds.size();
         }
 
-        std:: cout << " cur header from index" <<index<<"  " << currHeader<<std::endl;
+        // std:: cout << " cur header from index" <<index<<"  " << currHeader<<std::endl;
 
        
         currRow.push_back(currHeader);
