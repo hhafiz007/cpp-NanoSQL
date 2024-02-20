@@ -198,6 +198,20 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
             unsigned short byte2 = static_cast<unsigned char>(database_file[startAddress+4]);
             unsigned short num_table =   (byte1 << 8) | (byte2);
 
+            unsigned long rightPointer;
+
+             if(pageType != 10) {
+
+                unsigned long result1 = static_cast<unsigned char>(database_file[startAddress+8]);
+                unsigned long  result2 = static_cast<unsigned char>(database_file[startAddress+9]);
+                unsigned long  result3 = static_cast<unsigned char>(database_file[startAddress+10]);
+                unsigned long  result4 = static_cast<unsigned char>(database_file[startAddress+11]);
+
+                
+               
+                rightPointer =   (((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4)))*4096;
+                }
+
 
 
 
@@ -258,6 +272,14 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                 }
             
         }
+
+        if(pageType != 10) {
+
+
+                
+               
+                parseInteriorIndexPages(database_file,rightPointer,rowIds,indexValue);
+                }
             
 
 
