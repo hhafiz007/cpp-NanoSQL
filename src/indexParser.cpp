@@ -137,7 +137,7 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
 
 
 
-void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long pageStart,vector<unsigned long> rowIds){
+void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long pageStart,vector<unsigned long> rowIds,string indexValue){
 
 
     unsigned short pageType = static_cast<unsigned char>(database_file[pageStart]);
@@ -226,7 +226,7 @@ void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPa
     
     
 
-    parseInteriorIndexPages(database_file,pageStart,rowIds);
+    parseInteriorIndexPages(database_file,pageStart,rowIds,indexValue);
 
 
 
