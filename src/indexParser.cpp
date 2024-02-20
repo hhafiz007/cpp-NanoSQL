@@ -125,6 +125,7 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
                     // std :: cout << currByte << " curr byte "<<int(database_file[prev+j])<<std:: endl;
                     result |=  (currByte);
                 }
+                myMap[currRow[0]] = result;
                 // cout << "  rowID  " << result << endl;
              
 
@@ -138,7 +139,7 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
 
         if (index == 0 )
         {
-            myMap[currHeader] += 1;
+            
             if (mySet.find(currHeader) == mySet.end())
             {
              std:: cout <<currHeader<<"  ";
