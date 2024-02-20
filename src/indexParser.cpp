@@ -266,10 +266,10 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                     parseInteriorIndexPages(database_file,leftPointer,rowIds,indexValue);
                     // break;
                 }
-                else if (rowIds.size()){
-                     break;
+                // else if (rowIds.size()){
+                //      break;
 
-                }
+                // }
             
         }
 
