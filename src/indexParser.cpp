@@ -116,7 +116,7 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
                     // std :: cout << currByte << " curr byte "<<int(database_file[prev+j])<<std:: endl;
                     result |=  (currByte);
                 }
-                cout << "  rowID  " << result << endl;
+                // cout << "  rowID  " << result << endl;
              
 
 
@@ -233,7 +233,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
                 unsigned long next = processRowData(database_file,childAddress,rowIds,indexValue);
 
-                if (next == 1 && pageType == 2) {
+                if ( pageType == 2) {
                     cout << " welcome to next  address" << leftPointer <<"  "<<endl;
                     flag = true;
                     parseInteriorIndexPages(database_file,leftPointer,rowIds,indexValue);
