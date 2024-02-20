@@ -135,12 +135,12 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
 
         if (index == 0 )
         {
-            if (mySet.find(currHeader) != mySet.end())
+            if (mySet.find(currHeader) == mySet.end())
             {
              std:: cout <<currHeader<<"  ";
              mySet.insert(currHeader);
             }
-            // return 1;
+            //  return 1;
         }
         else if (index == 0 && currHeader == indexValue) {
             std:: cout << " I am equal" <<"  " << currHeader<<std::endl;
