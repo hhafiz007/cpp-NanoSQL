@@ -288,11 +288,10 @@ void printIndexLeafPage(std::vector<char> &database_file , unsigned short rootPa
 
     parseInteriorIndexPages(database_file,pageStart,rowIds,indexValue);
 
-    cout << myMap << endl;
-
-
-
-
+   std::cout << "Contents of the map:" << std::endl;
+    for (const auto& pair : myMap) {
+        std::cout << pair.first << ": " << pair.second << std::endl;
+    }
         
 
 
