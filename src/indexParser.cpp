@@ -154,7 +154,6 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
     // cout << " welcome to first page" << pageType <<"  "<<pageStart<<endl;
 
     unsigned long startAddress = pageStart;
-    if (int(pageType) == interiorIndexPage) {
 
         bool flag = false;
 
@@ -197,26 +196,14 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                     flag = true;
                     parseInteriorIndexPages(database_file,leftPointer,rowIds,indexValue);
                     break;
+                }
+                else if (rowIds.size()){
+                     break;
 
                 }
-
-
-
-
-
-
-    
             
         }
             
-
-        }
-    else {
-
-        cout << " welcome to index leaf page" << pageType <<"  "<<endl;
-
-
-    }
 
 
 
