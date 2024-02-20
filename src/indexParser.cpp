@@ -233,7 +233,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
                 unsigned long next = processRowData(database_file,childAddress,rowIds,indexValue);
 
-                if (next == 1) {
+                if (next == 1 && pageType == 2) {
                     cout << " welcome to next  address" << leftPointer <<"  "<<endl;
                     flag = true;
                     parseInteriorIndexPages(database_file,leftPointer,rowIds,indexValue);
