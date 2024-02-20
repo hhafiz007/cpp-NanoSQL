@@ -195,7 +195,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
                 if (next == 1) {
                     flag = true;
-                    parseInteriorIndexPages(database_file,leftPointer,rowIds);
+                    parseInteriorIndexPages(database_file,leftPointer,rowIds,indexValue);
                     break;
 
                 }
