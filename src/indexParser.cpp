@@ -127,9 +127,9 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
         }
         }
 
-        if (index == 0 && currHeader > indexValue)
+        if (index == 0 )
         {
-            //  std:: cout << " I am greater" <<"  " << currHeader<<"  "<<indexValue<<std::endl;
+             std:: cout <<currHeader<<"  "<<std::endl;
             // return 1;
         }
         else if (index == 0 && currHeader == indexValue) {
