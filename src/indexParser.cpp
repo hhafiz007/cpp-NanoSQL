@@ -137,15 +137,17 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
         }
         }
 
-        if (index == 0 )
+        if (index == 0  && currHeader > indexValue)
         {
+
+            std:: cout << " I am greater" <<"  " << currHeader<<"  "<<indexValue<<std::endl;
             
             if (mySet.find(currHeader) == mySet.end())
             {
              std:: cout <<currHeader<<"  ";
              mySet.insert(currHeader);
             }
-            //  return 1;
+             return 1;
         }
         else if (index == 0 && currHeader == indexValue) {
             std:: cout << " I am equal" <<"  " << currHeader<<std::endl;
@@ -262,11 +264,11 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
                 unsigned long next = processRowData(database_file,childAddress,rowIds,indexValue);
 
-                if ( pageType == 2) {
-                    // cout << " welcome to next  address" << leftPointer <<"  ";
+                if ( pageType == 2 && next == 1) {
+                    cout << " welcome to next  address" << leftPointer <<"  ";
                     flag = true;
                     parseInteriorIndexPages(database_file,leftPointer,rowIds,indexValue);
-                    // break;
+                    break;
                 }
                 // else if (rowIds.size()){
                 //      break;
