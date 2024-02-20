@@ -113,6 +113,7 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
 
         if (index == 0 && currHeader > "eritrea")
         {
+             std:: cerr << " I am greater" <<index<<"  " << currHeader<<std::endl;
             return 1;
         }
         else if (currHeader == "eritrea") {
@@ -162,6 +163,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
             unsigned short byte1 = static_cast<unsigned char>(database_file[startAddress+3]);
             unsigned short byte2 = static_cast<unsigned char>(database_file[startAddress+4]);
             unsigned short num_table =   (byte1 << 8) | (byte2);
+
             unsigned long start = startAddress+12;
             std::vector<unsigned long> cellAddress;
              for (int i = 0; i < num_table; i++) {
