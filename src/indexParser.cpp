@@ -274,10 +274,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
         }
 
         if(pageType != 10) {
-
-
-                
-               
+                cout <<"welcome to right pointer";
                 parseInteriorIndexPages(database_file,rightPointer,rowIds,indexValue);
                 }
             
