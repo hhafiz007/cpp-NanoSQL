@@ -135,7 +135,6 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
         else if (index == 0 && currHeader == indexValue) {
             std:: cout << " I am equal" <<"  " << currHeader<<std::endl;
             rowIds.push_back(1);
-            rowIds.size();
         }
 
    
@@ -179,7 +178,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
         bool flag = false;
 
-        cout << " welcome to interior page" << pageType <<"  "<<endl;
+        // cout << " welcome to interior page" << pageType <<"  "<<endl;
             
             unsigned short byte1 = static_cast<unsigned char>(database_file[startAddress+3]);
             unsigned short byte2 = static_cast<unsigned char>(database_file[startAddress+4]);
@@ -234,7 +233,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                 unsigned long next = processRowData(database_file,childAddress,rowIds,indexValue);
 
                 if ( pageType == 2) {
-                    cout << " welcome to next  address" << leftPointer <<"  "<<endl;
+                    // cout << " welcome to next  address" << leftPointer <<"  "<<endl;
                     flag = true;
                     parseInteriorIndexPages(database_file,leftPointer,rowIds,indexValue);
                     // break;
