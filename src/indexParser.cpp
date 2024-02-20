@@ -208,12 +208,6 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
     
             
         }
-
-        if (flag) {
-            break;
-        }
-        
-
             
 
         }
