@@ -84,7 +84,7 @@ unsigned long processHeaderIndex(std::vector<char> &database_file ,unsigned long
 
 
 
-unsigned long processRowData(std::vector<char> &database_file , unsigned long rowAddress,std::vector<unsigned long> rowIds){
+unsigned long processRowData(std::vector<char> &database_file , unsigned long rowAddress,std::vector<unsigned long> rowIds,string indexValue){
     unsigned long next = rowAddress;
     std::vector<int> header; 
     next = processVarIntIndex(database_file,rowAddress);
@@ -111,12 +111,12 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
             startByte+=1;
         }
 
-        if (index == 0 && currHeader > "eritrea")
+        if (index == 0 && currHeader > indexValue)
         {
              std:: cout << " I am greater" <<"  " << currHeader<<std::endl;
             return 1;
         }
-        else if (index == 0 && currHeader == "eritrea") {
+        else if (index == 0 && currHeader == indexValue) {
             std:: cout << " I am equal" <<"  " << currHeader<<std::endl;
             rowIds.push_back(1);
             rowIds.size();
@@ -211,7 +211,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                 cout << "  Processing child " << i<<"   "<<childAddress << endl;
             }
 
-                unsigned long next = processRowData(database_file,childAddress,rowIds);
+                unsigned long next = processRowData(database_file,childAddress,rowIds,indexValue);
 
                 if (next == 1) {
                     cout << " welcome to next  address" << leftPointer <<"  "<<endl;
