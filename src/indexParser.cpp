@@ -190,7 +190,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
              for (int i = 0; i < cellAddress.size(); ++i) {
 
 
-            
+                if(pageType != 10) {
 
                 unsigned long result1 = static_cast<unsigned char>(database_file[cellAddress[i]]);
                 unsigned long  result2 = static_cast<unsigned char>(database_file[cellAddress[i]+1]);
@@ -200,11 +200,11 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                 
                
                 unsigned long  leftPointer =   (((result1 << 24) | (result2 << 16) | (result3 << 8) | (result4)))*4096;
-
+                }
 
                 unsigned long childAddress = cellAddress[i]+4;
                  if (pageType == 10){
-                childAddress-=4;
+                childAddress=cellAddress[i];
             }
 
                 unsigned long next = processRowData(database_file,childAddress,rowIds);
