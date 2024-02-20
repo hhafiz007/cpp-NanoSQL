@@ -189,7 +189,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
 
              for (int i = 0; i < cellAddress.size(); ++i) {
 
-                unsigned long  leftPointer = 0'
+                unsigned long  leftPointer = 0;
 
 
                 if(pageType != 10) {
