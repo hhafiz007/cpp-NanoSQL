@@ -174,7 +174,7 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
 
      while (rowStartByte < next) {
             unsigned short currByte = static_cast<unsigned char>(database_file[rowStartByte]) ;
-            cout <<currByte  <<" ";
+            cout <<currByte  <<" "<<endl;
             // currHeader = currHeader + database_file[startByte];
             rowStartByte+=1;
         }
