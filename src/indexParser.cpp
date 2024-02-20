@@ -141,10 +141,11 @@ unsigned long processRowData(std::vector<char> &database_file , unsigned long ro
         {
 
             std:: cout << " I am greater" <<"  " << currHeader<<"  "<<indexValue<<std::endl;
+            std:: cout <<currHeader<<"  ";
             
             if (mySet.find(currHeader) == mySet.end())
             {
-             std:: cout <<currHeader<<"  ";
+             
              mySet.insert(currHeader);
             }
              return 1;
