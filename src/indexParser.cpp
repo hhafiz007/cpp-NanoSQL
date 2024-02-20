@@ -217,7 +217,7 @@ void parseInteriorIndexPages(std::vector<char> &database_file,unsigned long page
                     cout << " welcome to next  address" << leftPointer <<"  "<<endl;
                     flag = true;
                     parseInteriorIndexPages(database_file,leftPointer,rowIds,indexValue);
-                    break;
+                    // break;
                 }
                 else if (rowIds.size()){
                      break;
